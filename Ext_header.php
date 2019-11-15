@@ -5,8 +5,8 @@
                 <section class="nav-fostrap">
                     <ul class="ligne_one">
                         <li>
-                            <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
-                            </section>
+                          <a href="Accueil.php" class="Logo-Accueil"><section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
+                            </section></a>
                         </li>
                         <li>
                             <form class="form-inline md-form mr-auto">
@@ -29,7 +29,7 @@
                                 <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-de"> </span>
                                         Deutsch</a></li>
                                 <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ru"> </span>
-                                        русский</a></li>
+                                        Pусский</a></li>
                                 <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-jp"> </span>
                                         日本語</a></li>
                                 <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cn"> </span>
@@ -38,14 +38,14 @@
                     </ul>
 
                     <ul class="ligne_two">
-                        <li><a href="">Accueil</a></li>
+                        <li><a href="Accueil.php">Accueil</a></li>
                         <li><a href="">Produits</a></li>
                         <li><a href="">Service</a></li>
                         <li><a href="">Aide</a></li>
                         <li><a href="">À propos</a></li>
                     </ul>
                     <ul class="ligne_three">
-                        <li><a href="javascript:void(0)">Guitares/Basses<span class="arrow-down"></span></a>
+                        <li><a href="Guitares&Basses.php">Guitares/Basses<span class="arrow-down"></span></a>
                             <ul class="dropdown">
                                 <li><a href="">Basses</a></li>
                                 <li><a href="">Guitares acoustiques</a></li>

@@ -82,7 +82,7 @@
               <img src="Images/Guitare&Basses.jpg" alt="Psychopomp" />
             </section>
             <section class="card-description">
-              <a href="">
+              <a href="Guitares&Basses.php">
                 <h2>Guitares & Basses</h2>
               </a>
               <section class="souscategorie">

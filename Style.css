@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
 
 * {
@@ -9,6 +10,7 @@
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: 'Lobster', cursive;
 }
 
 body {
@@ -28,6 +30,10 @@ hr {
   border: none;
   /*on supprime le style par défaut*/
   box-shadow: 0 20px 20px -20px #333;
+}
+
+h2 {
+  font-size: 35px;
 }
 
 
@@ -92,13 +98,13 @@ a:hover {
   padding: 0;
   display: inline-block;
   position: relative;
-  font-size: 14;
+  font-size: 14px;
   color: #ffffff;
 }
 
 .nav-fostrap li a {
-  padding: 15px 20px;
-  font-size: 14;
+  padding: 11px 20px;
+  font-size: 20px;
   color: #ffffff;
   display: inline-block;
   outline: 0;
@@ -129,7 +135,7 @@ a:hover {
 
 .nav-fostrap li ul.dropdown li a {
   padding: 15px 20px;
-  font-size: 15px;
+  font-size: 20px;
   color: #fff;
   display: block;
   font-weight: 400;
@@ -190,7 +196,7 @@ a:hover {
 
 .ligne_one li a {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .panier {
@@ -215,7 +221,7 @@ a:hover {
 .ligne_two li a {
   color: #ffffff;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 23px;
 }
 
 .ligne_three {
@@ -248,7 +254,7 @@ a:hover {
 
 .dropdown .choixdrap a {
   text-align: left;
-  width: 158px !important;
+  width: 159px !important;
 }
 
 .dropdown-item {
@@ -262,8 +268,8 @@ a:hover {
 
 .logo {
   position: relative;
-  margin-right: 1rem;
-  bottom: -10px;
+  margin-right: 2.5rem;
+  bottom: -6px;
   font-size: 50px;
   text-align: left !important;
   font-family: 'saira stencil one';
@@ -280,8 +286,18 @@ a:hover {
   color: #FFF;
 }
 
+.Logo-Accueil {
+  padding: 0px 0px !important;
+}
+
+.Logo-Accueil:hover {
+  background: transparent !important;
+}
+
 .orangetexte {
   color: #FF8742;
+  font-family: 'saira stencil one';
+
 }
 
 /*
@@ -292,26 +308,27 @@ a:hover {
  |____/   \___|  \__,_| |_|     \___| |_| |_|   |____/   \__,_| |_|                                                                     
 */
 
-.loupe{
+.loupe {
   height: 38px;
   width: 45px;
   border-radius: 0px 15px 15px 0px;
-  text-shadow: 3px 2px 3px rgba(255,255,255,.2);
+  text-shadow: 3px 2px 3px rgba(255, 255, 255, .2);
 }
 
-.fa-search{
+.fa-search {
   position: relative;
   font-size: 25px;
   right: 3px;
-  top: 1px;
+  bottom: 6px;
 }
 
-.recherche{
+.recherche {
   width: 450px !important;
   border-radius: 15px 0px 0px 15px !important;
 }
 
-.form-control, .recherche{
+.form-control,
+.recherche {
   margin-right: 0% !important;
 }
 
@@ -338,7 +355,7 @@ a:hover {
 .souscategorie a {
   color: #000000;
   line-height: 40px;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 a:hover {
@@ -347,6 +364,7 @@ a:hover {
 
 .banderole {
   color: rgba(0, 0, 0, 0.63);
+  text-shadow: 0px 0px 0px #ffffff00;
 }
 
 
@@ -600,7 +618,7 @@ footer {
 .marginpieddepage {
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 footer a {
@@ -609,23 +627,33 @@ footer a {
 
 .pieddepage {
   text-align: center;
-  font-size: 14px !important;
+  font-size: 16px !important;
   padding-bottom: 10px;
 }
 
 h5 {
   color: #FFF;
   font-weight: bold;
+  font-size: 30px;
+  text-shadow: 3px 5px 2px #474747;
 }
 
 h6 {
   color: #FFF;
   font-weight: bold;
+  font-size: 22px;
+  text-shadow: 3px 5px 2px #474747;
+}
+
+.parts p {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 1rem !important;
 }
 
 p {
   color: rgb(219, 219, 219);
   margin-bottom: 0px !important;
+  font-size: 18px;
 }
 
 .couleurtexte {
@@ -637,6 +665,9 @@ p {
   color: #FFF;
   font-weight: bold;
   border-color: rgb(241, 97, 14);
+  font-size: 25px;
+  text-shadow: 3px 5px 2px #474747;
+  padding-bottom: 10px;
 }
 
 .btn-warning:hover {
@@ -646,7 +677,7 @@ p {
   border-color: rgb(255, 135, 66);
 }
 
-.email-group .form-control{
+.email-group .form-control {
   border-radius: 40px 0 0 40px !important;
   padding-left: 75px;
 }
@@ -662,12 +693,12 @@ p {
   margin-right: 10%;
 }
 
-.email h5{
+.email h5 {
   position: relative;
   left: 170px;
 }
 
-.email .btn{
+.email .btn {
   border-radius: 0 40px 40px 0 !important;
 }
 
@@ -682,8 +713,8 @@ p {
   margin-right: 5%;
 }
 
-.espace{
-  margin-left:7%;
+.espace {
+  margin-left: 7%;
 }
 
 .finfooter {
@@ -699,10 +730,12 @@ p {
 
 .finfooterp1 {
   color: #FFF;
+  font-size: 14px;
 }
 
 .finfooterp2 {
   color: rgb(167, 167, 167);
+  font-size: 14px;
 }
 
 
@@ -771,6 +804,7 @@ section.client .section-title {
   bottom: 80px;
   color: rgb(241, 97, 14);
   z-index: 99999;
+  text-shadow: 3px 5px 2px #474747;
   cursor: pointer;
 }
 
@@ -778,7 +812,7 @@ section.client .section-title {
   display: none;
 }
 
-.fa-compact-disc{
+.fa-compact-disc {
   position: relative;
   left: 65px;
   font-size: 55px;
@@ -786,16 +820,16 @@ section.client .section-title {
   z-index: 9999 !important;
 }
 
-.normal{
+.normal {
   color: rgb(0, 0, 0);
 }
 
-.rouge{
+.rouge {
   color: rgb(255, 17, 0);
   text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
 }
 
-.vert{
+.vert {
   color: rgb(32, 197, 68);
 }
 
@@ -967,6 +1001,7 @@ section.client .section-title {
 
   .ligne_one {
     background: rgb(109, 109, 109);
+    padding-top: 80px !important;
     text-align: left;
   }
 
@@ -986,39 +1021,32 @@ section.client .section-title {
 
 
   .logo {
-    position: relative;
-    left: 0px;
-    font-size: 28px;
-    margin-right: 0rem;
-    text-align: center !important;
-    font-family: 'saira stencil one';
-    color: #FFF;
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
+    display: none;
   }
 
-  .nav-bg-fostrap{
+  .nav-bg-fostrap {
     position: fixed !important;
   }
 
-  .recherche{
+  .recherche {
     width: 165px !important;
     border-radius: 15px 0px 0px 15px !important;
   }
 
-  .form-control, .recherche{
+  .form-control,
+  .recherche {
     font-size: 14px;
   }
 
-  .loupe{
+  .loupe {
     height: 35px;
     width: 35px;
   }
 
-  .fa-search{
+  .fa-search {
     font-size: 14px;
     right: 3px;
-    top: 1px;
+    bottom: 12px;
   }
 
   #navbarcontent {
@@ -1029,9 +1057,7 @@ section.client .section-title {
 }
 
 
-@media only screen and (max-width:900px) {
-
-}
+@media only screen and (max-width:900px) {}
 
 @media only screen and (max-width:768px) {
   #navbarcontent {
@@ -1040,7 +1066,7 @@ section.client .section-title {
     width: 100%;
   }
 
-  .nav-bg-fostrap{
+  .nav-bg-fostrap {
     position: fixed !important;
   }
 
@@ -1048,13 +1074,13 @@ section.client .section-title {
     margin-left: -10%;
     margin-right: 5%;
   }
-  
-  .email h5{
+
+  .email h5 {
     position: relative;
     left: 70px;
   }
-  
-  .email .btn{
+
+  .email .btn {
     border-radius: 0 40px 40px 0 !important;
   }
 }
