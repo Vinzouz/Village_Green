@@ -249,7 +249,7 @@ a:hover {
 
 .choixdrap {
   text-align: left;
-  width: 158px !important;
+  width: 159px !important;
 }
 
 .dropdown .choixdrap a {
@@ -297,8 +297,17 @@ a:hover {
 .orangetexte {
   color: #FF8742;
   font-family: 'saira stencil one';
-
 }
+
+.esp_client{
+    text-align: left;
+    width: 158px !important;
+  }
+
+  .dropdown .esp_client a {
+    text-align: left;
+    width: 158px !important;
+  }
 
 /*
   ____                                 _         ____                 
@@ -323,7 +332,7 @@ a:hover {
 }
 
 .recherche {
-  width: 450px !important;
+  width: 440px !important;
   border-radius: 15px 0px 0px 15px !important;
 }
 
@@ -615,6 +624,10 @@ footer {
   z-index: 500 !important;
 }
 
+p.spacer{
+  line-height:1em;
+}
+
 .marginpieddepage {
   margin-left: 10px;
   margin-right: 10px;
@@ -634,15 +647,19 @@ footer a {
 h5 {
   color: #FFF;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   text-shadow: 3px 5px 2px #474747;
 }
 
 h6 {
   color: #FFF;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
   text-shadow: 3px 5px 2px #474747;
+}
+
+.numtelephone{
+  font-size: 20px;
 }
 
 .parts p {
@@ -706,6 +723,14 @@ p {
   width: 50px;
   height: 50px;
   align-content: center;
+}
+
+.res_sociaux img:hover {
+  -moz-transform: scale(0.9) translate(0px, 12px);
+  -webkit-transform: scale(0.9) translate(0px, 12px);
+  -o-transform: scale(0.9) translate(0px, 12px);
+  -ms-transform: scale(0.9) translate(0px, 12px);
+  transform: scale(0.9) translate(0px, 12px);
 }
 
 .res_sociaux h5 {
@@ -1011,6 +1036,16 @@ section.client .section-title {
   }
 
   .dropdown .choixdrap a {
+    text-align: left;
+    width: 200px !important;
+  }
+
+  .esp_client {
+    text-align: left;
+    width: 200px !important;
+  }
+
+  .dropdown .esp_client a {
     text-align: left;
     width: 200px !important;
   }

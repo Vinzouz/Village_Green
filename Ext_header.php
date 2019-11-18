@@ -5,8 +5,10 @@
                 <section class="nav-fostrap">
                     <ul class="ligne_one">
                         <li>
-                          <a href="Accueil.php" class="Logo-Accueil"><section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
-                            </section></a>
+                            <a href="Accueil.php" class="Logo-Accueil">
+                                <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
+                                </section>
+                            </a>
                         </li>
                         <li>
                             <form class="form-inline md-form mr-auto">
@@ -17,7 +19,15 @@
 
                         <li><a class="padding_ligne_one" href="">Infos</a></li>
                         <li><a class="padding_ligne_one" href="">Service</a></li>
-                        <li><a class="padding_ligne_one" href="">Espace client</a></li>
+
+                        <li class="padding_ligne_one"><a href="">Espace client<span class="arrow-down"></span></a>
+                            <ul class="dropdown">
+                                <li class="esp_client"><a class="dropdown-item" href="Accueilen.html"><i class="fas fa-sign-in-alt"></i>  Connexion</a></li>
+                                <li class="esp_client"><a class="dropdown-item" href="#"><i class="fas fa-id-card"></i>
+                                         Inscription</a></li>
+                            </ul>
+                        </li>
+
                         <li><a class="padding_ligne_one" href=""><i class="fas fa-shopping-basket panier"></i></a></li>
                         <li class="padding_ligne_one"><a href=""><span class="flag-icon flag-icon-fr"> </span> Français<span class="arrow-down"></span></a>
                             <ul class="dropdown">
@@ -35,6 +45,7 @@
                                 <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cn"> </span>
                                         官话</a></li>
                             </ul>
+                        </li>
                     </ul>
 
                     <ul class="ligne_two">

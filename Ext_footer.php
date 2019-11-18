@@ -54,56 +54,62 @@
       <br>
       <h6>Conseil / Commande téléphone</h6>
       <p>Du lundi au vendredi de 8h à 19h, <br>
-        le samedi de 10h à 18h. <br>
-        <br>
-        Depuis la France :</p>
-      <h5>02 40 38 50 50</h5>
-      <br>
+        le samedi de 10h à 18h.</p>
+      <p class="spacer">&nbsp;</p>
+      <p>Depuis la France :</p>
+      <h5 class="numtelephone">02 40 38 50 50</h5>
+      <p class="spacer">&nbsp;</p>
       <p>Belgique, Suisse, International :</p>
-      <h5>0033 2 40 38 50 50</h5>
-      <br>
+      <h5 class="numtelephone">0033 2 40 38 50 50</h5>
+      <p class="spacer">&nbsp;</p>
       <h6>Service après vente :</h6>
-      <h5>02 51 80 68 76</h5>
+      <h5 class="numtelephone">02 51 80 68 76</h5>
       <p>Contactez-nous par téléphone <br>
         du lundi au samedi de 9h à 18h <br>
         ou depuis votre compte client.</p>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <h6>Conseils pour choisir <br> un instrument :</h6>
       <p>infovg@villagegreen.com</p>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <h6>Service Presse :</h6>
       <p>contact@villagegreen.com</p>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <h6>Village Green Recrute !</h6>
     </section>
     <section class="col">
       <h5>Village Green Stores</h5>
       <br>
       <h6>Ouverts de 10h à 19h30 non-stop.</h6>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <p>Guitares - Amplificateurs - Efets : <br>
         182 avenue Jean Jaurès <br>
-        75019 Paris <br>
-        <br>
+        75019 Paris </p>
+        <p class="spacer">&nbsp;</p>
+        <p>
         Clavier - Home Studio - Sonorisation <br>
         Équipement DJ - Éclairages : <br>
         184 avenue Jean Jaurès <br>
-        75019 Paris <br>
-        <br>
+        75019 Paris </p>
+        <p class="spacer">&nbsp;</p>
+        <p>
         Librairie Musicale : <br>
         7 av. du Nouveau Conservatoire <br>
-        75019 Paris <br>
-        <br>
+        75019 Paris </p>
+        <p class="spacer">&nbsp;</p>
+        <p>
         Instruments à vent : <br>
         9/11 av. du Nouveau Conservatoire <br>
-        75019 Paris <br>
-        <br>
+        75019 Paris </p>
+        <p class="spacer">&nbsp;</p>
+        <p>
         Percussions : <br>
         13/15 av. du Nouveau Conservatoire <br>
-        75019 Paris <br>
-        <br>
-        Métro Ligne 5, station Porte de Pantin. <br>
-        <br>
+        75019 Paris </p>
+        <p class="spacer">&nbsp;</p>
+        <p>
+        Métro Ligne 5, station Porte de Pantin. </p>
+        <p class="spacer">&nbsp;</p>
+        <p>
         Plan d'accès / Visite virtuelle
       </p>
     </section>
@@ -112,35 +118,35 @@
       <br>
       <a href="">Qui sommes-nous ?</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">F.A.Q</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Le blog Village Green</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <p>Vous avez un site internet ?</p>
       <a href="">Devenez partenaire Village Green</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Conditions générales de vente</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Mention légales</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Plan du site</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Parrainage</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Nouveautés</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Assurance Woodbrass.com</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Location d'instruments de musique</a>
     </section>
     <section class="col">
@@ -148,10 +154,10 @@
       <br>
       <a href="">Toute l'actualité musicale</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Voir l'avis des musiciens</a>
       <br>
-      <br>
+      <p class="spacer">&nbsp;</p>
       <a href="">Concours : inscription et résultat... <br>
         à vous de jouer !</a>
     </section>
