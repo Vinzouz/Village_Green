@@ -299,15 +299,15 @@ a:hover {
   font-family: 'saira stencil one';
 }
 
-.esp_client{
-    text-align: left;
-    width: 158px !important;
-  }
+.esp_client {
+  text-align: left;
+  width: 158px !important;
+}
 
-  .dropdown .esp_client a {
-    text-align: left;
-    width: 158px !important;
-  }
+.dropdown .esp_client a {
+  text-align: left;
+  width: 158px !important;
+}
 
 /*
   ____                                 _         ____                 
@@ -624,8 +624,8 @@ footer {
   z-index: 500 !important;
 }
 
-p.spacer{
-  line-height:1em;
+p.spacer {
+  line-height: 1em;
 }
 
 .marginpieddepage {
@@ -658,7 +658,7 @@ h6 {
   text-shadow: 3px 5px 2px #474747;
 }
 
-.numtelephone{
+.numtelephone {
   font-size: 20px;
 }
 
@@ -692,6 +692,23 @@ p {
   color: #FFF;
   font-weight: bold;
   border-color: rgb(255, 135, 66);
+}
+
+.btn-success {
+  background-color: rgb(53, 184, 41);
+  color: #FFF;
+  font-weight: bold;
+  border-color: rgb(53, 184, 41);
+  font-size: 25px;
+  text-shadow: 3px 5px 2px #474747;
+  padding-bottom: 10px;
+}
+
+.btn-success:hover {
+  background-color: rgb(25, 209, 34);
+  color: #FFF;
+  font-weight: bold;
+  border-color: rgb(53, 184, 41);
 }
 
 .email-group .form-control {
@@ -1131,3 +1148,29 @@ section.client .section-title {
   }
 
 }
+
+/* 
+                                                    ███████╗ ██████╗ ██████╗ ███╗   ███╗██╗   ██╗██╗      █████╗ ██╗██████╗ ███████╗
+                                                    ██╔════╝██╔═══██╗██╔══██╗████╗ ████║██║   ██║██║     ██╔══██╗██║██╔══██╗██╔════╝
+                                                    █████╗  ██║   ██║██████╔╝██╔████╔██║██║   ██║██║     ███████║██║██████╔╝█████╗  
+                                                    ██╔══╝  ██║   ██║██╔══██╗██║╚██╔╝██║██║   ██║██║     ██╔══██║██║██╔══██╗██╔══╝  
+                                                    ██║     ╚██████╔╝██║  ██║██║ ╚═╝ ██║╚██████╔╝███████╗██║  ██║██║██║  ██║███████╗
+                                                    ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝
+                                                                                                                                    
+*/
+
+.legend {
+  font-size: 60px;
+  margin-left: 32% !important;
+  text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+}
+
+.champs {
+  width: 170px;
+  font-size: 20px;
+}
+
+select{
+  height: 48px !important;
+}
+
