@@ -1,6 +1,8 @@
 <footer>
   <section class="container">
     <section class="row">
+
+      <!-- Carrousel sur les moyens de paiements -->
       <section class="col">
         <section class="client">
           <section class="carousel-client">
@@ -22,6 +24,8 @@
     </section>
     <br>
     <section class="row">
+
+      <!-- Newsletter -->
       <section class="col-sm-6 col-12">
         <section class="email">
           <h5>Recevez <span class="couleurtexte">nos offres exclusives </span>!</h5>
@@ -36,6 +40,8 @@
           </section>
         </section>
       </section>
+
+      <!-- Réseaux sociaux -->
       <section class="col-sm-6 col-12">
         <section class="res_sociaux">
           <h5><span class="couleurtexte">Suivez-nous</span> par ici !</h5>
@@ -49,6 +55,8 @@
     <br>
   </section>
   <section class="row marginpieddepage">
+
+    <!-- Colonne 1 -->
     <section class="col">
       <h5>Contactez-nous !</h5>
       <br>
@@ -76,6 +84,8 @@
       <p class="spacer">&nbsp;</p>
       <h6>Village Green Recrute !</h6>
     </section>
+
+    <!-- Colonne 2 -->
     <section class="col">
       <h5>Village Green Stores</h5>
       <br>
@@ -84,35 +94,37 @@
       <p>Guitares - Amplificateurs - Efets : <br>
         182 avenue Jean Jaurès <br>
         75019 Paris </p>
-        <p class="spacer">&nbsp;</p>
-        <p>
+      <p class="spacer">&nbsp;</p>
+      <p>
         Clavier - Home Studio - Sonorisation <br>
         Équipement DJ - Éclairages : <br>
         184 avenue Jean Jaurès <br>
         75019 Paris </p>
-        <p class="spacer">&nbsp;</p>
-        <p>
+      <p class="spacer">&nbsp;</p>
+      <p>
         Librairie Musicale : <br>
         7 av. du Nouveau Conservatoire <br>
         75019 Paris </p>
-        <p class="spacer">&nbsp;</p>
-        <p>
+      <p class="spacer">&nbsp;</p>
+      <p>
         Instruments à vent : <br>
         9/11 av. du Nouveau Conservatoire <br>
         75019 Paris </p>
-        <p class="spacer">&nbsp;</p>
-        <p>
+      <p class="spacer">&nbsp;</p>
+      <p>
         Percussions : <br>
         13/15 av. du Nouveau Conservatoire <br>
         75019 Paris </p>
-        <p class="spacer">&nbsp;</p>
-        <p>
+      <p class="spacer">&nbsp;</p>
+      <p>
         Métro Ligne 5, station Porte de Pantin. </p>
-        <p class="spacer">&nbsp;</p>
-        <p>
+      <p class="spacer">&nbsp;</p>
+      <p>
         Plan d'accès / Visite virtuelle
       </p>
     </section>
+
+    <!-- Colonne 3 -->
     <section class="col">
       <h5>Utiles !</h5>
       <br>
@@ -149,6 +161,8 @@
       <p class="spacer">&nbsp;</p>
       <a href="">Location d'instruments de musique</a>
     </section>
+
+    <!-- Colonne 4 -->
     <section class="col">
       <h5>Village Green <br> Preservation Society</h5>
       <br>
@@ -164,6 +178,8 @@
   </section>
   <br>
   <section class="row">
+
+    <!-- Informations complémentaires 1 -->
     <section class="col">
       <p class="pieddepage">Village Green est une entreprise 100% Made in France ! <br>
         Magasin de musique - Achat / Vente instruments de musique - Location instruments de musique - Atelier de
@@ -172,6 +188,8 @@
     </section>
   </section>
   <section class="row">
+
+    <!-- Informations complémentaires 2 -->
     <section class="col">
       <section class="finfooter">
         <p class="finfooterp1">

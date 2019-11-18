@@ -3,13 +3,18 @@
         <section id="main">
             <nav>
                 <section class="nav-fostrap">
+                    <!-- NavBar Ligne 1-->
                     <ul class="ligne_one">
+
+                        <!-- Logo Village Green -->
                         <li>
                             <a href="Accueil.php" class="Logo-Accueil">
                                 <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
                                 </section>
                             </a>
                         </li>
+
+                        <!-- Barre de recherche -->
                         <li>
                             <form class="form-inline md-form mr-auto">
                                 <input class="form-control mr-sm-2 recherche" type="text" placeholder="Que recherchez-vous?" aria-label="Search">
@@ -17,18 +22,25 @@
                             </form>
                         </li>
 
+                        <!-- Infos -->
                         <li><a class="padding_ligne_one" href="">Infos</a></li>
+
+                        <!-- Service -->
                         <li><a class="padding_ligne_one" href="">Service</a></li>
 
+                        <!-- Espace Client -->
                         <li class="padding_ligne_one"><a href="">Espace client<span class="arrow-down"></span></a>
                             <ul class="dropdown">
-                                <li class="esp_client"><a class="dropdown-item" href="Accueilen.html"><i class="fas fa-sign-in-alt"></i>  Connexion</a></li>
+                                <li class="esp_client"><a class="dropdown-item" href="Accueilen.html"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
                                 <li class="esp_client"><a class="dropdown-item" href="#"><i class="fas fa-id-card"></i>
-                                         Inscription</a></li>
+                                        Inscription</a></li>
                             </ul>
                         </li>
 
+                        <!-- Panier -->
                         <li><a class="padding_ligne_one" href=""><i class="fas fa-shopping-basket panier"></i></a></li>
+
+                        <!-- Langue -->
                         <li class="padding_ligne_one"><a href=""><span class="flag-icon flag-icon-fr"> </span> Français<span class="arrow-down"></span></a>
                             <ul class="dropdown">
                                 <li class="choixdrap"><a class="dropdown-item" href="Accueilen.html"><span class="flag-icon flag-icon-gb"> </span> English</a></li>
@@ -48,6 +60,7 @@
                         </li>
                     </ul>
 
+                    <!-- NavBar Ligne 2-->
                     <ul class="ligne_two">
                         <li><a href="Accueil.php">Accueil</a></li>
                         <li><a href="">Produits</a></li>
@@ -55,7 +68,11 @@
                         <li><a href="">Aide</a></li>
                         <li><a href="">À propos</a></li>
                     </ul>
+
+                    <!-- NavBar Ligne 3-->
                     <ul class="ligne_three">
+
+                        <!-- Catégorie et Sous-Catégorie -->
                         <li><a href="Guitares&Basses.php">Guitares/Basses<span class="arrow-down"></span></a>
                             <ul class="dropdown">
                                 <li><a href="">Basses</a></li>
@@ -157,6 +174,8 @@
                         </li>
                     </ul>
                 </section>
+
+                <!-- NavBar Responsive et Hamburger -->
                 <section class="nav-bg-fostrap">
                     <section class="navbar-fostrap"> <span></span> <span></span> <span></span> </section>
                     <a href="" class="title-mobile">
@@ -165,6 +184,7 @@
                     </a>
                 </section>
             </nav>
+            <!-- Écart entre le Header et le Body (Marge Haute sur le responsive) -->
             <section id='navbarcontent' class='content'>
             </section>
         </section>
