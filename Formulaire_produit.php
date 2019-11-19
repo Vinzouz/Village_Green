@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link rel="stylesheet" href="Style.css" />
-    <title>Formulaire Produit</title>
+<?php include("Ext_head.php"); ?>
+<title>Formulaire Produit</title>
 </head>
 
 <body>
@@ -20,6 +11,8 @@
             <fieldset>
                 <legend class="legend">Formulaire Produit</legend>
                 <p>*Champs obligatoires</p>
+
+                <!-- Champs 1 La Marque -->
                 <section class="input-group input-group-lg">
                     <section class="input-group-prepend">
                         <span class="input-group-text champs">Marque*</span>
@@ -27,6 +20,8 @@
                     <input type="text" class="form-control" id="marque" name="marque" required>
                 </section>
                 <br>
+
+                <!-- Champs 2 Le Nom du Produit -->
                 <section class="input-group input-group-lg">
                     <section class="input-group-prepend">
                         <span class="input-group-text champs">Nom du produit*</span>
@@ -34,6 +29,8 @@
                     <input type="text" class="form-control" id="nom_prod" name="nom_prod" required>
                 </section>
                 <br>
+
+                <!-- Champs 3  Le Prix-->
                 <section class="input-group input-group-lg">
                     <section class="input-group-prepend">
                         <span class="input-group-text champs">Prix*</span>
@@ -41,6 +38,8 @@
                     <input type="text" class="form-control" id="prix" name="prix" required>
                 </section>
                 <br>
+
+                <!-- Champs 4 La Description-->
                 <section>
                     <section class="form-group input-group">
                         <span class="input-group-text text champs">Description*</span>
@@ -48,6 +47,8 @@
                     </section>
                 </section>
                 <br>
+
+                <!-- Champs 5 Les Caractéristiques-->
                 <section>
                     <section class="form-group input-group">
                         <span class="input-group-text text champs">Caractéristiques <br> techniques*</span>
@@ -55,6 +56,8 @@
                     </section>
                 </section>
                 <br>
+
+                <!-- Champs 6 La Sélection de la Catégorie -->
                 <section class="input-group-lg input-group">
                     <section class="input-group-prepend">
                         <span class="input-group-text champs">Catégorie*</span>
@@ -73,6 +76,8 @@
                     </select>
                 </section>
                 <br>
+
+                <!-- Champs 7 La Sélection de la Sous-Catégorie -->
                 <section class="input-group-lg input-group">
                     <section class="input-group-prepend">
                         <span class="input-group-text champs">Sous-Catégorie*</span>
@@ -145,6 +150,8 @@
                     </select>
                 </section>
                 <br>
+
+                <!-- Champs 8 Le Stock Actuel -->
                 <section class="input-group input-group-lg">
                     <section class="input-group-prepend">
                         <span class="input-group-text champs">Stock Quantité*</span>
@@ -152,6 +159,8 @@
                     <input type="text" class="form-control" id="stock_qt" name="stock_qt" value="100" required>
                 </section>
                 <br>
+
+                <!-- Champs 9 Le Stock d'Alerte -->
                 <section class="input-group input-group-lg">
                     <section class="input-group-prepend">
                         <span class="input-group-text champs">Stock Alerte*</span>
@@ -159,6 +168,8 @@
                     <input type="text" class="form-control" id="stock_al" name="stock_al" value="15" required>
                 </section>
                 <br>
+
+                <!-- Champs 10 Les Boutons Envoyer/Annuler -->
                 <input type="submit" class="btn-lg btn-success" id="envoie" NAME="Envoyer" VALUE=" Envoyer">
                 <input type="reset" class="btn-lg btn-warning" NAME="Annuler" VALUE=" Annuler">
             </fieldset>

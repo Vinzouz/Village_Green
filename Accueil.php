@@ -1,82 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include("Ext_head.php");?>
+<?php include("Ext_head.php"); ?>
+<title>Village Green Accueil</title>
+</head>
 
 <body>
-<?php include("Ext_header.php");?>
+  <?php include("Ext_header.php"); ?>
 
 
   <section class="body">
     <section class="container">
 
+      <!--------------->
+      <!-- Carrousel -->
+      <!--------------->
+      <section class="d-flex flex-row justify-content-around align-content-center" id="entete">
+        <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <!-- Petite barre horizontal d'indication en bas du carrousel -->
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          </ol>
 
+          <!-- Image Publicitaire du Carrousel -->
+          <div class="carousel-inner" role="listbox">
+            <section class="carousel-item active">
+              <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
+              <img class="d-block" src="images/pubguitare.png" data-src="holder.js/900x400?theme=social" alt="First slide">
+            </section>
+            <section class="carousel-item">
+              <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
+              <img class="d-block" src="images/pubpiano.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
+            </section>
+            <section class="carousel-item">
+              <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
+              <img class="d-block" src="images/pubbatterie.png" data-src="holder.js/900x400?theme=industrial" alt="Third slide">
+            </section>
+            <section class="carousel-item">
+              <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
+              <img class="d-block" src="images/pubplatine.png" data-src="holder.js/900x400?theme=industrial" alt="Fourth slide">
+            </section>
+          </div>
 
-        <section class="d-flex flex-row justify-content-around align-content-center" id="entete">
-            <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-              </ol>
-              <div class="carousel-inner" role="listbox">
-               <section class="carousel-item active">
-                  <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-                 <img class="d-block" src="images/pubguitare.png" data-src="holder.js/900x400?theme=social" alt="First slide">
-                </section>
-                <section class="carousel-item">
-                  <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-                 <img class="d-block" src="images/pubpiano.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
-                </section>
-                <section class="carousel-item">
-                    <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-                   <img class="d-block" src="images/pubbatterie.png" data-src="holder.js/900x400?theme=industrial" alt="Third slide">
-                  </section>
-                  <section class="carousel-item">
-                    <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-                   <img class="d-block" src="images/pubplatine.png" data-src="holder.js/900x400?theme=industrial" alt="Fourth slide">
-                  </section>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </section>
-              <section class="d-flex flex-row">
-                <img class="img-fluid bg-white" src="images/banniere_droite_prix.png" alt="banniere droite" id="bannieredroite">
-              </section>
-          </section>
-        
-        <section class="container p-0" id="Degrade">
-      
-            <section class="row text-center">
-              <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/free-delivery.png" alt="free delivery">
-                <h5 class="banderole">Livraison gratuite</h5><h6 class="banderole">A partir de 19€</h6></section>
-              <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/guarantee.png" alt="guarantee">
-                <h5 class="banderole">Garantie</h5><h6 class="banderole">3 ans</h6></section>
-              <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/calendar.png" alt="calendar">
-                <h5 class="banderole">Satisfait ou remboursé</h5><h6 class="banderole">30 jours d'essai</h6></section>
-              <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/protected.png" alt="protected">
-                <h5 class="banderole">Sécurité de payement</h5></section>
-            </section>
+          <!-- Boutton Gauche/Droite de défilement du carrousel -->
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </section>
 
+        <!-- PUB Bannière de droite -->
+        <section class="d-flex flex-row">
+          <img class="img-fluid bg-white" src="images/banniere_droite_prix.png" alt="banniere droite" id="bannieredroite">
+        </section>
+      </section>
 
+      <!-- Bannière Horizontal sur les avantages -->
+      <section class="container p-0" id="Degrade">
+        <section class="row text-center">
 
+          <!-- Segment 1 -->
+          <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/free-delivery.png" alt="free delivery">
+            <h5 class="banderole">Livraison gratuite</h5>
+            <h6 class="banderole">A partir de 19€</h6>
+          </section>
 
+          <!-- Segment 2 -->
+          <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/guarantee.png" alt="guarantee">
+            <h5 class="banderole">Garantie</h5>
+            <h6 class="banderole">3 ans</h6>
+          </section>
 
+          <!-- Segment 3 -->
+          <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/calendar.png" alt="calendar">
+            <h5 class="banderole">Satisfait ou remboursé</h5>
+            <h6 class="banderole">30 jours d'essai</h6>
+          </section>
 
+          <!-- Segment 4 -->
+          <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/protected.png" alt="protected">
+            <h5 class="banderole">Sécurité de payement</h5>
+          </section>
+        </section>
+      </section>
 
-
+      <!--------------------------------->
+      <!-- Catégorie et Sous-Catégorie -->
+      <!--------------------------------->
       <section class="row">
 
         <ul class="card-list">
 
+        <!-- Catégorie 1 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/Guitare&Basses.jpg" alt="Psychopomp" />
@@ -100,6 +122,7 @@
             </section>
           </li>
 
+          <!-- Catégorie 2 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/Batteries.jpg" alt="Psychopomp" />
@@ -123,6 +146,7 @@
             </section>
           </li>
 
+          <!-- Catégorie 3 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/Clavier.jpg" alt="Psychopomp" />
@@ -145,6 +169,7 @@
             </section>
           </li>
 
+          <!-- Catégorie 4 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/Studio.jpg" alt="Psychopomp" />
@@ -169,6 +194,7 @@
             </section>
           </li>
 
+          <!-- Catégorie 5 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/Sonorisation.jpg" alt="Psychopomp" />
@@ -191,6 +217,7 @@
             </section>
           </li>
 
+          <!-- Catégorie 6 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/Eclairage.jpg" alt="Psychopomp" />
@@ -213,6 +240,7 @@
             </section>
           </li>
 
+          <!-- Catégorie 7 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/DJ.jpg" alt="Psychopomp" />
@@ -236,6 +264,7 @@
             </section>
           </li>
 
+          <!-- Catégorie 8 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/Flight.jpg" alt="Psychopomp" />
@@ -258,6 +287,7 @@
             </section>
           </li>
 
+          <!-- Catégorie 9 -->
           <li class="card categorie">
             <section class="card-image">
               <img src="Images/Accessoires.jpg" alt="Psychopomp" />
@@ -282,11 +312,17 @@
         </ul>
       </section>
       <br>
+
+      <!-------------------->
+      <!-- Nos Partenaire -->
+      <!-------------------->
       <section class="row">
         <h2 class="nospartenaire">Nos partenaires</h2>
       </section>
       <hr>
       <section class="row total">
+
+        <!-- Partenaire 1 -->
         <section class="card part">
           <section class="face face1">
             <section class="content parts">
@@ -301,6 +337,8 @@
             </section>
           </section>
         </section>
+
+        <!-- Partenaire 2 -->
         <section class="card part">
           <section class="face face1">
             <section class="content parts">
@@ -311,12 +349,13 @@
             <section class="content parts">
               <p>Sennheiser electronic GmbH & Co. KG est une entreprise allemande qui fabrique des microphones, casques,
                 accessoires téléphoniques, casques d'aviateur et du matériel pour les professionnels.</p>
-              <a target="_blank"
-                href="https://fr-fr.sennheiser.com/?gclid=Cj0KCQjwuNbsBRC-ARIsAAzITuff9PJzel4C9nrqgZE-w-wghYD8FXmW8W6gM_KLTmRiat6Z9NsuTF4aAgEREALw_wcB&gclsrc=aw.ds">Plus
+              <a target="_blank" href="https://fr-fr.sennheiser.com/?gclid=Cj0KCQjwuNbsBRC-ARIsAAzITuff9PJzel4C9nrqgZE-w-wghYD8FXmW8W6gM_KLTmRiat6Z9NsuTF4aAgEREALw_wcB&gclsrc=aw.ds">Plus
                 d'infos</a>
             </section>
           </section>
         </section>
+
+        <!-- Partenaire 3 -->
         <section class="card part">
           <section class="face face1">
             <section class="content parts">
@@ -331,6 +370,8 @@
             </section>
           </section>
         </section>
+
+        <!-- Partenaire 4 -->
         <section class="card part">
           <section class="face face1">
             <section class="content parts">
@@ -341,8 +382,7 @@
             <section class="content parts">
               <p>Behringer Spezielle Studiotechnik GmbH (Behringer) est une société allemande d'électronique fondée en
                 1989 et spécialisée dans le domaine de l'audio.</p> <br>
-              <a target="_blank"
-                href="https://www.behringer.com/Categories/Behringer/c/Behringer?q=:catRank:sectionision:CREA:publicProduct:true#googtrans">Plus
+              <a target="_blank" href="https://www.behringer.com/Categories/Behringer/c/Behringer?q=:catRank:sectionision:CREA:publicProduct:true#googtrans">Plus
                 d'infos</a>
             </section>
           </section>
@@ -350,8 +390,8 @@
       </section>
     </section>
   </section>
-  <?php include("Ext_footer.php");?>
-  <?php include("Ext_script.php");?>
+  <?php include("Ext_footer.php"); ?>
+  <?php include("Ext_script.php"); ?>
 
 </body>
 
