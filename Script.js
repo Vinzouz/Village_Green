@@ -149,7 +149,7 @@ function giveSelect2(SelectValue) {
     else if (SelectValue === 'PRO') {
         hideInsclientSiret.style.display = 'block';
     }
-    else if (SelectValue === '') {
+    else if (SelectValue === '0') {
         hideInsclientSiret.style.display = 'none';
     }
 }

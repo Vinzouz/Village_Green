@@ -93,7 +93,7 @@ include 'Ext_header.php'; ?>
                     ?><br>
 
                     <label for="InsclientType">Vous êtes :</label><select size="1" name="InsclientType" id="InsclientType" onchange="giveSelect2(this.value)">
-                        <option value="">Choisissez votre type</option>
+                        <option value="0">Choisissez votre type</option>
                         <option value="PAR">Particulier</option>
                         <option value="PRO">Professionnel</option>
                     </select>
@@ -108,7 +108,7 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br><br>
 
-                    <span id="hideInsclientSiret" style=""><label for="InsclientSiret">Votre SIRET :</label><input class="form-control" type="text" name="InsclientSiret" id="InsclientSiret"></span>
+                    <span id="hideInsclientSiret" style="display:none;"><label for="InsclientSiret">Votre SIRET :</label><input class="form-control" type="text" name="InsclientSiret" id="InsclientSiret"></span>
                     <span id="missInsclientSiret"></span>
                     <?php
                     if (isset($formError['InsclientSiret'])) {
@@ -166,5 +166,5 @@ include 'Ext_header.php'; ?>
     <?php
     include 'Ext_footer.php';
     include 'Ext_script.php';
-    include 'Script.js'
     ?>
+    <script src="Script.js"></script>
