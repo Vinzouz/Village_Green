@@ -11,7 +11,7 @@ include 'Ext_header.php'; ?>
             <p>
                 <h2 class="text-center">Inscription</h2><br>
                 <form action="" name="formInsclient" method="post">
-                    <label for="InsclientNom">Votre nom :</label><input class="form-control" type="text" name="InsclientNom" id="InsclientNom">
+                    <label for="InsclientNom">Votre nom :</label><input class="form-control" type="text" name="InsclientNom" id="InsclientNom" placeholder="DOE">
                     <span id="missInsclientNom"></span>
                     <?php
                     if (isset($formError['InsclientNom'])) {
@@ -22,7 +22,7 @@ include 'Ext_header.php'; ?>
                     <?php
                     }
                     ?><br>
-                    <label for="InsclientPrenom">Votre prénom :</label><input class="form-control" type="text" name="InsclientPrenom" id="InsclientPrenom">
+                    <label for="InsclientPrenom">Votre prénom :</label><input class="form-control" type="text" name="InsclientPrenom" id="InsclientPrenom" placeholder="John">
                     <span id="missInsclientPrenom"></span>
                     <?php
                     if (isset($formError['InsclientPrenom'])) {
@@ -33,7 +33,7 @@ include 'Ext_header.php'; ?>
                     <?php
                     }
                     ?><br>
-                    <label for="InslientRue">Votre rue :</label><input class="form-control" type="text" name="InsclientRue" id="InsclientRue">
+                    <label for="InslientRue">Votre adresse :</label><input class="form-control" type="text" name="InsclientRue" id="InsclientRue" placeholder="25, rue Charles de Gaulle - Bâtiment E - Apt 106">
                     <span id="missInsclientRue"></span>
                     <?php
                     if (isset($formError['InsclientRue'])) {
@@ -44,7 +44,7 @@ include 'Ext_header.php'; ?>
                     <?php
                     }
                     ?><br>
-                    <label for="InsclientVille">Votre ville :</label><input class="form-control" type="text" name="InsclientVille" id="InsclientVille">
+                    <label for="InsclientVille">Votre ville :</label><input class="form-control" type="text" name="InsclientVille" id="InsclientVille" placeholder="Paris">
                     <span id="missInsclientVille"></span>
                     <?php
                     if (isset($formError['InsclientVille'])) {
@@ -56,7 +56,7 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br>
 
-                    <label for="InsclientCodeP">Votre code postal :</label><input class="form-control" type="text" name="InsclientCodeP" id="InsclientCodeP">
+                    <label for="InsclientCodeP">Votre code postal :</label><input class="form-control" type="text" name="InsclientCodeP" id="InsclientCodeP" placeholder="75000">
                     <span id="missInsclientCodeP"></span>
                     <?php
                     if (isset($formError['InsclientCodeP'])) {
@@ -68,7 +68,7 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br>
 
-                    <label for="InsclientTel">Votre téléphone :</label><input class="form-control" type="tel" name="InsclientTel" id="InsclientTel">
+                    <label for="InsclientTel">Votre téléphone :</label><input class="form-control" type="tel" name="InsclientTel" id="InsclientTel" placeholder="07.12.34.56.78">
                     <span id="missInsclientTel"></span>
                     <?php
                     if (isset($formError['InsclientTel'])) {
@@ -80,7 +80,7 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br>
 
-                    <label for="InsclientMail">Votre mail :</label><input class="form-control" type="email" name="InsclientMail" id="InsclientMail">
+                    <label for="InsclientMail">Votre mail :</label><input class="form-control" type="email" name="InsclientMail" id="InsclientMail" placeholder="john.doe@gmail.com">
                     <span id="missInsclientMail"></span>
                     <?php
                     if (isset($formError['InsclientMail'])) {
@@ -108,7 +108,7 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br><br>
 
-                    <span id="hideInsclientSiret" style="display:none;"><label for="InsclientSiret">Votre SIRET :</label><input class="form-control" type="text" name="InsclientSiret" id="InsclientSiret"></span>
+                    <span id="hideInsclientSiret" style="display:none;"><label for="InsclientSiret">Votre SIRET :</label><input class="form-control" type="text" name="InsclientSiret" id="InsclientSiret" placeholder="732 829 320 00074"></span>
                     <span id="missInsclientSiret"></span>
                     <?php
                     if (isset($formError['InsclientSiret'])) {

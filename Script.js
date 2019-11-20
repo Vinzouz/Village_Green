@@ -143,13 +143,10 @@ giveSelection(sel1.value);
 function giveSelect2(SelectValue) {
     var hideInsclientSiret = document.getElementById('hideInsclientSiret');
 
-    if (SelectValue === 'PAR') {
+    if (SelectValue === 'PAR' || SelectValue === '0') {
         hideInsclientSiret.style.display = 'none';
     }
     else if (SelectValue === 'PRO') {
         hideInsclientSiret.style.display = 'block';
-    }
-    else if (SelectValue === '0') {
-        hideInsclientSiret.style.display = 'none';
     }
 }
