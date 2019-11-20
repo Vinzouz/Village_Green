@@ -31,8 +31,8 @@
                         <!-- Espace Client -->
                         <li class="padding_ligne_one"><a href="">Espace client<span class="arrow-down"></span></a>
                             <ul class="dropdown">
-                                <li class="esp_client"><a class="dropdown-item" href="esp_connexion.php"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
-                                <li class="esp_client"><a class="dropdown-item" href="esp_forminscription.php"><i class="fas fa-id-card"></i>
+                                <li class="esp_client"><a class="dropdown-item" href="Accueilen.html"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
+                                <li class="esp_client"><a class="dropdown-item" href="#"><i class="fas fa-id-card"></i>
                                         Inscription</a></li>
                             </ul>
                         </li>
@@ -66,7 +66,7 @@
                         <li><a href="">Produits</a></li>
                         <li><a href="">Service</a></li>
                         <li><a href="">Aide</a></li>
-                        <li><a href="">À propos</a></li>
+                        <li><a href="APropos.php">À propos</a></li>
                     </ul>
 
                     <!-- NavBar Ligne 3-->
