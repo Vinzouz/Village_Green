@@ -3,8 +3,6 @@ include 'esp_validinscription.php';
 include 'Ext_head.php';
 include 'Ext_header.php'; ?>
 
-
-
 <div class="container">
     <div class="row justify-content-center">
 
