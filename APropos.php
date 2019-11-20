@@ -38,7 +38,7 @@ Ce projet est un projet au stade d'Alpha test, il sera mis à jour progressiveme
       <div class="avatar"></div>
    </div>
 	<h3>Jesse Roult</h3>
-   <a href="">📧 Jesse.Roulte@email.com</a>
+   <a href="">📧 Jesse.Roulte@gmail.com</a>
    <a href="">📱(+33)6 52 06 05 87</a>
 	<ul>
       <a href="" target="_blank"><i class="fab fa-twitter" style="font-size:16px"></i></a>
