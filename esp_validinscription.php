@@ -10,7 +10,7 @@ $siretReg = '/^[\d]{14}$/';
 $passwordReg = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/';
 $totalchamp = 12;
 
-if (isset($_POST['buttonIns']) && count($_POST) = $totalchamp) {
+if (isset($_POST['buttonIns']) && count($_POST) === $totalchamp) {
 
     $formError = array();
 
