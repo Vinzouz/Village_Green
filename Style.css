@@ -1106,6 +1106,18 @@ section.client .section-title {
     max-width: 1500px;
     width: 100%;
   }
+
+/* A propos  */
+
+  #titre
+  {
+      margin-top: 40px !important;
+  }
+}
+
+.card
+{
+  margin-bottom : 15px;
 }
 
 
@@ -1135,7 +1147,16 @@ section.client .section-title {
   .email .btn {
     border-radius: 0 40px 40px 0 !important;
   }
+
+/* A propos */
+
+.apropos p
+{
+  margin-left: 15px !important;
 }
+
+}
+
 
 @media only screen and (max-width:425px) {
 
@@ -1146,6 +1167,14 @@ section.client .section-title {
   .banderole {
     font-size: 10px;
   }
+
+/* A propos */
+
+.propos .card
+{
+  min-width: 200px;
+  margin-left: -25px;
+}
 
 }
 
@@ -1174,3 +1203,162 @@ select{
   height: 48px !important;
 }
 
+
+/* 
+                                                 █████╗     ██████╗ ██████╗  ██████╗ ██████╗  ██████╗ ███████╗
+                                                ██╔══██╗    ██╔══██╗██╔══██╗██╔═══██╗██╔══██╗██╔═══██╗██╔════╝
+                                                ███████║    ██████╔╝██████╔╝██║   ██║██████╔╝██║   ██║███████╗
+                                                ██╔══██║    ██╔═══╝ ██╔══██╗██║   ██║██╔═══╝ ██║   ██║╚════██║
+                                                ██║  ██║    ██║     ██║  ██║╚██████╔╝██║     ╚██████╔╝███████║
+                                                ╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝      ╚═════╝ ╚══════╝
+                                                                                                              
+*/
+
+
+#titre 
+{
+    margin: auto;
+    font-size: 60px;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+    font-family: 'Lobster', cursive;
+}
+
+#contap span
+{
+  text-decoration: underline; 
+  font-weight: bold;
+}
+
+#contap p
+{
+  padding-left: 5px;
+}
+
+#devo
+{
+ color: rgb(219, 219, 219);
+ font-size: large;
+}
+
+/* card contact a propos */
+
+.propos{
+  margin-top: 10px;
+}
+
+.propos .card{
+	width: 200px; /* ⬅ Size - Small (width: 200px), Medium (width: 225px), Large (width: 250px) */
+	overflow: hidden;
+	background-color: #FFFFFF;
+   
+	border-radius: 15px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	text-align: center;
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+}
+
+.propos .card{
+    margin-right: 25px;
+	}
+
+.propos .card:hover{
+    margin-top: -10px;
+	}
+
+  .propos .card:hover{
+		margin-bottom: 25px;
+	}
+
+  .propos .banner{
+	height: 100px;
+	width: 100%;
+	padding-top: 30px;
+	background-color: #FAFAFA;
+	background-size: cover;
+	background-position: center;
+}
+
+.propos	.card .banner{
+		background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQT9uXf_B9nN3Q5t9CSQvkPYuVdFz9vBDDUODpg6XqtjHvoHU9d");
+	}
+
+  .propos .avatar{
+	height: 100px;
+	width: 100px;
+	margin: auto;
+	background-size: cover;
+	background-position: center;
+	background-color: #F1F1F1;
+	border-radius: 100%;
+}
+
+/* C'est ici que l'on met l'URL de l'image de profil. */
+.propos	.jesse .avatar{
+		background-image: url(Images/jesse.jpg);
+  }
+  
+  .propos	.tom .avatar{
+		background-image: url(Images/tom.jpg);
+  }
+  
+  .propos	.vincent .avatar{
+		background-image: url(Images/vincent.jpg);
+	}
+
+.propos h3, a, i{
+	font-family: 'Roboto', sans-serif;
+	font-weight: lighter;
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+}
+
+.propos	h3{
+		margin-top: 45px;
+		margin-bottom: 5px;
+		font-size: 18px;
+		color: #212121;
+	}
+
+  .propos	a{
+		display: block;
+		padding: 5px 0px;
+		font-size: 14px;
+		color: #9E9E9E;
+		text-decoration: none;
+	}
+
+  .propos	a:hover{
+			background-color: #FAFAFA;
+			color: inherit;
+		}
+
+  .propos ul{
+	margin-top: 10px;
+	padding: 15px 0px;
+	background-color: #FAFAFA;
+}
+
+.propos	ul a{
+		display: inline;
+		margin-right: 10px;
+	}
+
+.propos	ul a{
+			margin-right: 0px;
+		}
+
+.propos	ul a i:hover{
+				transform: scale(1.5);
+      }
+      
+.centerm
+{
+  display: flex;
+}
+
+.contact
+{
+  display: flex;
+  flex-wrap: wrap;
+}
