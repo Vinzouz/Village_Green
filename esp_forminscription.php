@@ -1,4 +1,5 @@
 <?php
+include 'esp_validinscription.php';
 include 'Ext_head.php';
 include 'Ext_header.php'; ?>
 
@@ -33,13 +34,13 @@ include 'Ext_header.php'; ?>
                     <?php
                     }
                     ?><br>
-                    <label for="InslientRue">Votre adresse :</label><input class="form-control" type="text" name="InsclientRue" id="InsclientRue" placeholder="25, rue Charles de Gaulle - Bâtiment E - Apt 106">
+                    <label for="InslientAdresse">Votre adresse :</label><input class="form-control" type="text" name="InsclientAdresse" id="InsclientAdresse" placeholder="25, rue Charles de Gaulle - Bâtiment E - Apt 106">
                     <span id="missInsclientRue"></span>
                     <?php
-                    if (isset($formError['InsclientRue'])) {
+                    if (isset($formError['InsclientAdresse'])) {
                         ?>
                         <span class="alert alert-danger" role="alert" style="top:12px">
-                            <?= $formError['InsclientRue'] ?>
+                            <?= $formError['InsclientAdresse'] ?>
                         </span>
                     <?php
                     }
