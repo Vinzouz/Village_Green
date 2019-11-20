@@ -32,7 +32,7 @@
                         <li class="padding_ligne_one"><a href="">Espace client<span class="arrow-down"></span></a>
                             <ul class="dropdown">
                                 <li class="esp_client"><a class="dropdown-item" href="esp_connexion.php"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
-                                <li class="esp_client"><a class="dropdown-item" href="esp_inscription.php"><i class="fas fa-id-card"></i>
+                                <li class="esp_client"><a class="dropdown-item" href="esp_forminscription.php"><i class="fas fa-id-card"></i>
                                         Inscription</a></li>
                             </ul>
                         </li>
