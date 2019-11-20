@@ -32,8 +32,8 @@ include 'Ext_header.php'; ?>
                     <?php
                     }
                     ?><br>
-                    <label for="InslientAdresse">Votre adresse :</label><input class="form-control" type="text" name="InsclientAdresse" id="InsclientAdresse" placeholder="25, rue Charles de Gaulle - Bâtiment E - Apt 106">
-                    <span id="missInsclientRue"></span>
+                    <label for="InsclientAdresse">Votre adresse :</label><input class="form-control" type="text" name="InsclientAdresse" id="InsclientAdresse" placeholder="25, rue Charles de Gaulle - Bâtiment E - Apt 106">
+                    <span id="missInsclientAdresse"></span>
                     <?php
                     if (isset($formError['InsclientAdresse'])) {
                         ?>
@@ -89,7 +89,7 @@ include 'Ext_header.php'; ?>
                         </span>
                     <?php
                     }
-                    ?><br>
+                    ?><br><br>
 
                     <label for="InsclientType">Vous êtes :</label><select size="1" name="InsclientType" id="InsclientType" onchange="giveSelect2(this.value)">
                         <option value="0">Choisissez votre type</option>
@@ -100,7 +100,7 @@ include 'Ext_header.php'; ?>
                     <?php
                     if (isset($formError['InsclientType'])) {
                         ?>
-                        <span class="alert alert-danger" role="alert" style="top:12px">
+                        <span class="alert alert-danger" role="alert" style="">
                             <?= $formError['InsclientType'] ?>
                         </span>
                     <?php
@@ -144,7 +144,7 @@ include 'Ext_header.php'; ?>
                                 </span>
                             <?php
                             }
-                            ?><br>
+                            ?><br><br>
                         </div>
                     </div>
 
