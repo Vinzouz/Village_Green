@@ -10,7 +10,7 @@ include 'Ext_header.php'; ?>
             <p>
                 <h2 class="text-center">Inscription</h2><br>
                 <form action="" name="formInsclient" method="post">
-                    <label for="InsclientNom">Votre nom :</label><input class="form-control" type="text" name="InsclientNom" id="InsclientNom" placeholder="DOE">
+                    <label for="InsclientNom">Votre nom :</label><input class="form-control" type="text" name="InsclientNom" id="InsclientNom" placeholder="DOE" required>
                     <span id="missInsclientNom"></span>
                     <?php
                     if (isset($formError['InsclientNom'])) {
@@ -21,7 +21,7 @@ include 'Ext_header.php'; ?>
                     <?php
                     }
                     ?><br>
-                    <label for="InsclientPrenom">Votre prénom :</label><input class="form-control" type="text" name="InsclientPrenom" id="InsclientPrenom" placeholder="John">
+                    <label for="InsclientPrenom">Votre prénom :</label><input class="form-control" type="text" name="InsclientPrenom" id="InsclientPrenom" placeholder="John" required>
                     <span id="missInsclientPrenom"></span>
                     <?php
                     if (isset($formError['InsclientPrenom'])) {
@@ -32,7 +32,7 @@ include 'Ext_header.php'; ?>
                     <?php
                     }
                     ?><br>
-                    <label for="InsclientAdresse">Votre adresse :</label><input class="form-control" type="text" name="InsclientAdresse" id="InsclientAdresse" placeholder="25, rue Charles de Gaulle - Bâtiment E - Apt 106">
+                    <label for="InsclientAdresse">Votre adresse :</label><input class="form-control" type="text" name="InsclientAdresse" id="InsclientAdresse" placeholder="25, rue Charles de Gaulle - Bâtiment E - Apt 106" required>
                     <span id="missInsclientAdresse"></span>
                     <?php
                     if (isset($formError['InsclientAdresse'])) {
@@ -43,7 +43,7 @@ include 'Ext_header.php'; ?>
                     <?php
                     }
                     ?><br>
-                    <label for="InsclientVille">Votre ville :</label><input class="form-control" type="text" name="InsclientVille" id="InsclientVille" placeholder="Paris">
+                    <label for="InsclientVille">Votre ville :</label><input class="form-control" type="text" name="InsclientVille" id="InsclientVille" placeholder="Paris" required>
                     <span id="missInsclientVille"></span>
                     <?php
                     if (isset($formError['InsclientVille'])) {
@@ -55,7 +55,7 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br>
 
-                    <label for="InsclientCodeP">Votre code postal :</label><input class="form-control" type="text" name="InsclientCodeP" id="InsclientCodeP" placeholder="75000">
+                    <label for="InsclientCodeP">Votre code postal :</label><input class="form-control" type="text" name="InsclientCodeP" id="InsclientCodeP" placeholder="75000" required>
                     <span id="missInsclientCodeP"></span>
                     <?php
                     if (isset($formError['InsclientCodeP'])) {
@@ -67,7 +67,7 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br>
 
-                    <label for="InsclientTel">Votre téléphone :</label><input class="form-control" type="tel" name="InsclientTel" id="InsclientTel" placeholder="07.12.34.56.78">
+                    <label for="InsclientTel">Votre téléphone :</label><input class="form-control" type="tel" name="InsclientTel" id="InsclientTel" placeholder="07.12.34.56.78" required>
                     <span id="missInsclientTel"></span>
                     <?php
                     if (isset($formError['InsclientTel'])) {
@@ -79,7 +79,7 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br>
 
-                    <label for="InsclientMail">Votre mail :</label><input class="form-control" type="email" name="InsclientMail" id="InsclientMail" placeholder="john.doe@gmail.com">
+                    <label for="InsclientMail">Votre mail :</label><input class="form-control" type="email" name="InsclientMail" id="InsclientMail" placeholder="john.doe@gmail.com" required>
                     <span id="missInsclientMail"></span>
                     <?php
                     if (isset($formError['InsclientMail'])) {
@@ -91,8 +91,8 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br><br>
 
-                    <label for="InsclientType">Vous êtes :</label><select size="1" name="InsclientType" id="InsclientType" onchange="giveSelect2(this.value)">
-                        <option value="0">Choisissez votre type</option>
+                    <label for="InsclientType">Vous êtes :</label><select size="1" name="InsclientType" id="InsclientType" onchange="InsclientTypeCheck(this.value)" required>
+                        
                         <option value="PAR">Particulier</option>
                         <option value="PRO">Professionnel</option>
                     </select>
@@ -121,7 +121,7 @@ include 'Ext_header.php'; ?>
 
                     <div class="row">
                         <div class="col-6">
-                            <label for="InsclientPass">Votre mot de passe :</label><input class="form-control" type="password" name="InsclientPass" id="InsclientPass">
+                            <label for="InsclientPass">Votre mot de passe :</label><input class="form-control" type="password" name="InsclientPass" id="InsclientPass" required>
                             <span id="missInsclientPass"></span>
                             <?php
                             if (isset($formError['InsclientPass'])) {
@@ -134,7 +134,7 @@ include 'Ext_header.php'; ?>
                             ?><br>
                         </div>
                         <div class="col-6">
-                            <label for="InsclientPassV">Valdiation du mot de passe :</label><input class="form-control" type="password" name="InsclientPassV" id="InsclientPassV">
+                            <label for="InsclientPassV">Valdiation du mot de passe :</label><input class="form-control" type="password" name="InsclientPassV" id="InsclientPassV" required>
                             <span id="missInsclientPassV"></span>
                             <?php
                             if (isset($formError['InsclientPassV'])) {
@@ -166,4 +166,4 @@ include 'Ext_header.php'; ?>
     include 'Ext_footer.php';
     include 'Ext_script.php';
     ?>
-    <script src="Script.js"></script>
+    <script src="esp_forminsvalid.js"></script>
