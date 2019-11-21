@@ -91,8 +91,8 @@ include 'Ext_header.php'; ?>
                     }
                     ?><br><br>
 
-                    <label for="InsclientType">Vous êtes :</label><select size="1" name="InsclientType" id="InsclientType" onchange="InsclientTypeCheck(this.value)" required>
-                        
+                    <label for="InsclientType">Vous êtes :</label><select name="InsclientType" id="InsclientType" onchange="InsclientTypeCheck(this.value)" required>
+                        <option value="0">Choisisssez votre type<option>
                         <option value="PAR">Particulier</option>
                         <option value="PRO">Professionnel</option>
                     </select>

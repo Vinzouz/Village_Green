@@ -52,8 +52,6 @@ InsclientVille.onkeyup = InsclientVilleCheck;
 InsclientCodeP.onkeyup = InsclientCodePCheck;
 InsclientTel.onkeyup = InsclientTelCheck;
 InsclientMail.onkeyup = InsclientMailCheck;
-
-InsclientSiret.onkeyup = InsclientSiretCheck;
 InsclientPass.onkeyup = InsclientPassCheck;
 InsclientPassV.onkeyup = InsclientPassVCheck;
 
@@ -86,7 +84,7 @@ function checkForm() {
     InsclientTelCheck();
     InsclientMailCheck();
     InsclientTypeCheck();
-    InsclientSiretCheck();
+
     InsclientPassCheck();
     InsclientPassVCheck();
 }
@@ -233,6 +231,7 @@ function InsclientTypeCheck(SelectValue) {
         missInsclientType.textContent = 'Ok';
         missInsclientType.style.color = 'green';
         flagInsclientType = 1;
+        InsclientSiret.onkeyup = InsclientSiretCheck;
     }
     else if (SelectValue === '0'){
         hideInsclientSiret.style.display = 'none';
