@@ -108,7 +108,7 @@ if (isset($_POST['buttonIns']) && count($_POST) === $totalchamp) {
     if (empty($formError)) {
         $setUser = $db->prepare('INSERT INTO clients SET client_nom = ?, client_prenom = ?, client_adresse = ?, client_ville = ?, client_codepo = ?, client_telephone = ?, client_mail = ?, client_type = ?, client_siret = ?, client_password = ?');
         $setUser->execute(array($InsclientNom, $InsclientPrenom, $InsclientAdresse, $InsclientVille, $InsclientCodeP, $InsclientTel, $InsclientMail, $InsclientType, $InsclientSiret, $InsclientPass));
-        
+
         mail($InsclientMail, 'Inscription Village Green', 'Bonjour ' . $InsclientNom . '' . $InsclientPrenom . ', votre inscription au site Village Green a bien été effectuée !
     Vous pouvez dès à présent vous connecter.');
     header ('Location:Accueil.php');

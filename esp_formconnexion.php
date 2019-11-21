@@ -43,6 +43,8 @@ include 'Ext_header.php'; ?>
                             <input class="form-control" type="reset" value="Annuler">
                         </div>
                     </div>
+                    <br>
+                    <h7><a href='esp_lostpass.php'>Mot de passe perdu ?</a></h7>
                 </form>
                 <br>
         </div>
