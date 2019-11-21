@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <header>
     <section class="container">
         <section id="main">
@@ -29,13 +30,22 @@
                         <li><a class="padding_ligne_one" href="">Service</a></li>
 
                         <!-- Espace Client -->
-                        <li class="padding_ligne_one"><a href="">Espace client<span class="arrow-down"></span></a>
-                            <ul class="dropdown">
-                                <li class="esp_client"><a class="dropdown-item" href="Accueilen.html"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
-                                <li class="esp_client"><a class="dropdown-item" href="#"><i class="fas fa-id-card"></i>
-                                        Inscription</a></li>
-                            </ul>
-                        </li>
+                        <?php if (isset($_SESSION["grade"]) && isset($_SESSION["mail"])) { ?>
+                            <li class="padding_ligne_one"><a href="">Connecté<span class="arrow-down"></span></a>
+                                <ul class="dropdown">
+                                    <li class="esp_client"><a class="dropdown-item" href="#"><i class="fas fa-id-card"></i>Mon compte</a></li>
+                                    <li class="esp_client"><a class="dropdown-item" href="esp_logout.php"><i class="fa fa-sign-out"></i>Déconnexion</a></li>
+                                </ul>
+                            </li>
+                        <?php } else { ?>
+                            <li class="padding_ligne_one"><a href="">Espace client<span class="arrow-down"></span></a>
+                                <ul class="dropdown">
+                                    <li class="esp_client"><a class="dropdown-item" href="esp_formconnexion.php"><i class="fas fa-sign-in-alt"></i>Connexion</a></li>
+                                    <li class="esp_client"><a class="dropdown-item" href="esp_forminscription.php"><i class="fas fa-id-card"></i>
+                                            Inscription</a></li>
+                                </ul>
+                            </li>
+                        <?php } ?>
 
                         <!-- Panier -->
                         <li><a class="padding_ligne_one" href=""><i class="fas fa-shopping-basket panier"></i></a></li>
@@ -66,7 +76,7 @@
                         <li><a href="">Produits</a></li>
                         <li><a href="">Service</a></li>
                         <li><a href="">Aide</a></li>
-                        <li><a href="APropos.php">À propos</a></li>
+                        <li><a href="">À propos</a></li>
                     </ul>
 
                     <!-- NavBar Ligne 3-->

@@ -64,7 +64,7 @@
 
       <!-- Bannière Horizontal sur les avantages -->
       <section class="container p-0" id="Degrade">
-        <section class="row text-center">
+        <section class="row text-center overlay overlay-decalage-banderole">
 
           <!-- Segment 1 -->
           <section class="col-3 text-center pt-2 pb-2"><img class="img-fluid" src="images/free-delivery.png" alt="free delivery">
@@ -94,9 +94,9 @@
       <!--------------------------------->
       <!-- Catégorie et Sous-Catégorie -->
       <!--------------------------------->
-      <section class="row">
+      <section class="row overlay">
 
-        <ul class="card-list">
+        <ul class="card-list overlay-categorie overlay-decalage-categorie">
 
         <!-- Catégorie 1 -->
           <li class="card categorie">
@@ -316,11 +316,11 @@
       <!-------------------->
       <!-- Nos Partenaire -->
       <!-------------------->
-      <section class="row">
+      <section class="row overlay overlay-decalage-titre">
         <h2 class="nospartenaire">Nos partenaires</h2>
       </section>
       <hr>
-      <section class="row total">
+      <section class="row total overlay overlay-decalage-partenaire">
 
         <!-- Partenaire 1 -->
         <section class="card part">

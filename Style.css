@@ -36,6 +36,17 @@ h2 {
   font-size: 35px;
 }
 
+.overlay {
+  width: calc(100% - 30px) !important;
+}
+
+.overlay-categorie {
+  width: calc(100% + 45px) !important;
+}
+
+.row {
+  margin-left: 10px;
+}
 
 /* 
                                                     ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗ 
@@ -278,7 +289,7 @@ a:hover {
 
 .logo-mobile {
   position: relative;
-  left: 0px;
+  width: 200px !important;
   font-size: 28px;
   bottom: 5px;
   text-align: center !important;
@@ -456,11 +467,13 @@ a:hover {
 
 .card-list {
   display: block;
-  margin: 1rem auto;
+  margin-top: 1rem;
   padding: 0;
   font-size: 0;
   text-align: center;
   list-style: none;
+  max-width: 1500px !important;
+
 }
 
 .categorie {
@@ -516,6 +529,7 @@ a:hover {
   position: relative;
   justify-content: space-around;
   display: flex;
+  max-width: 1500px;
 }
 
 .total .part {
@@ -830,6 +844,7 @@ section.client .section-title {
   border-radius: 5px;
 }
 
+
 /*
   ___                               
  |_ _|   ___    ___    _ __     ___ 
@@ -916,10 +931,8 @@ section.client .section-title {
     position: fixed;
     display: block;
     top: 10px;
+    right: 30px;
     font-size: 20px;
-    left: 100px;
-    right: 100px;
-    text-align: center;
     color: #FFF;
   }
 
@@ -935,7 +948,7 @@ section.client .section-title {
   .nav-bg-fostrap {
     display: inline-block;
     vertical-align: middle;
-    width: 100%;
+    width: 100% !important;
     height: 50px;
     margin: 0;
     position: absolute;
@@ -1107,17 +1120,15 @@ section.client .section-title {
     width: 100%;
   }
 
-/* A propos  */
-
-  #titre
-  {
-      margin-top: 40px !important;
+  #titre {
+    margin-top: 40px !important;
   }
-}
 
-.card
-{
-  margin-bottom : 15px;
+
+  .card {
+    margin-bottom: 15px;
+  }
+
 }
 
 
@@ -1148,15 +1159,10 @@ section.client .section-title {
     border-radius: 0 40px 40px 0 !important;
   }
 
-/* A propos */
-
-.apropos p
-{
-  margin-left: 15px !important;
+  .apropos p {
+    margin-left: 15px !important;
+  }
 }
-
-}
-
 
 @media only screen and (max-width:425px) {
 
@@ -1168,15 +1174,64 @@ section.client .section-title {
     font-size: 10px;
   }
 
-/* A propos */
+  .card__box .card {
+    flex-direction: column !important;
+    height: 500px !important;
+  }
 
-.propos .card
-{
-  min-width: 200px;
-  margin-left: -25px;
+  .row {
+    margin-left: -7px;
+  }
+
+  .overlay-decalage-categorie {
+    margin-left: 42px !important;
+
+  }
+
+  .overlay-decalage-titre {
+    margin-left: 8px !important;
+
+  }
+
+  .overlay-decalage-partenaire {
+    margin-left: 10px !important;
+
+  }
+
+  .overlay-decalage-banderole {
+    margin-left: 15px !important;
+
+  }
+
+  .propos .card {
+    min-width: 200px;
+    margin-left: -25px;
+  }
 }
 
+@media only screen and (max-width:375px) {
+  .row {
+    margin-left: -10px;
+  }
 }
+
+.overlay-decalage-categorie {
+  margin-left: 22px !important;
+
+}
+
+@media only screen and (max-width:320px) {
+  .row {
+    margin-left: -50px;
+  }
+
+  .overlay-decalage-categorie {
+    padding-left: 34px !important;
+  }
+
+}
+
+
 
 /* 
                                                     ███████╗ ██████╗ ██████╗ ███╗   ███╗██╗   ██╗██╗      █████╗ ██╗██████╗ ███████╗
@@ -1190,7 +1245,7 @@ section.client .section-title {
 
 .legend {
   font-size: 60px;
-  margin-left: 32% !important;
+  text-align: center;
   text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
 }
 
@@ -1199,9 +1254,177 @@ section.client .section-title {
   font-size: 20px;
 }
 
-select{
+select {
   height: 48px !important;
 }
+
+/* 
+                                                    ██████╗ ██████╗  ██████╗ ██████╗ ██╗   ██╗██╗████████╗
+                                                    ██╔══██╗██╔══██╗██╔═══██╗██╔══██╗██║   ██║██║╚══██╔══╝
+                                                    ██████╔╝██████╔╝██║   ██║██║  ██║██║   ██║██║   ██║   
+                                                    ██╔═══╝ ██╔══██╗██║   ██║██║  ██║██║   ██║██║   ██║   
+                                                    ██║     ██║  ██║╚██████╔╝██████╔╝╚██████╔╝██║   ██║   
+                                                    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝   ╚═╝   
+                                                                                                          
+*/
+
+
+
+.card__list {
+  max-width: 1500px;
+  margin: 2rem auto;
+}
+
+.card__list .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 280px;
+  margin-bottom: 1.5rem;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease-in;
+}
+
+.card__list .card h2 {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.card__list .card:hover {
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+
+
+.card__img {
+  flex: 1 40%;
+  -webkit-flex: 1 40%;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #efefef;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.card__img-preview {
+  display: block;
+  object-fit: cover;
+  margin: 0 auto;
+  max-width: 270px;
+  min-height: 100%;
+  max-height: 100%;
+  transition: all 0.5s ease 0s;
+}
+
+.card__img-preview:hover {
+  transform: scale(1.5);
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+}
+
+.card__content {
+  flex: 1 60%;
+  -webkit-flex: 1 60%;
+  padding: 0.8rem;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card__text {
+  margin: 0;
+  font-family: 'Roboto', sans-serif !important;
+  color: #000 !important;
+}
+
+.card__description {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 0.5rem;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  max-height: 53rem;
+  line-height: 1rem;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.card__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-top: 1px solid #efefef;
+  text-align: left;
+  padding-top: 0.5rem;
+  margin-top: 1rem;
+  margin-right: 5px;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+
+.card__price {
+  color: #E35354;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding-left: 0px !important;
+  padding-right: 15px !important;
+}
+
+.badge {
+  font-size: 20px !important;
+}
+
+.fa-star {
+  color: gold !important;
+}
+
+.fa-check {
+  color: rgb(47, 255, 92) !important;
+}
+
+.options .category {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.options {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.fa-cubes {
+  color: rgb(109, 243, 75) !important;
+}
+
+.stock {
+  font-family: 'Roboto', sans-serif !important;
+  color: #000000;
+}
+
 
 
 /* 
@@ -1215,150 +1438,146 @@ select{
 */
 
 
-#titre 
-{
-    margin: auto;
-    font-size: 60px;
-    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
-    font-family: 'Lobster', cursive;
+#titre {
+  margin: auto;
+  font-size: 60px;
+  text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+  font-family: 'Lobster', cursive;
 }
 
-#contap span
-{
-  text-decoration: underline; 
+#contap span {
+  text-decoration: underline;
   font-weight: bold;
 }
 
-#contap p
-{
+#contap p {
   padding-left: 5px;
 }
 
-#devo
-{
- color: rgb(219, 219, 219);
- font-size: large;
+#devo {
+  color: rgb(219, 219, 219);
+  font-size: large;
 }
 
 /* card contact a propos */
 
-.propos{
+.propos {
   margin-top: 10px;
 }
 
-.propos .card{
-	width: 200px; /* ⬅ Size - Small (width: 200px), Medium (width: 225px), Large (width: 250px) */
-	overflow: hidden;
-	background-color: #FFFFFF;
-   
-	border-radius: 15px;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-	text-align: center;
-	-webkit-transition: .1s ease-in-out;
-	transition: .1s ease-in-out;
+.propos .card {
+  width: 200px;
+  /* ⬅ Size - Small (width: 200px), Medium (width: 225px), Large (width: 250px) */
+  overflow: hidden;
+  background-color: #FFFFFF;
+
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
 }
 
-.propos .card{
-    margin-right: 25px;
-	}
-
-.propos .card:hover{
-    margin-top: -10px;
-	}
-
-  .propos .card:hover{
-		margin-bottom: 25px;
-	}
-
-  .propos .banner{
-	height: 100px;
-	width: 100%;
-	padding-top: 30px;
-	background-color: #FAFAFA;
-	background-size: cover;
-	background-position: center;
+.propos .card {
+  margin-right: 25px;
 }
 
-.propos	.card .banner{
-		background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQT9uXf_B9nN3Q5t9CSQvkPYuVdFz9vBDDUODpg6XqtjHvoHU9d");
-	}
+.propos .card:hover {
+  margin-top: -10px;
+}
 
-  .propos .avatar{
-	height: 100px;
-	width: 100px;
-	margin: auto;
-	background-size: cover;
-	background-position: center;
-	background-color: #F1F1F1;
-	border-radius: 100%;
+.propos .card:hover {
+  margin-bottom: 25px;
+}
+
+.propos .banner {
+  height: 100px;
+  width: 100%;
+  padding-top: 30px;
+  background-color: #FAFAFA;
+  background-size: cover;
+  background-position: center;
+}
+
+.propos .card .banner {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQT9uXf_B9nN3Q5t9CSQvkPYuVdFz9vBDDUODpg6XqtjHvoHU9d");
+}
+
+.propos .avatar {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
+  background-color: #F1F1F1;
+  border-radius: 100%;
 }
 
 /* C'est ici que l'on met l'URL de l'image de profil. */
-.propos	.jesse .avatar{
-		background-image: url(Images/jesse.jpg);
-  }
-  
-  .propos	.tom .avatar{
-		background-image: url(Images/tom.jpg);
-  }
-  
-  .propos	.vincent .avatar{
-		background-image: url(Images/vincent.jpg);
-	}
-
-.propos h3, a, i{
-	font-family: 'Roboto', sans-serif;
-	font-weight: lighter;
-	-webkit-transition: .1s ease-in-out;
-	transition: .1s ease-in-out;
+.propos .jesse .avatar {
+  background-image: url(Images/jesse.jpg);
 }
 
-.propos	h3{
-		margin-top: 45px;
-		margin-bottom: 5px;
-		font-size: 18px;
-		color: #212121;
-	}
-
-  .propos	a{
-		display: block;
-		padding: 5px 0px;
-		font-size: 14px;
-		color: #9E9E9E;
-		text-decoration: none;
-	}
-
-  .propos	a:hover{
-			background-color: #FAFAFA;
-			color: inherit;
-		}
-
-  .propos ul{
-	margin-top: 10px;
-	padding: 15px 0px;
-	background-color: #FAFAFA;
+.propos .tom .avatar {
+  background-image: url(Images/tom.jpg);
 }
 
-.propos	ul a{
-		display: inline;
-		margin-right: 10px;
-	}
+.propos .vincent .avatar {
+  background-image: url(Images/vincent.jpg);
+}
 
-.propos	ul a{
-			margin-right: 0px;
-		}
+.propos h3,
+a,
+i {
+  font-weight: lighter;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
 
-.propos	ul a i:hover{
-				transform: scale(1.5);
-      }
-      
-.centerm
-{
+.propos h3 {
+  margin-top: 45px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #212121;
+}
+
+.propos a {
+  display: block;
+  padding: 5px 0px;
+  font-size: 14px;
+  color: #9E9E9E;
+  text-decoration: none;
+}
+
+.propos a:hover {
+  background-color: #FAFAFA;
+  color: inherit;
+}
+
+.propos ul {
+  margin-top: 10px;
+  padding: 15px 0px;
+  background-color: #FAFAFA;
+}
+
+.propos ul a {
+  display: inline;
+  margin-right: 10px;
+}
+
+.propos ul a {
+  margin-right: 0px;
+}
+
+.propos ul a i:hover {
+  transform: scale(1.5);
+}
+
+.centerm {
   display: flex;
 }
 
-.contact
-{
+.contact {
   display: flex;
   flex-wrap: wrap;
 }
