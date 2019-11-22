@@ -1089,6 +1089,11 @@ section.client .section-title {
     display: none;
   }
 
+  .encadre-milieu .logo,
+  .encadre-milieu2 .logo {
+    display: block;
+  }
+
   .nav-bg-fostrap {
     position: fixed !important;
   }
@@ -1162,6 +1167,19 @@ section.client .section-title {
   .apropos p {
     margin-left: 15px !important;
   }
+
+  .encadre-inscription {
+    width: 700px !important;
+    height: 820px !important;
+  }
+
+  .overlay-decalage-inscription {
+    margin-left: 15px !important;
+  }
+
+  .encadre-inscription label {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width:425px) {
@@ -1207,18 +1225,48 @@ section.client .section-title {
     min-width: 200px;
     margin-left: -25px;
   }
+
+  .encadre-connexion {
+    height: 450px !important;
+    width: 400px !important;
+  }
+
+  .overlay-decalage-connexion {
+    margin-left: 15px !important;
+  }
+
+  .encadre-inscription {
+    padding: 20px 10px 0px 10px !important;
+    width: 400px !important;
+    height: 1120px !important;
+  }
 }
 
 @media only screen and (max-width:375px) {
   .row {
     margin-left: -10px;
   }
+
+  .encadre-connexion {
+    width: 370px !important;
+  }
+
+  .overlay-decalage-categorie {
+    margin-left: 22px !important;
+
+  }
+
+  .centrage-bouton {
+    width: 240px;
+  }
+
+  .encadre-inscription {
+    width: 350px !important;
+    height: 1130px !important;
+  }
 }
 
-.overlay-decalage-categorie {
-  margin-left: 22px !important;
 
-}
 
 @media only screen and (max-width:320px) {
   .row {
@@ -1229,6 +1277,46 @@ section.client .section-title {
     padding-left: 34px !important;
   }
 
+  .encadre-connexion {
+    width: 315px !important;
+  }
+
+  .connexion-champ {
+    width: 220px !important;
+  }
+
+  .centrage-col {
+    margin-left: -30px;
+    width: 240px;
+  }
+
+  .centrage-col2 {
+    margin-left: 40px;
+    width: 240px;
+  }
+
+  .centrage-bouton {
+    margin-left: -10px;
+  }
+
+  .encadre-inscription {
+    width: 318px !important;
+    height: 1150px !important;
+  }
+
+  select {
+    width: 108px;
+    font-size: 9px;
+  }
+
+  .encadre-inscription .legend {
+    position: relative;
+    right: 38px;
+  }
+
+  .encadre-milieu2 .logo {
+    width: 315px;
+  }
 }
 
 
@@ -1484,7 +1572,11 @@ select {
 }
 
 .propos .card:hover {
-  transform: translateY(-15px);
+  margin-top: -10px;
+}
+
+.propos .card:hover {
+  margin-bottom: 25px;
 }
 
 .propos .banner {
@@ -1577,4 +1669,81 @@ i {
 .contact {
   display: flex;
   flex-wrap: wrap;
+}
+
+/* 
+                                                     ██████╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗██╗  ██╗██╗ ██████╗ ███╗   ██╗    
+                                                    ██╔════╝██╔═══██╗████╗  ██║████╗  ██║██╔════╝╚██╗██╔╝██║██╔═══██╗████╗  ██║    
+                                                    ██║     ██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗   ╚███╔╝ ██║██║   ██║██╔██╗ ██║    
+                                                    ██║     ██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝   ██╔██╗ ██║██║   ██║██║╚██╗██║    
+                                                    ╚██████╗╚██████╔╝██║ ╚████║██║ ╚████║███████╗██╔╝ ██╗██║╚██████╔╝██║ ╚████║    
+                                                     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝    
+                                                                                                                                   
+                                                    ██╗███╗   ██╗███████╗ ██████╗██████╗ ██╗██████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+                                                    ██║████╗  ██║██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+                                                    ██║██╔██╗ ██║███████╗██║     ██████╔╝██║██████╔╝   ██║   ██║██║   ██║██╔██╗ ██║
+                                                    ██║██║╚██╗██║╚════██║██║     ██╔══██╗██║██╔═══╝    ██║   ██║██║   ██║██║╚██╗██║
+                                                    ██║██║ ╚████║███████║╚██████╗██║  ██║██║██║        ██║   ██║╚██████╔╝██║ ╚████║
+                                                    ╚═╝╚═╝  ╚═══╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+                                                                                                                                   
+*/
+
+label {
+  font-size: 27px;
+  text-align: center;
+  text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+}
+
+.encadre-milieu {
+  margin-top: 12%;
+}
+
+.encadre-milieu2 {
+  margin-top: 0.01%;
+}
+
+.encadre-milieu .logo,
+.encadre-milieu2 .logo {
+  position: relative;
+  bottom: -6px;
+  font-size: 50px;
+  text-align: center !important;
+  font-family: 'saira stencil one';
+  color: #FFF;
+  margin-right: 0px;
+}
+
+.encadre-connexion {
+  background-color: #acabadd3;
+  padding: 50px 60px 0px 60px;
+  height: 500px;
+  width: 500px;
+  border: 3px solid #FF8742;
+  border-radius: 30px;
+}
+
+.encadre-inscription {
+  background-color: #acabadd3;
+  padding: 20px 60px 0px 60px;
+  height: 890px;
+  width: 820px;
+  border: 3px solid #FF8742;
+  border-radius: 30px;
+}
+
+.centrage-bouton {
+  margin-top: 15px;
+  margin-right: 5px;
+}
+
+#ConclientMail, #InsclientMail {
+  text-indent: 2px;
+}
+
+.logo-decalage {
+  position: relative;
+}
+
+select {
+  border-radius: 5px;
 }
