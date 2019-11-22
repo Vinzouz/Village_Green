@@ -33,7 +33,7 @@
                         <?php if (isset($_SESSION["grade"]) && isset($_SESSION["mail"])) { ?>
                             <li class="padding_ligne_one"><a href="">Connecté<span class="arrow-down"></span></a>
                                 <ul class="dropdown">
-                                    <li class="esp_client"><a class="dropdown-item" href="#"><i class="fas fa-id-card"></i>Mon compte</a></li>
+                                    <li class="esp_client"><a class="dropdown-item" href="esp_changesaccount.php"><i class="fas fa-id-card"></i>Mon compte</a></li>
                                     <li class="esp_client"><a class="dropdown-item" href="esp_logout.php"><i class="fa fa-sign-out"></i>Déconnexion</a></li>
                                 </ul>
                             </li>
