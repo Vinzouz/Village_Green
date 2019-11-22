@@ -76,7 +76,7 @@
                         <li><a href="">Produits</a></li>
                         <li><a href="">Service</a></li>
                         <li><a href="">Aide</a></li>
-                        <li><a href="">À propos</a></li>
+                        <li><a href="APropos.php">À propos</a></li>
                     </ul>
 
                     <!-- NavBar Ligne 3-->
