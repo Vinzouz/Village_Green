@@ -6,18 +6,18 @@ include 'Ext_header.php';
 
 <div class="container">
     <div class="row justify-content-center">
-<div class="col-6">
-    <br>
-        <h4 class="text-center">Réinitialisation du mot de passe</h4>
-        <?php
+        <div class="col-6">
+            <br>
+            <h4 class="text-center">Réinitialisation du mot de passe</h4>
+            <?php
 
-        if (isset($_GET['LPW']) == 1 && isset($_GET['ID'])) {
-            require_once 'config/connectDB.php';
+            if (isset($_GET['LPW']) == 1 && isset($_GET['ID'])) {
+                require_once 'config/connectDB.php';
 
-            $ID = $_GET['ID']; ?>
+                $ID = $_GET['ID']; ?>
 
-            <form action="" name="formNewPass" method="post">
-                
+                <form action="" name="formNewPass" method="post">
+
                     <label for="mailNewPass">Nouveau mot de passe :</label><input class="form-control" type="password" name="mailNewPass" id="mailNewPass">
                     <br>
                     <?php
@@ -38,7 +38,7 @@ include 'Ext_header.php';
                     <?php } ?>
 
                     <p><input class="form-control" type="submit" name="buttonNewPass" id="buttonNewPass" value="Envoyer"></p>
-                </div>
+        </div>
     </div>
     </form>
 </div>
@@ -50,11 +50,11 @@ include 'Ext_header.php';
     <p class="text-center">Veuillez renseigner votre pseudo pour reçevoir un mail dans le but de réinitialiser votre mot de passe.</p>
     <div class="container">
         <div class="row justify-content-center">
-        <div class="col-6">
-        <?php require_once 'config/connectDB.php'; ?>
-        
-            <form action="" name="formLostPass" method="post">
-                
+            <div class="col-6">
+                <?php require_once 'config/connectDB.php'; ?>
+
+                <form action="" name="formLostPass" method="post">
+
                     <label for="mailLostPass">Mail :</label><input class="form-control" type="text" name="mailLostPass" id="mailLostPass" placeholder="john.doe@gmail.com">
                     <br>
 
@@ -67,8 +67,8 @@ include 'Ext_header.php';
                         </span>
                     <?php } ?>
                     <p><input class="form-control" type="submit" name="buttonLostPass" id="buttonLostPass" value="Envoyer"></p>
-                </div>
-                
+            </div>
+
             </form>
         </div><br>
     </div>
