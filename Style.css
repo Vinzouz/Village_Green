@@ -1483,11 +1483,7 @@ select {
 }
 
 .propos .card:hover {
-  margin-top: -10px;
-}
-
-.propos .card:hover {
-  margin-bottom: 25px;
+  transform: translateY(-15px);
 }
 
 .propos .banner {
