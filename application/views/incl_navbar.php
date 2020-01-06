@@ -74,7 +74,6 @@
                     <ul class="ligne_two">
                         <li><a href="Accueil.php">Accueil</a></li>
                         <li><a href="">Produits</a></li>
-                        <li><a href="">Service</a></li>
                         <li><a href="">Aide</a></li>
                         <li><a href="APropos.php">À propos</a></li>
                     </ul>
