@@ -1,7 +1,6 @@
 <?php
 include 'esp_validinscription.php';
 include 'Ext_head.php';
-// include 'Ext_header.php'; 
 ?>
 
 <div class="container">
@@ -194,11 +193,13 @@ include 'Ext_head.php';
                     </form>
                 </div>
             </div>
+            <div class="col centrage-col">
+                <p class="centrage">Déjà client? <a href="esp_formconnexion.php">  C'est par là.</a></p>
+            </div>
         </div>
     </div>
 </div>
 <?php
-// include 'Ext_footer.php';
 include 'Ext_script.php';
 ?>
 <script src="esp_forminsvalid.js"></script>

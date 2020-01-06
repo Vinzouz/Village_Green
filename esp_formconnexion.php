@@ -1,7 +1,6 @@
 <?php
 include 'esp_validconnexion.php';
 include 'Ext_head.php';
-// include 'Ext_header.php'; 
 ?>
 
 <div class="container">
@@ -53,12 +52,14 @@ include 'Ext_head.php';
                         <br>
                 </div>
             </div>
+            <div class="col centrage-col">
+                <p class="centrage">Nouveau client? <a href="esp_forminscription.php"> Commencer ici.</a></p>
+            </div>
         </div>
     </div>
 </div>
 
 <?php
-// include 'Ext_footer.php';
 include 'Ext_script.php';
 ?>
 <script src=""></script>

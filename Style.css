@@ -343,7 +343,8 @@ a:hover {
 }
 
 .recherche {
-  width: 440px !important;
+  /* width: 440px !important; */
+    width: 655px !important;
   border-radius: 15px 0px 0px 15px !important;
 }
 
@@ -1539,13 +1540,13 @@ select {
 }
 
 #contap p {
-  padding-left: 5px;
   font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }
 
 #devo {
   color: rgb(219, 219, 219);
-  font-size: large;
+  font-size: 22px;
 }
 
 /* card contact a propos */
@@ -1667,6 +1668,7 @@ i {
   flex-wrap: wrap;
 }
 
+
 /* 
                                                      ██████╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗██╗  ██╗██╗ ██████╗ ███╗   ██╗    
                                                     ██╔════╝██╔═══██╗████╗  ██║████╗  ██║██╔════╝╚██╗██╔╝██║██╔═══██╗████╗  ██║    
@@ -1742,4 +1744,9 @@ label {
 
 select {
   border-radius: 5px;
+}
+
+.centrage{
+  text-align: center !important;
+  font-size: 22px !important;
 }
