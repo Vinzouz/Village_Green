@@ -199,6 +199,7 @@ a:hover {
   text-align: right;
   position: relative !important;
   top: -18px;
+  height: 74px !important;
 }
 
 .ligne_one li {
@@ -344,7 +345,7 @@ a:hover {
 
 .recherche {
   /* width: 440px !important; */
-    width: 655px !important;
+    width: 500px !important;
   border-radius: 15px 0px 0px 15px !important;
 }
 
