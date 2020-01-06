@@ -198,8 +198,8 @@ a:hover {
   background: rgb(109, 109, 109);
   text-align: right;
   position: relative !important;
-  top: -18px;
-  height: 74px !important;
+  top: -19px;
+  /* height: 74px !important; */
 }
 
 .ligne_one li {
@@ -227,7 +227,7 @@ a:hover {
   background: rgb(48, 48, 48);
   z-index: 5 !important;
   position: relative !important;
-  top: -18px;
+  top: -19px;
 }
 
 .ligne_two li a {
@@ -240,7 +240,7 @@ a:hover {
   z-index: 4 !important;
   position: relative !important;
   height: 35px;
-  top: -18px;
+  top: -19px;
 }
 
 .ligne_three ul {
@@ -344,8 +344,7 @@ a:hover {
 }
 
 .recherche {
-  /* width: 440px !important; */
-    width: 500px !important;
+  width: 500px !important;
   border-radius: 15px 0px 0px 15px !important;
 }
 
@@ -901,7 +900,11 @@ section.client .section-title {
                                                     ██████╔╝██║  ██║███████╗██║  ██║██║  ██╗██║     ╚██████╔╝██║██║ ╚████║   ██║   
                                                     ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝╚═╝  ╚═══╝   ╚═╝                                                                                                                                 
 */
-
+@media only screen and (max-width:1440px) {
+  .recherche {
+    width: 420px !important;
+  }
+}
 
 @media only screen and (max-width:1024px) {
   body {
@@ -1735,7 +1738,8 @@ label {
   margin-right: 5px;
 }
 
-#ConclientMail, #InsclientMail {
+#ConclientMail,
+#InsclientMail {
   text-indent: 2px;
 }
 
@@ -1747,7 +1751,7 @@ select {
   border-radius: 5px;
 }
 
-.centrage{
+.centrage {
   text-align: center !important;
   font-size: 22px !important;
 }
