@@ -217,6 +217,7 @@ a:hover {
   top: 3px !important;
   color: #FF8742 !important;
   text-shadow: #e0e0e0 1px 1px 0;
+  padding-bottom: 5px !important;
 }
 
 .padding_ligne_one a {
@@ -241,6 +242,7 @@ a:hover {
   position: relative !important;
   height: 35px;
   top: -19px;
+  height: 33px !important;
 }
 
 .ligne_three ul {
@@ -275,12 +277,12 @@ a:hover {
 
 .padding_ligne_one:hover {
   text-decoration: none;
-  background: rgb(241, 97, 14);
+  /* background: rgb(241, 97, 14); */
 }
 
 .logo {
   position: relative;
-  margin-right: 2.5rem;
+  margin-right: 2rem;
   bottom: -6px;
   font-size: 50px;
   text-align: left !important;
@@ -340,7 +342,7 @@ a:hover {
   position: relative;
   font-size: 25px;
   right: 3px;
-  bottom: 6px;
+  bottom: 0px;
 }
 
 .recherche {
@@ -399,6 +401,7 @@ a:hover {
 
 #bannieredroite {
   background: white;
+  width: 240px !important;
 }
 
 .boutonblanc {
@@ -417,7 +420,7 @@ a:hover {
 }
 
 .carousel {
-  width: 1287px;
+  width: 1215px !important;
 }
 
 .d-block {
@@ -429,6 +432,7 @@ a:hover {
   padding-top: 30px;
   padding-bottom: 20px;
 }
+
 
 /*
    ____           _                                   _        
@@ -830,6 +834,7 @@ section.client .section-title {
   display: inline-block;
   *zoom: 1;
   *display: inline;
+  padding-bottom: 10px;
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a {

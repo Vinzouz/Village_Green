@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 <body>
 
   <section class="body">
@@ -9,7 +6,7 @@
       <!--------------->
       <!-- Carrousel -->
       <!--------------->
-      <section class="d-flex flex-row justify-content-around align-content-center" id="entete">
+      <section class="d-flex flex-row justify-content-between align-content-center" id="entete">
         <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <!-- Petite barre horizontal d'indication en bas du carrousel -->
           <ol class="carousel-indicators">
@@ -27,7 +24,7 @@
             </section>
             <section class="carousel-item">
               <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-              <img class="d-block" src="images/pubpiano.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
+              <img class="d-block" src="images/pubpiano.png" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
             </section>
             <section class="carousel-item">
               <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
@@ -52,6 +49,6 @@
 
         <!-- PUB Bannière de droite -->
         <section class="d-flex flex-row">
-          <img class="img-fluid bg-white" src="images/banniere_droite_prix.png" alt="banniere droite" id="bannieredroite">
+        <a href="#"><img class="img-fluid bg-white" src="images/banniere_droite_prix.png" alt="banniere droite" id="bannieredroite"></a>
         </section>
       </section>
