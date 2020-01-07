@@ -29,4 +29,41 @@ class Welcome extends CI_Controller {
 		$this->load->view('incl_footer');
 		$this->load->view('incl_script');
 	}
+
+	public function connexion()
+	{
+		$this->load->view('incl_head');
+		$this->load->view('incl_formconnexion');
+		$this->load->view('incl_script');
+	}
+
+	public function inscription()
+	{
+		$this->load->view('incl_head');
+		$this->load->view('incl_forminscription');
+		$this->load->view('incl_script');
+	}
+
+	public function modifcompte()
+	{
+		$this->load->view('incl_head');
+		$this->load->view('incl_changesaccount');
+		$this->load->view('incl_script');
+	}
+
+	public function deconnexion()
+	{
+		$this->load->view('incl_head');
+		$this->load->view('incl_logout');
+		$this->load->view('incl_script');
+	}
+
+	public function apropos() {
+		$this->load->view('incl_navbar');
+		$this->load->view('incl_head');
+		$this->load->view('incl_apropos');
+		$this->load->view('incl_footer');
+		$this->load->view('incl_script');
+	}
+
 }

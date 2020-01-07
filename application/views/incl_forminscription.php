@@ -1,12 +1,11 @@
 <?php
 include 'esp_validinscription.php';
-include 'Ext_head.php';
 ?>
 
 <div class="container">
     <div class="row justify-content-center overlay-decalage-inscription overlay">
         <div class="encadre-milieu2">
-            <a href="Accueil.php" class="Logo-Accueil logo-decalage">
+            <a href="<?= site_url('index.php/welcome/index') ?>" class="Logo-Accueil logo-decalage">
                 <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
                 </section>
             </a>
@@ -194,12 +193,10 @@ include 'Ext_head.php';
                 </div>
             </div>
             <div class="col centrage-col">
-                <p class="centrage">Déjà client? <a href="esp_formconnexion.php">  C'est par là.</a></p>
+                <p class="centrage">Déjà client? <a href="<?= site_url('index.php/welcome/connexion') ?>">  C'est par là.</a></p>
             </div>
         </div>
     </div>
 </div>
-<?php
-include 'Ext_script.php';
-?>
+
 <script src="esp_forminsvalid.js"></script>
