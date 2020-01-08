@@ -15,7 +15,7 @@
 
 body {
   background-size: 100%;
-  background-image: url('Images/background_village.png');
+  background-image: url('../../assets/images/background_village.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
@@ -634,7 +634,7 @@ a:hover {
 footer {
   max-width: 1500px;
   width: 100%;
-  background-image: url('Images/footer.png');
+  background-image: url('../../assets/images/footer.png');
   background-repeat: no-repeat;
   object-fit: cover;
   background-size: cover;
@@ -1610,15 +1610,15 @@ select {
 
 /* C'est ici que l'on met l'URL de l'image de profil. */
 .propos .jesse .avatar {
-  background-image: url(Images/jesse.jpg);
+  background-image: url(../../assets/images/jesse.jpg);
 }
 
 .propos .tom .avatar {
-  background-image: url(Images/tom.jpg);
+  background-image: url(../../assets/images/tom.jpg);
 }
 
 .propos .vincent .avatar {
-  background-image: url(Images/vincent.jpg);
+  background-image: url(../../assets/images/vincent.jpg);
 }
 
 .propos h3,

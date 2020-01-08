@@ -19,20 +19,20 @@
           <!-- Image Publicitaire du Carrousel -->
           <div class="carousel-inner" role="listbox">
             <section class="carousel-item active">
-              <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-              <img class="d-block" src="images/pubguitare.png" data-src="holder.js/900x400?theme=social" alt="First slide">
+              <a href="#"><img class="boutonblanc" src=<?=base_url('assets/images/pub_guitare_bouton_blanc.png')?> alt="bouton blanc"></a>
+              <img class="d-block" src=<?=base_url('assets/images/pubguitare.png')?> data-src="holder.js/900x400?theme=social" alt="First slide">
             </section>
             <section class="carousel-item">
-              <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-              <img class="d-block" src="images/pubpiano.png" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
+              <a href="#"><img class="boutonblanc" src=<?=base_url('assets/images/pub_guitare_bouton_blanc.png')?> alt="bouton blanc"></a>
+              <img class="d-block" src=<?=base_url('assets/images/pubpiano.png')?> data-src="holder.js/900x400?theme=industrial" alt="Second slide">
             </section>
             <section class="carousel-item">
-              <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-              <img class="d-block" src="images/pubbatterie.png" data-src="holder.js/900x400?theme=industrial" alt="Third slide">
+              <a href="#"><img class="boutonblanc" src=<?=base_url('assets/images/pub_guitare_bouton_blanc.png')?> alt="bouton blanc"></a>
+              <img class="d-block" src=<?=base_url('assets/images/pubbatterie.png')?> data-src="holder.js/900x400?theme=industrial" alt="Third slide">
             </section>
             <section class="carousel-item">
-              <a href="#"><img class="boutonblanc" src="images/pub_guitare_bouton_blanc.png" alt="bouton blanc"></a>
-              <img class="d-block" src="images/pubplatine.png" data-src="holder.js/900x400?theme=industrial" alt="Fourth slide">
+              <a href="#"><img class="boutonblanc" src=<?=base_url('assets/images/pub_guitare_bouton_blanc.png')?> alt="bouton blanc"></a>
+              <img class="d-block" src=<?=base_url('assets/images/pubplatine.png')?> data-src="holder.js/900x400?theme=industrial" alt="Fourth slide">
             </section>
           </div>
 
@@ -49,6 +49,6 @@
 
         <!-- PUB Bannière de droite -->
         <section class="d-flex flex-row">
-        <a href="#"><img class="img-fluid bg-white" src="images/banniere_droite_prix.png" alt="banniere droite" id="bannieredroite"></a>
+        <a href="#"><img class="img-fluid bg-white" src=<?=base_url('assets/images/banniere_droite_prix.png')?> alt="banniere droite" id="bannieredroite"></a>
         </section>
       </section>

@@ -4,17 +4,17 @@
       <!-- Carrousel sur les moyens de paiements -->
         <section class="client">
           <section class="carousel-client">
-            <section class="slide"><img src="Images/+x.png" alt=""></section>
-            <section class="slide"><img src="Images/aurore.png" alt=""></section>
-            <section class="slide"><img src="Images/chronopost.png" alt=""></section>
-            <section class="slide"><img src="Images/kdo.png" alt=""></section>
-            <section class="slide"><img src="Images/mastercard.png" alt=""></section>
-            <section class="slide"><img src="Images/maximiles.png" alt=""></section>
-            <section class="slide"><img src="Images/paypal.png" alt=""></section>
-            <section class="slide"><img src="Images/sofinco.png" alt=""></section>
-            <section class="slide"><img src="Images/uneuro.png" alt=""></section>
-            <section class="slide"><img src="Images/visa.png" alt=""></section>
-            <section class="slide"><img src="Images/cb.png" alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/+x.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/aurore.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/chronopost.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/kdo.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/mastercard.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/maximiles.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/paypal.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/sofinco.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/uneuro.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/visa.png')?> alt=""></section>
+            <section class="slide"><img src=<?=base_url('assets/images/cb.png')?> alt=""></section>
       </section>
     </section>
     <br>
@@ -41,9 +41,9 @@
         <section class="res_sociaux">
           <h5><span class="couleurtexte">Suivez-nous</span> par ici !</h5>
           <span class="espace"></span>
-          <a href=""><img src="Images/fb.png" alt="Facebook"></a>
+          <a href=""><img src=<?=base_url('assets/images/fb.png')?> alt="Facebook"></a>
           <span class="espace"></span>
-          <a href=""><img src="Images/twitter.png" alt="twitter"></a>
+          <a href=""><img src=<?=base_url('assets/images/twitter.png')?> alt="twitter"></a>
         </section>
       </section>
     </section>

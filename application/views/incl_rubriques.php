@@ -8,7 +8,7 @@
         <!-- Catégorie 1 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/Guitare&Basses.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/Guitare&Basses.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="Guitares&Basses.php">
@@ -32,7 +32,7 @@
           <!-- Catégorie 2 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/Batteries.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/Batteries.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="">
@@ -56,7 +56,7 @@
           <!-- Catégorie 3 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/Clavier.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/Clavier.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="">
@@ -79,7 +79,7 @@
           <!-- Catégorie 4 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/Studio.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/Studio.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="">
@@ -104,7 +104,7 @@
           <!-- Catégorie 5 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/Sonorisation.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/Sonorisation.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="">
@@ -127,7 +127,7 @@
           <!-- Catégorie 6 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/Eclairage.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/Eclairage.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="">
@@ -150,7 +150,7 @@
           <!-- Catégorie 7 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/DJ.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/DJ.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="">
@@ -174,7 +174,7 @@
           <!-- Catégorie 8 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/Flight.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/Flight.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="">
@@ -197,7 +197,7 @@
           <!-- Catégorie 9 -->
           <li class="card categorie">
             <section class="card-image">
-              <img src="Images/Accessoires.jpg" alt="Psychopomp" />
+              <img src=<?=base_url('assets/images/Accessoires.jpg')?> alt="Psychopomp" />
             </section>
             <section class="card-description">
               <a href="">

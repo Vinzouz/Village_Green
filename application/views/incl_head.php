@@ -6,5 +6,5 @@
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <link rel="stylesheet" href="<?= base_url('Style.css') ?>" />
+  <link rel="stylesheet" href="<?= base_url('assets/css/Style.css') ?>" />
 </head>

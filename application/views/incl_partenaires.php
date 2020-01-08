@@ -11,7 +11,7 @@
         <section class="card part">
           <section class="face face1">
             <section class="content parts">
-              <img id="roland" src="Images/Roland.png" alt="Roland-Logo">
+              <img id="roland" src=<?=base_url('assets/images/Roland.png')?> alt="Roland-Logo">
             </section>
           </section>
           <section class="face face2">
@@ -27,7 +27,7 @@
         <section class="card part">
           <section class="face face1">
             <section class="content parts">
-              <img src="Images/sennheiser-png-2017-present-sennheiser-2017-1821.png" alt="Sennheiser-Logo">
+              <img src=<?=base_url('assets/images/sennheiser-png-2017-present-sennheiser-2017-1821.png')?> alt="Sennheiser-Logo">
             </section>
           </section>
           <section class="face face2">
@@ -44,7 +44,7 @@
         <section class="card part">
           <section class="face face1">
             <section class="content parts">
-              <img src="Images/yamaha.png" alt="Yamaha-Logo">
+              <img src=<?=base_url('assets/images/yamaha.png')?> alt="Yamaha-Logo">
             </section>
           </section>
           <section class="face face2">
@@ -60,7 +60,7 @@
         <section class="card part">
           <section class="face face1">
             <section class="content parts">
-              <img src="Images/behringer-logo.png" alt="Behringer-Logo">
+              <img src=<?=base_url('assets/images/behringer-logo.png')?> alt="Behringer-Logo">
             </section>
           </section>
           <section class="face face2">
