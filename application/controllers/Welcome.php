@@ -18,11 +18,12 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+
+public function index()
 	{
 		$this->load->view('incl_head');
 		$this->load->view('incl_loader');
-		$this->load->view('incl_navbar');
+		$this->load->view('incl_navbar_fr');
 		$this->load->view('incl_carousel');
 		$this->load->view('incl_avantages');
 		$this->load->view('incl_rubriques');
@@ -30,35 +31,30 @@ class Welcome extends CI_Controller {
 		$this->load->view('incl_footer');
 		$this->load->view('incl_script');
 	}
-
 	public function connexion()
 	{
 		$this->load->view('incl_head');
 		$this->load->view('incl_formconnexion');
 		$this->load->view('incl_script');
 	}
-
 	public function inscription()
 	{
 		$this->load->view('incl_head');
 		$this->load->view('incl_forminscription');
 		$this->load->view('incl_script');
 	}
-
 	public function modifcompte()
 	{
 		$this->load->view('incl_head');
 		$this->load->view('incl_changesaccount');
 		$this->load->view('incl_script');
 	}
-
 	public function deconnexion()
 	{
 		$this->load->view('incl_head');
 		$this->load->view('incl_logout');
 		$this->load->view('incl_script');
 	}
-
 	public function apropos() {
 		$this->load->view('incl_head');
 		$this->load->view('incl_loader');
@@ -67,5 +63,4 @@ class Welcome extends CI_Controller {
 		$this->load->view('incl_footer');
 		$this->load->view('incl_script');
 	}
-
 }
