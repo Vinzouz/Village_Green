@@ -20,8 +20,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('incl_navbar');
 		$this->load->view('incl_head');
+		$this->load->view('incl_loader');
+		$this->load->view('incl_navbar');
 		$this->load->view('incl_carousel');
 		$this->load->view('incl_avantages');
 		$this->load->view('incl_rubriques');
@@ -59,8 +60,9 @@ class Welcome extends CI_Controller {
 	}
 
 	public function apropos() {
-		$this->load->view('incl_navbar');
 		$this->load->view('incl_head');
+		$this->load->view('incl_loader');
+		$this->load->view('incl_navbar');
 		$this->load->view('incl_apropos');
 		$this->load->view('incl_footer');
 		$this->load->view('incl_script');
