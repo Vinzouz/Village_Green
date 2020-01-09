@@ -58,7 +58,7 @@ public function index()
 	public function apropos() {
 		$this->load->view('incl_head');
 		$this->load->view('incl_loader');
-		$this->load->view('incl_navbar');
+		$this->load->view('incl_navbar_fr');
 		$this->load->view('incl_apropos');
 		$this->load->view('incl_footer');
 		$this->load->view('incl_script');
