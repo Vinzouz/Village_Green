@@ -318,6 +318,10 @@ a:hover {
   width: 158px !important;
 }
 
+.ec_hover {
+  cursor: pointer;
+}
+
 .dropdown .esp_client a {
   text-align: left;
   width: 158px !important;
@@ -1775,7 +1779,7 @@ select {
 
 .allPage
 {
-  display: none;
+  visibility: hidden;
 }
 
 .loader {
