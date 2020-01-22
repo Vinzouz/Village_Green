@@ -1,5 +1,6 @@
 <?php //session_start(); 
 ?>
+<div class="allPage">
 <header>
     <section class="container">
         <section id="main">
