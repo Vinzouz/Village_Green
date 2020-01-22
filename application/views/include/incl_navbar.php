@@ -1,4 +1,5 @@
-<?php //session_start(); ?>
+<?php //session_start(); 
+?>
 <header>
     <section class="container">
         <section id="main">
@@ -9,9 +10,8 @@
 
                         <!-- Logo Village Green -->
                         <li>
-                            <a href="<?= site_url( 'index.php/welcome/index' ) ?>" class="Logo-Accueil">
-                                <section class="logo"><span class="orangetexte">V</span>illage <span
-                                            class="orangetexte">G</span>reen
+                            <a href="<?= site_url('index.php/welcome/index') ?>" class="Logo-Accueil">
+                                <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
                                 </section>
                             </a>
                         </li>
@@ -19,10 +19,8 @@
                         <!-- Barre de recherche -->
                         <li>
                             <form class="form-inline md-form mr-auto">
-                                <input class="form-control mr-sm-2 recherche" type="text"
-                                       placeholder="Que recherchez-vous?" aria-label="Search">
-                                <button class="btn btn-warning btn-rounded btn-sm my-0 waves-effect waves-light loupe"
-                                        type="submit"><i class="fas fa-search"></i></button>
+                                <input class="form-control mr-sm-2 recherche" type="text" placeholder="Que recherchez-vous?" aria-label="Search">
+                                <button class="btn btn-warning btn-rounded btn-sm my-0 waves-effect waves-light loupe" type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </li>
 
@@ -33,26 +31,33 @@
                         <li><a class="padding_ligne_one" href="">Service</a></li>
 
                         <!-- Espace Client -->
-                        <?php if ( isset( $_SESSION["grade"] ) && isset( $_SESSION["mail"] ) ) { ?>
+                        <?php if ($this->session->flashdata('login') || $this->session->userdata('logged_in')) { ?>
                             <li class="padding_ligne_one"><a href="">Connecté<span class="arrow-down"></span></a>
                                 <ul class="dropdown">
-                                    <li class="esp_client"><a class="dropdown-item"
-                                                              href="<?= site_url( 'welcome/modifcompte' ) ?>"><i
-                                                    class="fas fa-id-card"></i>Mon compte</a></li>
-                                    <li class="esp_client"><a class="dropdown-item"
-                                                              href="<?= site_url( 'welcome/deconnexion' ) ?>"><i
-                                                    class="fa fa-sign-out"></i>Déconnexion</a></li>
+                                    <li class="esp_client"><a class="dropdown-item" href="<?= site_url('connexion/edit') ?>"><i class="fas fa-id-card"></i>Mon compte</a></li>
+                                    <li style='cursor:pointer' onclick="logout()" class="esp_client"> <a class="dropdown-item"><i class="fa fa-sign-out"></i>Déconnexion</a></li>
+                                    <?php
+                                    $data = array(
+                                        'style' => 'opacity:0; display:inline-block',
+                                        'type' => 'submit',
+                                        'content' => 'Soumettre',
+                                        'value' => 'Déconnexion'
+                                    );
+                                    $attr = array(
+                                        'method' => 'post',
+                                        'id' => 'logout'
+                                    );
+                                    if ($this->session->userdata('logged_in')) {
+                                        echo form_open('register/logout', $attr);
+                                        echo form_close();
+                                    } ?>
                                 </ul>
                             </li>
                         <?php } else { ?>
                             <li class="padding_ligne_one"><a class="ec_hover">Espace client<span class="arrow-down"></span></a>
                                 <ul class="dropdown">
-                                    <li class="esp_client"><a class="dropdown-item"
-                                                              href="<?= site_url( 'connexion/index' ) ?>"><i
-                                                    class="fas fa-sign-in-alt"></i>Connexion</a></li>
-                                    <li class="esp_client"><a class="dropdown-item"
-                                                              href="<?= site_url( 'welcome/inscription' ) ?>"><i
-                                                    class="fas fa-id-card"></i>
+                                    <li class="esp_client"><a class="dropdown-item" href="<?= site_url('connexion/index') ?>"><i class="fas fa-sign-in-alt"></i>Connexion</a></li>
+                                    <li class="esp_client"><a class="dropdown-item" href="<?= site_url('welcome/inscription') ?>"><i class="fas fa-id-card"></i>
                                             Inscription</a></li>
                                 </ul>
                             </li>
@@ -65,25 +70,18 @@
                         <li class="padding_ligne_one"><a href=""><span class="flag-icon flag-icon-fr"> </span>
                                 Français<span class="arrow-down"></span></a>
                             <ul class="dropdown">
-                                <li class="choixdrap"><a class="dropdown-item" href="Accueilen.html"><span
-                                                class="flag-icon flag-icon-gb"> </span> English</a></li>
-                                <li class="choixdrap"><a class="dropdown-item" href="#"><span
-                                                class="flag-icon flag-icon-es"> </span>
+                                <li class="choixdrap"><a class="dropdown-item" href="Accueilen.html"><span class="flag-icon flag-icon-gb"> </span> English</a></li>
+                                <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-es"> </span>
                                         Spañish</a></li>
-                                <li class="choixdrap"><a class="dropdown-item" href="#"><span
-                                                class="flag-icon flag-icon-it"> </span>
+                                <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-it"> </span>
                                         Italiano</a></li>
-                                <li class="choixdrap"><a class="dropdown-item" href="#"><span
-                                                class="flag-icon flag-icon-de"> </span>
+                                <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-de"> </span>
                                         Deutsch</a></li>
-                                <li class="choixdrap"><a class="dropdown-item" href="#"><span
-                                                class="flag-icon flag-icon-ru"> </span>
+                                <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ru"> </span>
                                         Pусский</a></li>
-                                <li class="choixdrap"><a class="dropdown-item" href="#"><span
-                                                class="flag-icon flag-icon-jp"> </span>
+                                <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-jp"> </span>
                                         日本語</a></li>
-                                <li class="choixdrap"><a class="dropdown-item" href="#"><span
-                                                class="flag-icon flag-icon-cn"> </span>
+                                <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cn"> </span>
                                         官话</a></li>
                             </ul>
                         </li>
@@ -91,53 +89,11 @@
 
                     <!-- NavBar Ligne 2-->
                     <ul class="ligne_two">
-                        <li><a href="<?= site_url( 'index.php/welcome/index' ) ?>">Accueil</a></li>
+                        <li><a href="<?= site_url('index.php/welcome/index') ?>">Accueil</a></li>
                         <li><a href="">Produits</a></li>
                         <li><a href="">Aide</a></li>
-                        <li><a href="<?= site_url( 'index.php/welcome/apropos' ) ?>">À propos</a></li>
-                        <li style="float: right;" class="px-4">
-                            <?php
+                        <li><a href="<?= site_url('index.php/welcome/apropos') ?>">À propos</a></li>
 
-                                if ( $this->session->flashdata( 'login' ) ) {
-                                    echo $this->session->flashdata( 'login' );
-                                }
-
-                                if ( $this->session->userdata( 'logged_in' ) ) {
-                                    echo 'Bienvenue: ' . $this->session->userdata( 'username' );
-                                }
-
-                            ?>
-                        </li>
-                        <li style="float: right;" class="px-4">
-                            <?php
-                                $data = array
-                                (
-                                    'class' => 'btn btn-primary btn-block',
-                                    'type' => 'submit',
-                                    'content' => 'Soumettre',
-                                    'value' => 'logout'
-
-                                );
-                                $data = array
-                                (
-                                    'class' => 'btn btn-primary btn-block',
-                                    'content' => 'Soumettre',
-                                    'value' => 'logout'
-
-                                );
-                                $attr = array( 'method' => 'post' );
-                                if ( $this->session->userdata( 'logged_in' ) ):
-                                
-                                    echo form_open( 'register/logout', $attr );
-                                    echo form_submit( $data );
-                                    echo form_close();
-                                    echo form_button();
-                                    ?> 
-                                    <a class="btn btn-primary" href="connexion/edit">Modifier</a>
-                                <?php endif; ?>
-                                
-                            
-                        </li>
                     </ul>
 
                     <!-- NavBar Ligne 3-->
@@ -261,3 +217,9 @@
         </section>
     </section>
 </header>
+
+<script>
+    function logout() {
+        $('#logout').submit();
+    }
+</script>

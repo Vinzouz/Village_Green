@@ -26,11 +26,13 @@
             <!-- Produit caractéristiques -->
             <div class="form-group">
                 <label for="exampleInputPassword4">Caractéristiques du produit</label>
-                <input type="text" class="form-control" name="produit_caract" id="exampleInputPassword4">
+                <!-- The button used to copy the text -->
+                <label class="btn btn-light" onclick="myFunction()">✔️</label>
+                <textarea type="text" class="form-control" name="produit_caract" id="exampleInputPassword4" rows="10"></textarea>
             </div>
 
-                        <!-- Produit sous rubrique id -->
-                        <div class="form-group">
+            <!-- Produit sous rubrique id -->
+            <div class="form-group">
                 <label for="exampleInput">Rubrique du produit</label>
                 <select class="form-control" name="produit_rub_id">
                     <?php foreach ($getProRubriques->result() as $rubrique) { ?>
@@ -94,3 +96,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    function myFunction() {
+
+  /* Get the text field */
+  var copyText = navigator.clipboard.writeText('✔️');
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+}
+</script>
