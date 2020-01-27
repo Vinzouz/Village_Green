@@ -59,13 +59,13 @@
             <!-- Produit quantité -->
             <div class="form-group">
                 <label for="exampleInputPassword4">Quantité du produit</label>
-                <input type="text" class="form-control" name="produit_qtite" id="exampleInputPassword4">
+                <input type="text" class="form-control" name="produit_qtite" id="exampleInputPassword4" value="50">
             </div>
 
             <!-- Produit quantité alerte -->
             <div class="form-group">
                 <label for="exampleInputPassword4">Quantité minimale du produit</label>
-                <input type="text" class="form-control" name="produit_qtite_ale" id="exampleInputPassword4">
+                <input type="text" class="form-control" name="produit_qtite_ale" id="exampleInputPassword4" value="10">
             </div>
 
             <!-- Produit photo -->
@@ -82,10 +82,10 @@
             </div>
 
             <!-- Produit description -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="exampleTextarea1">Description du produit</label>
                 <textarea class="form-control" name="produit_desc" id="exampleTextarea1" rows="5"></textarea>
-            </div>
+            </div> -->
 
             <button type="submit" class="btn btn-success mr-2">Envoyer</button>
             <button class="btn btn-light">Annuler</button>

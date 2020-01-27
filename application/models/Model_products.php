@@ -2,10 +2,19 @@
 
 class Model_products extends CI_Model{
 
-    public function getSousrubrique($sousrub_rubrique_id){
+    public function getRubrique($Rubrique_id){
 
-        $this->db->where('sousrub_rubrique_id', $sousrub_rubrique_id);
-        $select = $this->db->get('sous_rubrique');
+        $this->db->where('Rubrique_id', $Rubrique_id);
+        $select = $this->db->get('Rubrique');
         return $select->result();
     }
-}
+
+    public function getSousRubrique($SousRubrique_id){
+
+        $this->db->where('Sousrub_id', $SousRubrique_id);
+        $this->db->join('produit', 'produit_sousrub_id = sousrub_id');
+        $selected = $this->db->get('sous_rubrique');
+
+        return $selected->result();
+    }
+}  

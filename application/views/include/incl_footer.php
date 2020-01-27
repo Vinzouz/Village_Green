@@ -1,20 +1,20 @@
 <footer>
   <section class="container">
 
-      <!-- Carrousel sur les moyens de paiements -->
-        <section class="client">
-          <section class="carousel-client">
-            <section class="slide"><img src=<?=base_url('assets/images/+x.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/aurore.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/chronopost.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/kdo.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/mastercard.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/maximiles.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/paypal.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/sofinco.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/uneuro.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/visa.png')?> alt=""></section>
-            <section class="slide"><img src=<?=base_url('assets/images/cb.png')?> alt=""></section>
+    <!-- Carrousel sur les moyens de paiements -->
+    <section class="client">
+      <section class="carousel-client">
+        <section class="slide"><img src=<?= base_url('assets/images/+x.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/aurore.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/chronopost.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/kdo.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/mastercard.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/maximiles.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/paypal.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/sofinco.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/uneuro.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/visa.png') ?> alt=""></section>
+        <section class="slide"><img src=<?= base_url('assets/images/cb.png') ?> alt=""></section>
       </section>
     </section>
     <br>
@@ -40,10 +40,14 @@
       <section class="col-sm-6 col-12">
         <section class="res_sociaux">
           <h5><span class="couleurtexte">Suivez-nous</span> par ici !</h5>
-          <span class="espace"></span>
-          <a href=""><img src=<?=base_url('assets/images/fb.png')?> alt="Facebook"></a>
-          <span class="espace"></span>
-          <a href=""><img src=<?=base_url('assets/images/twitter.png')?> alt="twitter"></a>
+          <div class="row">
+            <div class="col facebook">
+              <a href=""><img src=<?= base_url('assets/images/fb.png') ?> alt="Facebook"></a>
+            </div>
+            <div class="col twitter">
+              <a href=""><img src=<?= base_url('assets/images/twitter.png') ?> alt="twitter"></a>
+            </div>
+          </div>
         </section>
       </section>
     </section>
@@ -52,7 +56,7 @@
     <section class="row marginpieddepage">
 
       <!-- Colonne 1 -->
-      <section class="col">
+      <section class="col col_foot">
         <h5>Contactez-nous !</h5>
         <br>
         <h6>Conseil / Commande téléphone</h6>
@@ -81,7 +85,7 @@
       </section>
 
       <!-- Colonne 2 -->
-      <section class="col">
+      <section class="col col_foot">
         <h5>Village Green Stores</h5>
         <br>
         <h6>Ouverts de 10h à 19h30 non-stop.</h6>
@@ -120,7 +124,7 @@
       </section>
 
       <!-- Colonne 3 -->
-      <section class="col">
+      <section class="col col_foot">
         <h5>Utiles !</h5>
         <br>
         <a href="">Qui sommes-nous ?</a>
@@ -158,7 +162,7 @@
       </section>
 
       <!-- Colonne 4 -->
-      <section class="col">
+      <section class="col col_foot">
         <h5>Village Green <br> Preservation Society</h5>
         <br>
         <a href="">Toute l'actualité musicale</a>
@@ -173,37 +177,37 @@
     </section>
     <br>
 
-      <!-- Informations complémentaires 1 -->
-        <p class="pieddepage">Village Green est une entreprise 100% Made in France ! <br>
-          Magasin de musique - Achat / Vente instruments de musique - Location instruments de musique - Atelier de
-          réparation - Vente accessoires de musique au meilleur prix. <br>
-          1989-2019 - RCS Paris B 222 333 444 Déclaration CNIL : 12345678.</p>
+    <!-- Informations complémentaires 1 -->
+    <p class="pieddepage">Village Green est une entreprise 100% Made in France ! <br>
+      Magasin de musique - Achat / Vente instruments de musique - Location instruments de musique - Atelier de
+      réparation - Vente accessoires de musique au meilleur prix. <br>
+      1989-2019 - RCS Paris B 222 333 444 Déclaration CNIL : 12345678.</p>
 
 
-      <!-- Informations complémentaires 2 -->
-        <section class="finfooter">
-          <p class="finfooterp1">
-            Guitares - Amplis / Effets - Claviers / Pianos - Synthès - Batteries / Percusssion - Vents - Violons
-            - Home Studio - Sonorisation - DJ - Éclairage - Micros - Casques - Enregistreurs - Lifestyle -
-            Déstockage -
-            Écoles & Pros
-          </p>
-          <br>
-          <p class="finfooterp2">
-            Behringer - Bose - Conservatoire de musique de Paris - Fender - Focusrite Scarlett Focusrite - Gibson
-            2016 -
-            Gibson - Guitar Shop - Guitare Martin - Guitare Taylor - Guitare classique - Guitare folk - Guitare
-            électrique
-            IK Multimedia - Luthier Paris - Magasin DJ Paris - Magasin instruments de musique Paris - Magasin
-            sonorisation Paris - Microphone USB - Musique - Namm - Partition alto - Partition clarinette -
-            Partition
-            flute - Partition Guitare
-            Partition harmonica - Partition musique - Partition Piano - Partition saxophone - Partition trombone -
-            Partition trompette - Partition vibraphone - Partition violon - Partition xylophone - Piano pas cher -
-            Pioneer DJ - Plantine vinyle - Site internet DJ -<br> Site internet Deejay - Site internet Violon -
-            Sono
-            Behringer - Tablature guitare - Tablatures- Ukulele - Vente sono - Yamaha RS - baterrie débutant
-          </p>
-        </section>
+    <!-- Informations complémentaires 2 -->
+    <section class="finfooter">
+      <p class="finfooterp1">
+        Guitares - Amplis / Effets - Claviers / Pianos - Synthès - Batteries / Percusssion - Vents - Violons
+        - Home Studio - Sonorisation - DJ - Éclairage - Micros - Casques - Enregistreurs - Lifestyle -
+        Déstockage -
+        Écoles & Pros
+      </p>
+      <br>
+      <p class="finfooterp2">
+        Behringer - Bose - Conservatoire de musique de Paris - Fender - Focusrite Scarlett Focusrite - Gibson
+        2016 -
+        Gibson - Guitar Shop - Guitare Martin - Guitare Taylor - Guitare classique - Guitare folk - Guitare
+        électrique
+        IK Multimedia - Luthier Paris - Magasin DJ Paris - Magasin instruments de musique Paris - Magasin
+        sonorisation Paris - Microphone USB - Musique - Namm - Partition alto - Partition clarinette -
+        Partition
+        flute - Partition Guitare
+        Partition harmonica - Partition musique - Partition Piano - Partition saxophone - Partition trombone -
+        Partition trompette - Partition vibraphone - Partition violon - Partition xylophone - Piano pas cher -
+        Pioneer DJ - Plantine vinyle - Site internet DJ -<br> Site internet Deejay - Site internet Violon -
+        Sono
+        Behringer - Tablature guitare - Tablatures- Ukulele - Vente sono - Yamaha RS - baterrie débutant
+      </p>
     </section>
+  </section>
 </footer>

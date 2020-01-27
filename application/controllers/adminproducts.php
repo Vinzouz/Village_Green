@@ -34,7 +34,7 @@ class adminproducts extends CI_Controller
         $this->form_validation->set_rules('produit_qtite', 'Produit quantité', 'trim|required');
         $this->form_validation->set_rules('produit_qtite_ale', 'Produit quantité alerte', 'trim|required');
         // $this->form_validation->set_rules('produit_image', 'Produit image', 'trim|required|min_length[3]');
-        $this->form_validation->set_rules('produit_desc', 'Produit description', 'trim|required|min_length[3]');
+        // $this->form_validation->set_rules('produit_desc', 'Produit description', 'trim|required|min_length[3]');
 
         if ($this->form_validation->run() == FALSE) {
             $data = array('errors' => validation_errors());
@@ -50,7 +50,7 @@ class adminproducts extends CI_Controller
                 'produit_qtite' => $this->input->post('produit_qtite'),
                 'produit_qtite_ale' => $this->input->post('produit_qtite_ale'),
                 // 'produit_image' => $this->input->post('produit_image'),
-                'produit_desc' => $this->input->post('produit_desc')
+                // 'produit_desc' => $this->input->post('produit_desc')
             );
 
             $rubid = $this->input->post('produit_rub_id');

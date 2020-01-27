@@ -15,4 +15,22 @@ class Home extends CI_Controller
 		$this->load->view('index/index', $data);
 	}
 
+    public function inscription()
+    {
+    	$this->load->view( 'include/incl_loader' );
+        $this->load->view( 'include/incl_head' );
+        $this->load->view( 'login/incl_forminscription' );
+        $this->load->view( 'include/incl_script' );
+	}
+	
+	public function apropos()
+    {
+        $this->load->view( 'include/incl_loader' );
+        $this->load->view('include/incl_navbar');
+        $this->load->view('include/incl_head');
+        $this->load->view('incl_apropos');
+        $this->load->view('include/incl_footer');
+        $this->load->view('include/incl_script');
+    }
+
 }

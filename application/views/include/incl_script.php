@@ -12,8 +12,6 @@
 window.onload = function() {
     $(".loader").hide();
     $('.allPage').css({ visibility: "visible" });
-
-    
 }
 </script>
 </div>

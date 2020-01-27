@@ -48,6 +48,25 @@ h2 {
   margin-left: 10px;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: rgb(83, 83, 83)
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(241, 97, 14);
+  border-radius: 10px;
+}
+
+
 /* 
                                                     ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗ 
                                                     ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
@@ -647,6 +666,10 @@ footer {
   z-index: 500 !important;
 }
 
+.col_foot {
+  text-align: center;
+}
+
 p.spacer {
   line-height: 1em;
 }
@@ -669,6 +692,7 @@ footer a {
 
 h5 {
   color: #FFF;
+  text-align: center;
   font-weight: bold;
   font-size: 25px;
   text-shadow: 3px 5px 2px #474747;
@@ -705,7 +729,7 @@ p {
   color: #FFF;
   font-weight: bold;
   border-color: rgb(241, 97, 14);
-  font-size: 25px;
+  font-size: 1.5rem;
   text-shadow: 3px 5px 2px #474747;
   padding-bottom: 10px;
 }
@@ -750,10 +774,10 @@ p {
   margin-right: 10%;
 }
 
-.email h5 {
+/* .email h5 {
   position: relative;
   left: 170px;
-}
+} */
 
 .email .btn {
   border-radius: 0 40px 40px 0 !important;
@@ -762,7 +786,14 @@ p {
 .res_sociaux img {
   width: 50px;
   height: 50px;
-  align-content: center;
+}
+
+.facebook {
+  text-align: end;
+}
+
+.twitter {
+  text-align: start;
 }
 
 .res_sociaux img:hover {
@@ -773,14 +804,11 @@ p {
   transform: scale(0.9) translate(0px, 12px);
 }
 
-.res_sociaux h5 {
+/* .res_sociaux h5 {
   margin-left: 5%;
   margin-right: 5%;
-}
+} */
 
-.espace {
-  margin-left: 7%;
-}
 
 .finfooter {
   padding-top: 10px;
@@ -1162,16 +1190,11 @@ section.client .section-title {
 
   .nav-bg-fostrap {
     position: fixed !important;
+    z-index: 99999999999999;
   }
 
   .email {
-    margin-left: -10%;
-    margin-right: 5%;
-  }
-
-  .email h5 {
-    position: relative;
-    left: 70px;
+    display: none;
   }
 
   .email .btn {
@@ -1283,8 +1306,17 @@ section.client .section-title {
 
 
 @media only screen and (max-width:320px) {
-  .row {
+  /* .row {
     margin-left: -50px;
+  } */
+
+  .col_foot {
+    min-width: 300px !important;
+    margin-bottom: 40px;
+  }
+
+  .row.card__bottom {
+    margin-left: 0px;
   }
 
   .overlay-decalage-categorie {
@@ -1393,7 +1425,7 @@ select {
 }
 
 .card__list .card h2 {
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Roboto', sans-serif !important;
 }
 
@@ -1441,9 +1473,16 @@ select {
   flex: 1 60%;
   -webkit-flex: 1 60%;
   padding: 0.8rem;
+  background: linear-gradient(to bottom, rgb(236, 236, 236), rgb(202, 202, 202));
 }
 
 .card__title {
+  min-height: 48px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   font-size: 1.2rem;
   font-weight: 700;
   margin: 0;
@@ -1459,12 +1498,13 @@ select {
   font-size: 1rem;
   margin: 0;
   margin-top: 0.5rem;
-  color: #888;
-  overflow: hidden;
+  color: rgb(88, 88, 88);
+  overflow: auto;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 7;
+  min-height: 112px;
   max-height: 53rem;
   line-height: 1rem;
   font-family: 'Roboto', sans-serif !important;
@@ -1501,14 +1541,6 @@ select {
   font-size: 20px !important;
 }
 
-.fa-star {
-  color: gold !important;
-}
-
-.fa-check {
-  color: rgb(47, 255, 92) !important;
-}
-
 .options .category {
   font-family: 'Roboto', sans-serif !important;
 }
@@ -1516,15 +1548,6 @@ select {
 .options {
   padding-left: 10px !important;
   padding-right: 10px !important;
-}
-
-.fa-cubes {
-  color: rgb(109, 243, 75) !important;
-}
-
-.stock {
-  font-family: 'Roboto', sans-serif !important;
-  color: #000000;
 }
 
 
@@ -1777,8 +1800,7 @@ select {
 */
 
 
-.allPage
-{
+.allPage {
   visibility: hidden;
 }
 
@@ -1826,6 +1848,7 @@ select {
   0% {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
   }
+
   100% {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
   }
@@ -1835,6 +1858,7 @@ select {
   0% {
     transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
   }
+
   100% {
     transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
   }
@@ -1844,6 +1868,7 @@ select {
   0% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
   }
+
   100% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
