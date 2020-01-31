@@ -1,8 +1,7 @@
       <!--------------------------------->
       <!-- Catégorie et Sous-Catégorie -->
       <!--------------------------------->
-      <?php //print_r($getRubriques) 
-      ?>
+
       <section class="row overlay">
 
         <ul class="card-list overlay-categorie overlay-decalage-categorie">
@@ -10,7 +9,7 @@
           <?php foreach ($getRubriques as $rubrique) : ?>
 
             <!-- Catégorie -->
-            <a href="<?= base_url('products/getSousrubrique/') . $rubrique['rubrique_id'] ?>">
+            <a href="<?= base_url('products/getRubrique/') . $rubrique['rubrique_id'] ?>">
               <li class="card categorie">
 
                 <section class="card-image">
@@ -34,7 +33,7 @@
                 </section>
               </li>
             </a>
-                  <?php endforeach; ?>
+          <?php endforeach; ?>
 
         </ul>
       </section>

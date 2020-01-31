@@ -136,3 +136,33 @@
       }
       
       giveSelection(sel1.value);
+
+
+
+      $(document).ready(function() {
+        var sub_search = $('#sub-search');
+        $('#searchbox').keyup(function() {
+            var search_value = $('#searchbox').val();
+            //alert(search_value);
+            if (search_value != "") {
+                $.ajax({
+                    url: "<?= base_url('search/get_search') ?>",
+                    data: {
+                        search_value: search_value
+                    },
+                    method: 'post',
+                    dataType: 'json',
+                    success: function(data) {
+                        //console.log(data);
+                        sub_search.html('');
+                        $.each(data, function(index, value) {
+                            var child_search = '<div class="child-search">' + '<span style="margin: 0 15px 0 0;">'+ value['produit_marque'] +'</span>' + value['produit_nom'] + '</div>';
+                            sub_search.append(child_search);
+                        });
+                    }
+                })
+            }else{
+                sub_search.html('');  
+            }
+        });
+    });

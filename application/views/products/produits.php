@@ -1,12 +1,8 @@
-<?php
+<?php $array = json_decode(json_encode($getSousRubrique), True); ?>
+<div class="parallax" style="background-image:url('<?= base_url('assets/images/Imagesproducts/' . $array[0]['rubrique_id'] . '/' . $array[0]['sousrub_id'] . '/home.jpg') ?>')">
+  <h1><?= $array[0]['sousrub_nom'] ?></h1>
+</div>
 
-$this->load->view('include/incl_loader');
-$this->load->view('include/incl_navbar');
-$this->load->view('include/incl_head');
-
-// print_r($getSousRubrique);
-
-?>
 <section class="card__list row">
   <?php
 
@@ -41,8 +37,3 @@ $this->load->view('include/incl_head');
 
   <?php endforeach; ?>
 </section>
-
-<?php
-$this->load->view('include/incl_footer');
-$this->load->view('include/incl_script');
-?>

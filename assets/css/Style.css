@@ -214,11 +214,13 @@ a:hover {
 }
 
 .ligne_one {
+  display: flex !important;
   background: rgb(109, 109, 109);
-  text-align: right;
+  text-align: left;
   position: relative !important;
-  top: -19px;
-  /* height: 74px !important; */
+  /* top: -19px; */
+  justify-content: space-between !important;
+  height: 74px !important;
 }
 
 .ligne_one li {
@@ -236,7 +238,7 @@ a:hover {
   top: 3px !important;
   color: #FF8742 !important;
   text-shadow: #e0e0e0 1px 1px 0;
-  padding-bottom: 5px !important;
+  padding-bottom: 3px !important;
 }
 
 .padding_ligne_one a {
@@ -302,11 +304,12 @@ a:hover {
 .logo {
   position: relative;
   margin-right: 2rem;
-  bottom: -6px;
+  bottom: 13px;
   font-size: 50px;
   text-align: left !important;
   font-family: 'saira stencil one';
   color: #FFF;
+  margin-left: 5px;
 }
 
 .logo-mobile {
@@ -355,6 +358,8 @@ a:hover {
 */
 
 .loupe {
+  position: relative;
+  top: -1px;
   height: 38px;
   width: 45px;
   border-radius: 0px 15px 15px 0px;
@@ -369,13 +374,17 @@ a:hover {
 }
 
 .recherche {
-  width: 500px !important;
+  /* width: 500px !important; */
+  position: relative;
+  top: 9px;
+  width: 20vw !important;
   border-radius: 15px 0px 0px 15px !important;
 }
 
 .form-control,
 .recherche {
   margin-right: 0% !important;
+  margin-bottom: 20px;
 }
 
 /* 
@@ -413,6 +422,13 @@ a:hover {
   text-shadow: 0px 0px 0px #ffffff00;
 }
 
+.banderole h5{
+  font-size: 1.5vw;
+}
+
+.banderole h6{
+  font-size: 1.4vw;
+}
 
 /* 
   ____                            _                                                                             _ 
@@ -529,6 +545,18 @@ a:hover {
   height: 518px;
 }
 
+
+.card-description_sousrub {
+  display: table-cell;
+  padding: 1em 0.5em;
+  color: #515151;
+  text-decoration: none;
+  height: 124px !important;
+  vertical-align: middle;
+  text-align: center;
+  width: 446px;
+}
+
 .card-description>h2 {
   margin: 0 0 0.5em;
 }
@@ -537,7 +565,8 @@ a:hover {
   margin: 0;
 }
 
-.nospartenaire {
+.intercalaire {
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
   color: #FFF;
@@ -761,6 +790,7 @@ p {
 .email-group .form-control {
   border-radius: 40px 0 0 40px !important;
   padding-left: 75px;
+  height: auto !important;
 }
 
 .btn-warning:focus,
@@ -930,6 +960,242 @@ section.client .section-title {
 
 
 /* 
+                                    ███████╗ ██████╗ ██╗   ██╗███████╗    ██████╗ ██╗   ██╗██████╗ ██████╗ ██╗ ██████╗ ██╗   ██╗███████╗███████╗
+                                    ██╔════╝██╔═══██╗██║   ██║██╔════╝    ██╔══██╗██║   ██║██╔══██╗██╔══██╗██║██╔═══██╗██║   ██║██╔════╝██╔════╝
+                                    ███████╗██║   ██║██║   ██║███████╗    ██████╔╝██║   ██║██████╔╝██████╔╝██║██║   ██║██║   ██║█████╗  ███████╗
+                                    ╚════██║██║   ██║██║   ██║╚════██║    ██╔══██╗██║   ██║██╔══██╗██╔══██╗██║██║▄▄ ██║██║   ██║██╔══╝  ╚════██║
+                                    ███████║╚██████╔╝╚██████╔╝███████║    ██║  ██║╚██████╔╝██████╔╝██║  ██║██║╚██████╔╝╚██████╔╝███████╗███████║
+                                    ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝ ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝
+                                                                                                                                                                
+*/
+
+.parallax {
+  display: table;
+  height: 400px;
+  width: 100%;
+  max-width: 1500px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+  z-index: -5;
+}
+
+.parallax h1 {
+  display: table-cell;
+  color: #fff;
+  vertical-align: middle;
+  font-family: 'Lobster', cursive;
+  font-size: 7rem;
+  position: static;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgb(0, 0, 0);
+}
+
+.card-description_sousrub a{
+  color: #505050;
+}
+
+.card-description_sousrub a:hover{
+  color: rgb(241, 97, 14);
+}
+
+/* 
+    _____                                                _   _                  _   
+   | ____|  ___   _ __     __ _    ___    ___      ___  | | (_)   ___   _ __   | |_ 
+   |  _|   / __| | '_ \   / _` |  / __|  / _ \    / __| | | | |  / _ \ | '_ \  | __|
+   | |___  \__ \ | |_) | | (_| | | (__  |  __/   | (__  | | | | |  __/ | | | | | |_ 
+   |_____| |___/ | .__/   \__,_|  \___|  \___|    \___| |_| |_|  \___| |_| |_|  \__|
+                 |_|                                                                
+                 */
+
+
+                 /* globalEC = ensemble de l'espace client */
+                 .globalEC
+                 {
+                   width: 100%;
+                   height: 100%;
+                   margin-top: 40px;
+                   margin-bottom: 25px;
+                   display: grid;
+                   grid-template: repeat(2, 10%) 30% 10% 40% / repeat(6, 5.55%) repeat(6, 11.11%);
+                   border: 3px solid rgba(241, 137, 1, 0.932);
+                   border-radius: 30px;
+                   background-color: rgb(109, 109, 109, 0.5);
+                 }
+                 
+                 .infoCompte
+                 {
+                   grid-area: 4/1/6/4;
+                 }
+                 
+                 /* Partie "Divers" */
+                 
+                 .InfoCpt
+                 {
+                   grid-area: 4/1/5/7;
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   border-top: 2px solid black;
+                   border-right: 2px solid black;
+                   border-bottom: 2px solid black;
+                   font-size: 1.3rem;
+                   overflow: hidden;
+                 
+                 }
+                 
+                 .testCompte
+                 {
+                   grid-area: 5/1/6/7;
+                   display: flex;
+                   justify-content: left;
+                   flex-direction: column;
+                   border-right: 2px solid black;
+                   overflow: hidden;
+                 }
+                 
+                 .testCompte p
+                 {
+                   padding: 40px 0px 10px 10px ;
+                   font-size: 1vw;
+                 }
+                 
+                 /* Partie "Historiques des commandes" */
+                 
+                 .historique
+                 {
+                   grid-area: 4/7/5/10;
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   border-top: 2px solid black;
+                   border-right: 2px solid black;
+                   border-bottom: 2px solid black;
+                   overflow: hidden;
+                 }
+                 
+                 .historique h2
+                 {
+                   font-size: 2vw;
+                   overflow: hidden;
+                 }
+                 
+                 .histo
+                 {
+                   grid-area: 5/7/6/10;
+                   display: flex;
+                   justify-content: left;
+                   flex-direction: column;
+                   border-right: 2px solid black;
+                   font-size: 1vw;
+                   overflow: hidden;
+                 }
+                 
+                 .histo p
+                 {
+                   padding: 40px 0px 10px 10px ;
+                   font-size: 1vw;
+                 }
+                 
+                 /* Partie "autres" */
+                 
+                 .autres
+                 {
+                   grid-area: 4/10/5/13;
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   border-top: 2px solid black;
+                   border-bottom: 2px solid black;
+                   overflow: hidden;
+                 }
+                 
+                 .autresInfos
+                 {
+                   grid-area: 5/10/6/13;
+                   display: flex;
+                   justify-content: left;
+                   flex-direction: column;
+                   overflow: hidden;
+                 }
+                 
+                 .autresInfos p
+                 {
+                   padding: 40px 0px 10px 10px ;
+                   font-size: 1vw;
+                 }
+                 
+                 /* Partie centrale à coté de l'image */
+                 .infosclient
+                 {
+                   grid-area: 1/4/4/13;
+                   padding-top: 50px;
+                   display: flex;
+                   overflow: hidden;
+                   flex-direction: column;
+                 }
+                 
+                 .InfosClient span
+                 {
+                   font-size: 2.1rem !important;
+                   text-decoration: underline;
+                   padding-right: 5px;
+                 }
+                 
+                 
+                 .infosclient p
+                 {
+                   padding: 0px 0px 20px 40px ;
+                   font-size: 1.4rem;
+                 }
+                 
+                 /* Image de fond sur la gauche de l'espace Client */
+                 .logoEC
+                 {
+                   grid-area: 1/1/4/4;
+                   margin-top: 0px;
+                   border-right: 2px solid black;
+                   background-image: url(../images/Clavier.jpg);
+                   background-size: cover;
+                   border-top-left-radius: 30px;
+                   
+                 }
+                 
+                 /* Correspond au gros "Espace client tout en haut" */
+                 .titrePage
+                 {
+                   width: 250px;
+                   height: 55px;
+                   left: 50%;
+                   transform: translate(-50%, -50%);
+                   display: flex;
+                   justify-content: center;
+                   align-items: top;
+                   position: absolute;
+                   border: 3px solid rgba(241, 137, 1, 0.932);
+                   border-radius: 30px;
+                   background-color: rgba(177, 171, 171, 1);
+                 }
+                 
+                 /* Div permettant de remplacer "Historique des commandes" par "Historique" au breakpoint 425 */
+                 .histoBreak
+                 {
+                   display: none;
+                   grid-area: 4/7/5/10;
+                   justify-content: center;
+                   align-items: center;
+                   border-top: 2px solid black;
+                   border-right: 2px solid black;
+                   border-bottom: 2px solid black;
+                   overflow: hidden;
+                 }
+
+/* 
                                                     ██████╗ ██████╗ ███████╗ █████╗ ██╗  ██╗██████╗  ██████╗ ██╗███╗   ██╗████████╗
                                                     ██╔══██╗██╔══██╗██╔════╝██╔══██╗██║ ██╔╝██╔══██╗██╔═══██╗██║████╗  ██║╚══██╔══╝
                                                     ██████╔╝██████╔╝█████╗  ███████║█████╔╝ ██████╔╝██║   ██║██║██╔██╗ ██║   ██║   
@@ -937,13 +1203,80 @@ section.client .section-title {
                                                     ██████╔╝██║  ██║███████╗██║  ██║██║  ██╗██║     ╚██████╔╝██║██║ ╚████║   ██║   
                                                     ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝╚═╝  ╚═══╝   ╚═╝                                                                                                                                 
 */
-@media only screen and (max-width:1440px) {
-  .recherche {
-    width: 420px !important;
+
+@media only screen and (max-width:2560px) {
+  .historique h2 {
+    font-size: 1.6vw;
+  }
+
+  .infosclient {
+    padding-top: 10px;
+  }
+
+  .infosclient p {
+    padding: 20px 0px 30px 80px;
+    font-size: 1.8vw;
+  }
+
+  .infosclient span {
+    font-size: 2vw !important;
+    padding-right: 5px;
+  }
+
+  .autres h2 {
+    font-size: 1.6vw;
+  }
+
+  .InfoCpt h2 {
+    font-size: 1.6vw;
   }
 }
 
-@media only screen and (max-width:1024px) {
+
+@media only screen and (max-width:1440px) {
+  /* .recherche {
+    width: 420px !important;
+  } */
+
+
+  .historique h2 {
+    font-size: 2vw;
+  }
+
+  .testCompte p {
+    font-size: 1.3vw;
+  }
+
+  .histo p {
+    font-size: 1.3vw;
+  }
+
+  .autresInfos p {
+    font-size: 1.3vw;
+  }
+
+  .infosclient {
+    padding-top: 60px;
+  }
+
+  .infosclient p {
+    padding: 0px 0px 30px 60px;
+  }
+
+  .autres h2 {
+    font-size: 1.5rem;
+  }
+
+  .InfoCpt h2 {
+    font-size: 1.5rem;
+  }
+
+}
+
+
+
+
+@media only screen and (max-width:1240px) {
   body {
     background-repeat: round;
   }
@@ -1088,7 +1421,7 @@ section.client .section-title {
   }
 
   .cover-bg {
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
     position: fixed;
     top: 0;
     bottom: 0;
@@ -1097,8 +1430,10 @@ section.client .section-title {
   }
 
   .ligne_one {
+    display: block !important;
     background: rgb(109, 109, 109);
     padding-top: 80px !important;
+    top: -19px;
     text-align: left;
   }
 
@@ -1141,7 +1476,8 @@ section.client .section-title {
   }
 
   .recherche {
-    width: 165px !important;
+    bottom: 20px !important;
+    width: 158px !important;
     border-radius: 15px 0px 0px 15px !important;
   }
 
@@ -1151,14 +1487,17 @@ section.client .section-title {
   }
 
   .loupe {
-    height: 35px;
+    position: absolute;
+    top: 9px;
+    left: 158px;
+    height: 38px;
     width: 35px;
   }
 
   .fa-search {
-    font-size: 14px;
+    font-size: 18px;
     right: 3px;
-    bottom: 12px;
+    /* bottom: 8px; */
   }
 
   #navbarcontent {
@@ -1178,8 +1517,91 @@ section.client .section-title {
 
 }
 
+@media only screen and (max-width:1024px) {
 
-@media only screen and (max-width:900px) {}
+  .globalEC {
+    margin-top: 60px;
+  }
+
+  .historique h2 {
+    font-size: 2.4vw;
+  }
+
+  .testCompte p {
+    font-size: 1.6vw;
+  }
+
+  .histo p {
+    font-size: 1.6vw;
+  }
+
+  .autresInfos p {
+    font-size: 1.6vw;
+  }
+
+  .autres h2 {
+    font-size: 1.5rem;
+  }
+
+  .InfoCpt h2 {
+    font-size: 1.5rem;
+  }
+
+  .infosClient {
+    padding-top: 50px;
+  }
+
+  .infosclient p {
+    padding: 5px 0px 30px 80px;
+    font-size: 1.5rem;
+  }
+
+  .infosclient span {
+    font-size: 2rem !important;
+    padding-right: 5px;
+  }
+
+}
+
+@media only screen and (max-width:900px) {
+
+  .testCompte p {
+    font-size: 1.8vw;
+  }
+
+  .histo p {
+    font-size: 1.8vw;
+  }
+
+  .autresInfos p {
+    font-size: 1.8vw;
+  }
+
+  .infosClient {
+    padding-top: 80px;
+  }
+
+  .infosclient p {
+    font-size: 1.2rem;
+    padding: 0px 0px 40px 60px;
+  }
+
+  .infosclient span {
+    font-size: 1.7rem !important;
+  }
+
+  .historique h2 {
+    font-size: 2.8vw;
+  }
+
+  .autres h2 {
+    font-size: 1.5rem;
+  }
+
+  .InfoCpt h2 {
+    font-size: 1.5rem;
+  }
+}
 
 @media only screen and (max-width:768px) {
   #navbarcontent {
@@ -1216,6 +1638,58 @@ section.client .section-title {
 
   .encadre-inscription label {
     font-size: 20px;
+  }
+
+  .autres h2 {
+    font-size: 1.5rem;
+  }
+
+  .InfoCpt h2 {
+    font-size: 1.5rem;
+  }
+
+  .testCompte p {
+    font-size: 1.8vw;
+  }
+
+  .histo p {
+    font-size: 1.8vw;
+  }
+
+  .autresInfos p {
+    font-size: 1.8vw;
+  }
+
+  .infosClient {
+    padding-top: 60px;
+  }
+
+  .infosclient p {
+    font-size: 1.2rem;
+    padding: 0px 0px 40px 60px;
+  }
+
+  .infosclient span {
+    font-size: 1.7rem !important;
+  }
+
+  .historique h2 {
+    font-size: 2.8vw;
+  }
+
+  .testCompte {
+    padding-top: 0px;
+    padding-left: 10px;
+  }
+
+  .histo {
+    padding-top: 0px;
+    padding-left: 10px;
+  }
+
+  .autresInfos {
+    padding-top: 0px;
+    padding-left: 10px;
   }
 }
 
@@ -1277,6 +1751,30 @@ section.client .section-title {
     width: 400px !important;
     height: 1120px !important;
   }
+
+  .parallax h1 {
+    font-size: 3rem;
+  }
+
+  .historique {
+    display: none;
+  }
+
+  .histoBreak {
+    display: flex;
+  }
+
+  .histoBreak h2 {
+    font-size: 1.5rem;
+  }
+
+  .autres h2 {
+    font-size: 1.5rem;
+  }
+
+  .InfoCpt h2 {
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width:375px) {
@@ -1306,9 +1804,9 @@ section.client .section-title {
 
 
 @media only screen and (max-width:320px) {
-  /* .row {
+  .row {
     margin-left: -50px;
-  } */
+  }
 
   .col_foot {
     min-width: 300px !important;
@@ -1362,6 +1860,30 @@ section.client .section-title {
 
   .encadre-milieu2 .logo {
     width: 315px;
+  }
+
+  .infosClient {
+    padding-top: 90px;
+  }
+
+  .infosClient p {
+    padding: 0px 0px 15px 10px;
+  }
+
+  .histoBreak h2 {
+    font-size: 1.5rem;
+  }
+
+  .autres h2 {
+    font-size: 1.5rem;
+  }
+
+  .InfoCpt h2 {
+    font-size: 1.5rem;
+  }
+
+  .testCompte p {
+    padding-left: 0px;
   }
 }
 
@@ -1550,7 +2072,22 @@ select {
   padding-right: 10px !important;
 }
 
+.padding_prod {
+  padding: 0px 15px;
+  margin-bottom: 0px;
+}
 
+.slick-slide {
+  display: none;
+  float: left;
+  height: auto;
+  min-height: 1px;
+}
+
+.slick-dots li button::before {
+  opacity: 1;
+  color: rgb(241, 97, 14);
+}
 
 /* 
                                                  █████╗     ██████╗ ██████╗  ██████╗ ██████╗  ██████╗ ███████╗
@@ -1872,4 +2409,20 @@ select {
   100% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
+}
+
+
+#sub-search {
+  position: absolute;
+  width: 489px;
+  background: #fff;
+  left: 11px;
+  top: 39px;
+  border-radius: 4px;
+}
+
+.child-search {
+  color: #000;
+  text-align: left;
+  padding: 2px 1px 2px 7px;
 }

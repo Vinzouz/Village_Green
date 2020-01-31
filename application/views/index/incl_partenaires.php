@@ -2,7 +2,7 @@
       <!-- Nos Partenaire -->
       <!-------------------->
       <section class="row overlay overlay-decalage-titre">
-        <h2 class="nospartenaire">Nos partenaires</h2>
+        <h2 class="intercalaire">Nos partenaires</h2>
       </section>
       <hr>
       <section class="row total overlay overlay-decalage-partenaire">

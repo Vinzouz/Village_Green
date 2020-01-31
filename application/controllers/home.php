@@ -10,7 +10,8 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		$data['getRubriques'] = $this->Model_home->getRubriques();
+        $data['getRubriques'] = $this->Model_home->getRubriques();
+        $data['carrousel_produit'] = $this->Model_home->carrousel_produit();
 
 		$this->load->view('index/index', $data);
 	}

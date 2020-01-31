@@ -6,6 +6,8 @@ class connexion extends CI_Controller {
 
         parent::__construct();
         $this->load->model('Model_connection');
+        $this->load->model('Model_espaceclient');
+        $this->load->model('Model_home');
 
 
         
@@ -13,9 +15,9 @@ class connexion extends CI_Controller {
     }
 
     public function index(){
-        $this->load->view('index/incl_head');
+        $this->load->view('include/incl_head');
         $this->load->view('login/incl_formconnexion');
-        $this->load->view('index/incl_script');
+        $this->load->view('include/incl_script');
 
     }
 
@@ -112,5 +114,21 @@ class connexion extends CI_Controller {
                 redirect( 'connexion/edit' );
             }
 
+        }
+
+        public function EspaceC()
+        {
+        
+
+                if ($this->session->userdata('user_id') == null) {
+                    redirect('');
+                }
+                $array['data'] = $this->Model_espaceclient->getEspaceC();
+                $navbarRub['getRubriques'] = $this->Model_home->getRubriques();
+                $this->load->view('include/incl_head');
+                $this->load->view('include/incl_navbar', $navbarRub);
+                $this->load->view('incl_user_area', $array);
+                $this->load->view('include/incl_footer');
+                $this->load->view('include/incl_script');
         }
 }

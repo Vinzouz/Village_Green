@@ -62,6 +62,7 @@ include 'esp_validconnexion.php';
             </div>
             <div class="col centrage-col">
                 <p class="centrage">Nouveau client? <a href="<?= site_url('index.php/welcome/inscription') ?>"> Commencer ici.</a></p>
+                <p class="centrage">Mot de passe perdu? <a href="<?= site_url('lostpass/index') ?>"> Cliquez ici.</a></p>
             </div>
         </div>
     </div>

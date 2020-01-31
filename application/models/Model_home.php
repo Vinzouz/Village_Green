@@ -21,5 +21,15 @@ class Model_home extends CI_Model {
         return $parents;
     }
 
+    public function carrousel_produit(){
+
+        $this->db->select('*');
+        $this->db->from('sous_rubrique')->order_by('produit_id', 'RANDOM')->limit(12);
+        $this->db->join('produit', 'produit_sousrub_id = sousrub_id');
+        $selected = $this->db->get();
+
+        return $selected->result();
+    }
+
 
 }

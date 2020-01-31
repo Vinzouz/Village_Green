@@ -20,7 +20,12 @@
                             <!-- Barre de recherche -->
                             <li>
                                 <form class="form-inline md-form mr-auto">
-                                    <input class="form-control mr-sm-2 recherche" type="text" placeholder="Que recherchez-vous?" aria-label="Search">
+                                    <div style="position: relative;">
+                                        <input class="form-control mr-sm-2 recherche" type="text" placeholder="Que recherchez-vous?" name="searchbox" id="searchbox" aria-label="Search">
+                                        <div id="sub-search">
+
+                                        </div>
+                                    </div>
                                     <button class="btn btn-warning btn-rounded btn-sm my-0 waves-effect waves-light loupe" type="submit"><i class="fas fa-search"></i></button>
                                 </form>
                             </li>
@@ -35,7 +40,7 @@
                             <?php if ($this->session->flashdata('login') || $this->session->userdata('logged_in')) { ?>
                                 <li class="padding_ligne_one"><a href="">Connecté<span class="arrow-down"></span></a>
                                     <ul class="dropdown">
-                                        <li class="esp_client"><a class="dropdown-item" href="<?= site_url('connexion/edit') ?>"><i class="fas fa-id-card"></i>Mon compte</a></li>
+                                        <li class="esp_client"><a class="dropdown-item" href="<?= site_url('connexion/espaceC') ?>"><i class="fas fa-id-card"></i>Mon compte</a></li>
                                         <li style='cursor:pointer' onclick="logout()" class="esp_client"> <a class="dropdown-item"><i class="fa fa-sign-out"></i>Déconnexion</a></li>
                                         <?php
                                         $data = array(
@@ -103,7 +108,7 @@
 
 
                             <?php foreach ($getRubriques as $rubrique) : ?>
-                                <li><a href="<?= base_url('products/getSousrubrique/') . $rubrique['rubrique_id'] ?>"><?= $rubrique['rubrique_nom'] ?><span class="arrow-down"></span></a>
+                                <li><a href="<?= base_url('products/getRubrique/') . $rubrique['rubrique_id'] ?>"><?= $rubrique['rubrique_nom'] ?><span class="arrow-down"></span></a>
                                     <ul class="dropdown">
 
                                         <?php
