@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-center overlay-decalage-inscription overlay">
         <div class="encadre-milieu2">
-            <a href="<?= site_url( 'index.php/welcome/index' ) ?>" class="Logo-Accueil logo-decalage">
+            <a href="<?= site_url( 'home/index' ) ?>" class="Logo-Accueil logo-decalage">
                 <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
                 </section>
             </a>
@@ -239,7 +239,7 @@
                 </div>
             </div>
             <div class="col centrage-col">
-                <p class="centrage">Déjà client? <a href="<?= site_url( 'index.php/welcome/connexion' ) ?>"> C'est par
+                <p class="centrage">Déjà client? <a href="<?= site_url( 'connexion/index' ) ?>"> C'est par
                         là.</a></p>
             </div>
         </div>

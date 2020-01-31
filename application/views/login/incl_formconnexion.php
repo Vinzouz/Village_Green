@@ -1,11 +1,11 @@
 <?php
-include 'esp_validconnexion.php';
+// include 'esp_validconnexion.php';
 ?>
 
 <div class="container">
     <div class="row justify-content-center overlay-decalage-connexion overlay">
         <div class="encadre-milieu">
-            <a href="<?= site_url('index.php/welcome/index') ?>" class="Logo-Accueil logo-decalage">
+            <a href="<?= site_url('home/index') ?>" class="Logo-Accueil logo-decalage">
                 <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
                 </section>
             </a>
@@ -61,7 +61,7 @@ include 'esp_validconnexion.php';
                 </div>
             </div>
             <div class="col centrage-col">
-                <p class="centrage">Nouveau client? <a href="<?= site_url('index.php/welcome/inscription') ?>"> Commencer ici.</a></p>
+                <p class="centrage">Nouveau client? <a href="<?= site_url('home/inscription') ?>"> Commencer ici.</a></p>
                 <p class="centrage">Mot de passe perdu? <a href="<?= site_url('lostpass/index') ?>"> Cliquez ici.</a></p>
             </div>
         </div>
