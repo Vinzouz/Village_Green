@@ -1,5 +1,3 @@
-<?php //session_start(); 
-?>
 <div class="allPage">
     <header>
         <section class="container">
@@ -40,7 +38,7 @@
                             <?php if ($this->session->flashdata('login') || $this->session->userdata('logged_in')) { ?>
                                 <li class="padding_ligne_one"><a href="">Connecté<span class="arrow-down"></span></a>
                                     <ul class="dropdown">
-                                        <li class="esp_client"><a class="dropdown-item" href="<?= site_url('connexion/espaceC') ?>"><i class="fas fa-id-card"></i>Mon compte</a></li>
+                                        <li class="esp_client"><a class="dropdown-item" href="<?= site_url('espaceclient/espaceC') ?>"><i class="fas fa-id-card"></i>Mon compte</a></li>
                                         <li style='cursor:pointer' onclick="logout()" class="esp_client"> <a class="dropdown-item"><i class="fa fa-sign-out"></i>Déconnexion</a></li>
                                         <?php
                                         $data = array(
@@ -146,3 +144,31 @@
             $('#logout').submit();
         }
     </script>
+    <script>
+    $(document).ready(function() {
+    var sub_search = $('#sub-search');
+    $('#searchbox').keyup(function() {
+        var search_value = $('#searchbox').val();
+        //alert(search_value);
+        if (search_value != "") {
+            $.ajax({
+                url: "<?= base_url('search/get_search') ?>",
+                data: {
+                    search_value: search_value
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    //console.log(data);
+                    sub_search.html('');
+                    $.each(data, function(index, value) {
+                        var child_search = '<div class="child-search">' + '<span style="margin: 0 10px 0 0;">'+ value['produit_marque'] +'</span>' + value['produit_nom'] + '</div>';
+                        sub_search.append(child_search);
+                    });
+                }
+            })
+        }else{
+            sub_search.html('');  
+        }
+    });
+});</script>

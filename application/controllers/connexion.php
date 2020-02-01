@@ -35,13 +35,12 @@ class connexion extends CI_Controller {
             $result = $this->Model_connection->login();
            //print_r($result);
             $user_id = $result['client_id'];
-            $nom = $result['client_nom'];
-
             
             if ( $user_id > 0 ) {
                 $user_data = array(
                     'user_id' => $user_id,
-                    'username' => $nom,
+                    'username' => $result['client_nom'],
+                    'role' => $result['client_role_id'],
                     'logged_in' => true
                 );
 
@@ -105,6 +104,7 @@ class connexion extends CI_Controller {
                     $user_data = array(
                         'user_id' => $dataUser['client_id'],
                         'username' => $dataUser['client_nom'],
+                        'role' => $dataUser['client_role_id'],
                         'logged_in' => true
                     );
 
@@ -116,20 +116,5 @@ class connexion extends CI_Controller {
 
         }
 
-        public function EspaceC()
-        {
-        
 
-                if ($this->session->userdata('user_id') == null) {
-                    redirect('');
-                }else{
-                $array['data'] = $this->Model_espaceclient->getEspaceC();
-                $navbarRub['getRubriques'] = $this->Model_home->getRubriques();
-                $this->load->view('include/incl_head');
-                $this->load->view('include/incl_navbar', $navbarRub);
-                $this->load->view('incl_user_area', $array);
-                $this->load->view('include/incl_footer');
-                $this->load->view('include/incl_script');
-                }
-        }
 }

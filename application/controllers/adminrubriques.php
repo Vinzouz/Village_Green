@@ -7,14 +7,23 @@ class adminrubriques extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Model_adminrubriques');
+        $this->load->model('Model_espaceclient');
     }
 
     public function index()
     {
 
-        $data['main'] = 'admin/adminproducts/rubriques/addrubrique';
+        $data['dataC'] = $this->Model_espaceclient->getClient();
+        if ($this->session->userdata('role') == 1) {
 
-        $this->load->view('admin/index', $data);
+            $this->load->view('admin/partials/header');
+
+            $this->load->view('admin/partials/navbar', $data);
+
+            $this->load->view('admin/adminproducts/rubriques/addrubrique');
+
+            $this->load->view('admin/partials/footer');
+        }
     }
 
     public function addRubrique()
@@ -42,13 +51,20 @@ class adminrubriques extends CI_Controller
     }
 
 
-    public function getRubriques(){
+    public function getRubriques()
+    {
 
         $data['rubriques'] = $this->Model_adminrubriques->getRubriques();
-        $data['main'] = 'admin/adminproducts/rubriques/index';
+        $data['dataC'] = $this->Model_espaceclient->getClient();
+        if ($this->session->userdata('role') == 1) {
 
-        $this->load->view('admin/index', $data);
+            $this->load->view('admin/partials/header');
 
+            $this->load->view('admin/partials/navbar', $data);
+
+            $this->load->view('admin/adminproducts/rubriques/index', $data);
+
+            $this->load->view('admin/partials/footer');
+        }
     }
-
 }

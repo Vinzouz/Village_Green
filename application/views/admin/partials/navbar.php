@@ -9,36 +9,36 @@
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center">
       <ul class="navbar-nav">
-        <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +050 2992 709</li>
+        <li class="nav-item font-weight-semibold d-none d-lg-block">Aide : 03 00 00 00 00</li>
         <li class="nav-item dropdown language-dropdown">
           <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
             <div class="d-inline-flex mr-0 mr-md-3">
               <div class="flag-icon-holder">
-                <i class="flag-icon flag-icon-us"></i>
+                <i class="flag-icon flag-icon-fr"></i>
               </div>
             </div>
-            <span class="profile-text font-weight-medium d-none d-md-block">English</span>
+            <span class="profile-text font-weight-medium d-none d-md-block">Français</span>
           </a>
           <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
             <a class="dropdown-item">
               <div class="flag-icon-holder">
-                <i class="flag-icon flag-icon-us"></i>
-              </div>English
+                <i class="flag-icon flag-icon-fr"></i>
+              </div>Français
             </a>
             <a class="dropdown-item">
               <div class="flag-icon-holder">
-                <i class="flag-icon flag-icon-fr"></i>
-              </div>French
+                <i class="flag-icon flag-icon-us"></i>
+              </div>Anglais
             </a>
             <a class="dropdown-item">
               <div class="flag-icon-holder">
                 <i class="flag-icon flag-icon-ae"></i>
-              </div>Arabic
+              </div>Arabe
             </a>
             <a class="dropdown-item">
               <div class="flag-icon-holder">
                 <i class="flag-icon flag-icon-ru"></i>
-              </div>Russian
+              </div>Russe
             </a>
           </div>
         </li>
@@ -124,21 +124,23 @@
               </div>
             </a>
           </div>
-        </li>
+        </li><?php $Userid = $this->session->userdata('user_id') ?>
         <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
           <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-            <img class="img-xs rounded-circle" src="<?= base_url() ?>assets/admin/assets/images/faces/face8.jpg" alt="Profile image"> </a>
+            <img class="img-xs rounded-circle" src="<?= base_url() ?>assets/admin/assets/images/faces/<?= $Userid ?>/profilpic.jpg" alt="Profile image"> </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
             <div class="dropdown-header text-center">
-              <img class="img-md rounded-circle" src="<?= base_url() ?>assets/admin/assets/images/faces/face8.jpg" alt="Profile image">
-              <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-              <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+              <img class="img-md rounded-circle" src="<?= base_url() ?>assets/admin/assets/images/faces/<?= $Userid ?>/profilpic.jpg" alt="Profile image">
+              <?php foreach($dataC as $admin){ ?>
+              <p class="mb-1 mt-3 font-weight-semibold"><?= $admin->client_prenom .' '.  $admin->client_nom ?></p>
+              <p class="font-weight-light text-muted mb-0"><?= $admin->client_mail ?></p>
+              <?php  } ?>
             </div>
-            <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
+            <a class="dropdown-item">Mon profil <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
             <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
-            <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
+            <a class="dropdown-item">Activité<i class="dropdown-item-icon ti-location-arrow"></i></a>
             <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-            <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+            <a class="dropdown-item">Déconnexion<i class="dropdown-item-icon ti-power-off"></i></a>
           </div>
         </li>
       </ul>
@@ -155,12 +157,15 @@
         <li class="nav-item nav-profile">
           <a href="#" class="nav-link">
             <div class="profile-image">
-              <img class="img-xs rounded-circle" src="<?= base_url() ?>assets/admin/assets/images/faces/face8.jpg" alt="profile image">
+              
+              <img class="img-xs rounded-circle" src="<?= base_url() ?>assets/admin/assets/images/faces/<?= $Userid ?>/profilpic.jpg" alt="profile image">
               <div class="dot-indicator bg-success"></div>
             </div>
             <div class="text-wrapper">
-              <p class="profile-name">Allen Moreno</p>
-              <p class="designation">Premium user</p>
+              <?php foreach($dataC as $admin){ ?>
+              <p class="profile-name"><?= $admin->client_prenom .' '.  $admin->client_nom ?></p>
+              <p class="designation">Administrateur</p>
+              <?php  } ?>
             </div>
           </a>
         </li>
@@ -174,7 +179,7 @@
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <i class="menu-icon typcn typcn-coffee"></i>
-            <span class="menu-title">Basic UI Elements</span>
+            <span class="menu-title">Gestions utilisateurs</span>
             <i class="menu-arrow"></i>
           </a>
           <div class="collapse" id="ui-basic">

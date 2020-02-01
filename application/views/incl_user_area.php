@@ -10,7 +10,7 @@
 
         <div class="logoEC"></div>
 
-        <?php foreach ($data as $client) : ?>
+        <?php foreach ($dataC as $client) : ?>
             <div class="infosClient">
                 <p><span>Nom :</span> <?= $client->client_nom; ?></p>
                 <p><span>Prénom :</span> <?= $client->client_prenom; ?></p>
@@ -46,9 +46,16 @@
 
         <div class="general histo">
             <!-- Va permettre d'afficher les différentes commandes enregistrées dans la BDD, view à créer pour le detail -->
-            <?php foreach ($data as $commande) { ?>
-                <p>Commande n°<?= $commande->commande_id; ?> (<a href="#">Details</a>)</p>
-            <?php } ?>
+            <?php
+            if ($data != null) {
+                foreach ($data as $commande) { ?>
+                    <p>Commande n°<?= $commande->commande_id; ?> (<a href="#">Details</a>)</p>
+
+            <?php
+                }
+            } else {
+                print_r('Aucune commande existante');
+            } ?>
         </div>
 
 

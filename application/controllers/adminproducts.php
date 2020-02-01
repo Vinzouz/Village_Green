@@ -7,6 +7,7 @@ class adminproducts extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Model_adminproducts');
+        $this->load->model('Model_espaceclient');
         $this->load->library('upload');
     }
 
@@ -14,11 +15,18 @@ class adminproducts extends CI_Controller
     {
 
         $data['getSousRubriques'] = $this->Model_adminproducts->getSousRubriques();
-        $data['main'] = 'admin/adminproducts/addproduct';
         $data['getProRubriques'] = $this->Model_adminproducts->getProRubriques();
-        $data['main'] = 'admin/adminproducts/addproduct';
+        $data['dataC'] = $this->Model_espaceclient->getClient();
+        if ($this->session->userdata('role') == 1) {
 
-        $this->load->view('admin/index', $data);
+            $this->load->view('admin/partials/header');
+
+            $this->load->view('admin/partials/navbar', $data);
+
+            $this->load->view('admin/adminproducts/addproduct', $data);
+
+            $this->load->view('admin/partials/footer');
+        }
     }
 
 
@@ -92,9 +100,17 @@ class adminproducts extends CI_Controller
     {
 
         $data['products'] = $this->Model_adminproducts->getProducts();
-        $data['main'] = 'admin/adminproducts/index';
+        $data['dataC'] = $this->Model_espaceclient->getClient();
+        if ($this->session->userdata('role') == 1) {
 
-        $this->load->view('admin/index', $data);
+            $this->load->view('admin/partials/header');
+
+            $this->load->view('admin/partials/navbar', $data);
+
+            $this->load->view('admin/adminproducts/index', $data);
+
+            $this->load->view('admin/partials/footer');
+        }
     }
 
 
