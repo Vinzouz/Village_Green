@@ -50,7 +50,7 @@ class connexion extends CI_Controller {
                 redirect( '' );
             } else {
                 $this->session->set_flashdata( 'failed', 'Vous n\'êtes pas connecté' );
-
+                redirect( 'connexion/index' );
             }
         }
     }
@@ -122,7 +122,7 @@ class connexion extends CI_Controller {
 
                 if ($this->session->userdata('user_id') == null) {
                     redirect('');
-                }
+                }else{
                 $array['data'] = $this->Model_espaceclient->getEspaceC();
                 $navbarRub['getRubriques'] = $this->Model_home->getRubriques();
                 $this->load->view('include/incl_head');
@@ -130,5 +130,6 @@ class connexion extends CI_Controller {
                 $this->load->view('incl_user_area', $array);
                 $this->load->view('include/incl_footer');
                 $this->load->view('include/incl_script');
+                }
         }
 }

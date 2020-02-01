@@ -26,8 +26,9 @@ class Home extends CI_Controller
 	
 	public function apropos()
     {
+        $data['getRubriques'] = $this->Model_home->getRubriques();
         $this->load->view( 'include/incl_loader' );
-        $this->load->view('include/incl_navbar');
+        $this->load->view('include/incl_navbar', $data);
         $this->load->view('include/incl_head');
         $this->load->view('incl_apropos');
         $this->load->view('include/incl_footer');
