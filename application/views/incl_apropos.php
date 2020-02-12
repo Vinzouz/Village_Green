@@ -31,8 +31,8 @@ Ce projet est un projet au stade d'Alpha test, il sera mis à jour progressiveme
       <div class="avatar"></div>
    </div>
 	<h3>Jesse Roult</h3>
-   <a href="">📧 Jesse.Roulte@gmail.com</a>
-   <a href="">📱(+33)6 52 06 05 87</a>
+   <a href="">📧 roult.jesse@gmail.com</a>
+   <a href="">📱(+33)6 33 48 85 36</a>
 	<ul>
       <a href="" target="_blank"><i class="fab fa-twitter" style="font-size:16px"></i></a>
 	   <a href="" target="_blank"><i class="fab fa-facebook" style="font-size:16px"></i></a>
@@ -61,8 +61,8 @@ Ce projet est un projet au stade d'Alpha test, il sera mis à jour progressiveme
       <div class="avatar"></div>
    </div>
 	<h3>Vincent André</h3>
-   <a href="">📧 Vincent.Andre@gmail.com</a>
-   <a href="">📱(+33)6 08 41 52 19</a>
+   <a href="">📧 vincent.andre1893@gmail.com</a>
+   <a href="">📱(+33)6 75 44 38 95</a>
 	<ul>
       <a href="" target="_blank"><i class="fab fa-twitter" style="font-size:16px"></i></a>
 	   <a href="" target="_blank"><i class="fab fa-facebook" style="font-size:16px"></i></a>

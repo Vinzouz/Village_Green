@@ -1,5 +1,5 @@
 <?php
-    include 'esp_validinscription.php';
+    // include 'esp_validinscription.php';
 ?>
 
 <div class="container">

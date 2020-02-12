@@ -1,11 +1,8 @@
-<?php
-    // include 'esp_validinscription.php';
-?>
 
 <div class="container">
     <div class="row justify-content-center overlay-decalage-inscription overlay">
         <div class="encadre-milieu2">
-            <a href="<?= site_url( 'home/index' ) ?>" class="Logo-Accueil logo-decalage">
+            <a href="<?= site_url( '' ) ?>" class="Logo-Accueil logo-decalage">
                 <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
                 </section>
             </a>
@@ -25,10 +22,11 @@
 
                     <div class="row">
                         <div class="col-12 col-sm-6">
+                            
                             <?php
                                 $value = set_value('InsclientNom');
                                 $attributes = array(
-                                    'name' => 'InsclientNom',
+                                    'id' => 'InsclientNom',
                                     'type' => 'input',
                                     'placeholder' => 'DOE',
                                     'class' => 'form-control',
@@ -263,4 +261,4 @@
     </div>
 </div>
 
-<script src="esp_forminsvalid.js"></script>
+<script src=<?= base_url('assets/js/esp_forminsvalid.js') ?>></script>

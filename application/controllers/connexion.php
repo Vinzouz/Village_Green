@@ -60,9 +60,9 @@ class connexion extends CI_Controller {
             redirect('');
         }
         $array['data'] =  $this->Model_connection->getUserdata();
-        $this->load->view('index/incl_head');
+        $this->load->view('include/incl_head');
         $this->load->view('login/incl_editaccount', $array);
-        $this->load->view('index/incl_script');
+        $this->load->view('include/incl_script');
     }
 
     public function updateUser()

@@ -15,7 +15,7 @@
             <?php foreach ($getRubrique as $rubrique) : ?>
 
                 <!-- Catégorie -->
-                <a href="<?= base_url('products/getRubrique/') . $rubrique->rubrique_id ?>">
+                <a href="<?= base_url('products/getSousRubrique/') . $rubrique->sousrub_id ?>">
                     <li class="card categorie">
 
                         <section class="card-image">

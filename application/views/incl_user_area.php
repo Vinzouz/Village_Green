@@ -29,9 +29,7 @@
 
 
         <div class="general testCompte">
-            <p><a href="#">Modifier les informations du compte</a></p>
-            <p><a href="#">Modifier le mot de passe</a></p>
-            <p><a href="#">Modifier son adresse mail</a></p>
+            <p><a href="<?= site_url('connexion/edit') ?>">Modifier les informations du compte</a></p>
             <p><a href="#">Désactiver le compte</a></p>
         </div>
 
@@ -45,17 +43,19 @@
         </div>
 
         <div class="general histo">
-            <!-- Va permettre d'afficher les différentes commandes enregistrées dans la BDD, view à créer pour le detail -->
-            <?php
-            if ($data != null) {
-                foreach ($data as $commande) { ?>
-                    <p>Commande n°<?= $commande->commande_id; ?> (<a href="#">Details</a>)</p>
+            <p>
+                <!-- Va permettre d'afficher les différentes commandes enregistrées dans la BDD, view à créer pour le detail -->
+                <?php
+                if ($data != null) {
+                    foreach ($data as $commande) { ?>
+                        <p>Commande n°<?= $commande->commande_id; ?> (<a href="#">Détails</a>)</p>
 
-            <?php
-                }
-            } else {
-                print_r('Aucune commande existante');
-            } ?>
+                <?php
+                    }
+                } else {
+                    print_r('Aucune commande existante');
+                } ?>
+            </p>
         </div>
 
 
