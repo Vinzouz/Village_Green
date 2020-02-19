@@ -13,6 +13,7 @@
                         <th>ID rubrique</th>
                         <th>Nom rubrique</th>
                         <th>Description rubrique</th>
+                        <th>Modifier / Supprimer</th>
 
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@
                             <td><?= $rubrique->rubrique_id ?></td>
                             <td><?= $rubrique->rubrique_nom ?></td>
                             <td><?= $rubrique->rubrique_desc ?></td>
+                            <td><p><a href="<?= site_url("adminrubriques/editRubrique/$rubrique->rubrique_id") ?>">Modifier</a> / <a href="<?= site_url("adminrubriques/deleteRubrique/$rubrique->rubrique_id") ?>">Supprimer</a></p></td>
                         </tr>
 
                     <?php
