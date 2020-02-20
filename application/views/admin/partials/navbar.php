@@ -212,6 +212,12 @@
                 <a class="nav-link" href="<?= base_url('adminrubriques/index') ?>">Ajouter rubriques</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('adminsousrubriques/getSousRubriques') ?>">Liste des sous-rubriques</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('adminsousrubriques/index') ?>">Ajouter sous-rubriques</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('adminproducts/getProduct') ?>">Liste des produits</a>
               </li>
               <li class="nav-item">

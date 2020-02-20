@@ -5,7 +5,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Listes des utilisateurs</h4>
+            <h4 class="card-title">Listes des produits</h4>
 
             <table class="table table-hover">
                 <thead>
@@ -14,10 +14,9 @@
                         <th>Marque produit</th>
                         <th>Nom produit</th>
                         <th>Prix produit HT</th>
-                        <th>Caractéristiques produit</th>
                         <th>Sous rubrique produit</th>
                         <th>Quantité produit</th>
-                        <th>Quantité alerte produit</th>
+                        <th>Modifier / Supprimer</th>
                     </tr>
                 </thead>
 
@@ -30,10 +29,9 @@
                             <td><?= $product->produit_marque ?></td>
                             <td><?= $product->produit_nom ?></td>
                             <td><?= $product->produit_prix_HT ?></td>
-                            <td><?= $product->produit_caract ?></td>
                             <td><?= $product->produit_sousrub_id ?></td>
                             <td><?= $product->produit_qtite ?></td>
-                            <td><?= $product->produit_qtite_ale ?></td>
+                            <td><p><a href="<?= site_url("adminproducts/editProduct/$product->produit_id") ?>">Modifier</a> / <a href="<?= site_url("adminproducts/deleteProduct/$product->produit_id") ?>">Supprimer</a></p></td>
                         </tr>
 
                     <?php

@@ -15,6 +15,7 @@
                         <th>Telephone</th>
                         <th>Mail</th>
                         <th>Type</th>
+                        <th>Supprimer</th>
                     </tr>
                 </thead>
 
@@ -37,6 +38,7 @@
                             <td>
                                 <label class="badge <?= $clientypebg ?>"><?= $user->client_type ?></label>
                             </td>
+                            <td><a href="<?= site_url("adminclients/deleteClient/$user->client_id") ?>">Supprimer</a></td>
                         </tr>
 
                     <?php

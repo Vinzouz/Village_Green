@@ -10,4 +10,11 @@ class Model_adminclients extends CI_Model
         return $select;
         
     }
+
+    public function deleteClient($id)
+    {
+
+        $this->db->where('client_id', $id);
+        $this->db->delete('clients');
+    }
 }

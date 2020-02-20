@@ -166,4 +166,68 @@ class adminproducts extends CI_Controller
             $this->image_lib->clear();
         }
     }
+
+    public function deleteProduct($idP){
+
+        $this->Model_adminproducts->deleteProduct($idP);
+
+        redirect('adminproducts/getProduct');
+    }
+
+    public function editProduct($idP){
+
+        if ($this->session->userdata('role') != 1) {
+            redirect('');
+        }
+        $data['getSousRubriques'] = $this->Model_adminproducts->getSousRubriques();
+        $data['getProRubriques'] = $this->Model_adminproducts->getProRubriques();
+        $data['dataC'] = $this->Model_espaceclient->getClient();
+        $array['data'] =  $this->Model_adminproducts->getProductData($idP);
+        $this->load->view('admin/partials/header');
+
+        $this->load->view('admin/partials/navbar', $data);
+
+        $this->load->view('admin/adminproducts/editproduct', $array);
+
+        $this->load->view('admin/partials/footer');
+    }
+
+    public function updateProduct($idP){
+
+        $this->form_validation->set_rules('produit_marque', 'Produit marque', 'trim|required|min_length[3]');
+        $this->form_validation->set_rules('produit_nom', 'Produit nom', 'trim|required|min_length[3]');
+        $this->form_validation->set_rules('produit_prix_HT', 'Produit prix HT', 'trim|required');
+        $this->form_validation->set_rules('produit_caract', 'Produit caractéristiques', 'trim|required|min_length[3]');
+        $this->form_validation->set_rules('produit_sousrub_id', 'Produit sous rubrique', 'trim|required');
+        $this->form_validation->set_rules('produit_qtite', 'Produit quantité', 'trim|required');
+        $this->form_validation->set_rules('produit_qtite_ale', 'Produit quantité alerte', 'trim|required');
+
+        if ( $this->form_validation->run() == FALSE ) {
+            $data = array( 'errors' => validation_errors() );
+            $this->session->set_flashdata( $data );
+            redirect( 'adminproducts/index' );
+        } else {
+            $data = array(
+                'produit_id' => $idP,
+                'produit_marque' => $this->input->post('produit_marque'),
+                'produit_nom' => $this->input->post('produit_nom'),
+                'produit_prix_HT' => $this->input->post('produit_prix_HT'),
+                'produit_caract' => $this->input->post('produit_caract'),
+                'produit_sousrub_id' => $this->input->post('produit_sousrub_id'),
+                'produit_qtite' => $this->input->post('produit_qtite'),
+                'produit_qtite_ale' => $this->input->post('produit_qtite_ale'),
+            );
+
+            $dataPro = $this->Model_adminproducts->updateProduct($data);
+            // print_r($test);
+            if ( $dataPro ) {
+
+                
+
+            }
+            redirect('adminproducts/getProduct');
+        }
+
+    }
+
 }
