@@ -44,7 +44,9 @@ class Lostpass extends CI_Controller
                 );
 
                 require 'PHPMailer/sendmail.php';
-                $send = envoyermail($user_mail, $nombrealeatoire);
+                $Subject = 'Réinitialisation du mot de passe';
+                $Body    = "<p>Bonjour  $user_mail , une réinitialisation du mot de passe a été lancée, voici votre code unique : $nombrealeatoire .</p>";
+                $send = envoyermail($user_mail, $Subject, $Body);
 
                 if ($send == 1) {
                     $this->Model_lostpass->insert_clients_temporaire($data);
@@ -107,7 +109,11 @@ class Lostpass extends CI_Controller
 
                 //print_r($user_id);
                 if ($result) {
-
+                    $user_mail = $this->session->userdata('user_mail');
+                    require 'PHPMailer/sendmail.php';
+                    $Subject = 'Mot de passe réinitialisé';
+                    $Body    = "<p>Bonjour  $user_mail , votre mot de passe a bien été réinitialisé.</p>";
+                    $send = envoyermail($user_mail, $Subject, $Body);
                     redirect('home/index');
                 } else {
 

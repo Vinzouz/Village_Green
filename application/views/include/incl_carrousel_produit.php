@@ -6,6 +6,7 @@
 
     <div class="card-slider">
         <?php foreach ($carrousel_produit as $index) : ?>
+            <span><a href="#">
             <section class="card__list padding_prod">
                 <div class="card__box">
                     <div class="card">
@@ -14,9 +15,9 @@
                             <img class="card__img-preview" src=<?= base_url('assets/images/Imagesproducts/' . $index->sousrub_rubrique_id . '/' . $index->produit_sousrub_id . '/' . $index->produit_id . '/product.jpg') ?> alt="Image name">
                         </div>
                         <div class="card__content">
-                            <a href="#">
+                            
                                 <h2 class="card__title"><?= $index->produit_nom ?></h2>
-                            </a>
+                            
 
                             <p class="card__description">
                                 <?= nl2br($index->produit_caract) ?>
@@ -34,6 +35,7 @@
                     </div>
                 </div><!-- /card__box -->
             </section>
+            </a></span>
         <?php endforeach; ?>
 
     </div>

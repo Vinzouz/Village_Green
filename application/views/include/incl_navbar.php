@@ -24,7 +24,7 @@
 
                                         </div>
                                     </div>
-                                    <button class="btn btn-warning btn-rounded btn-sm my-0 waves-effect waves-light loupe" type="submit"><i class="fas fa-search"></i></button>
+                                    <button class="btn btn-warning btn-rounded btn-sm my-0 waves-effect waves-light loupe"><i class="fas fa-search"></i></button>
                                 </form>
                             </li>
 
@@ -162,7 +162,7 @@
                     //console.log(data);
                     sub_search.html('');
                     $.each(data, function(index, value) {
-                        var child_search = '<div class="child-search">' + '<span style="margin: 0 10px 0 0;">'+ value['produit_marque'] +'</span>' + value['produit_nom'] + '</div>';
+                        var child_search = '<div class="child-search">' + '<span class="sbar" style="margin: 0 10px 0 0;">'+ value['produit_marque'] +'</span>' + value['produit_nom'] + '</div>';
                         sub_search.append(child_search);
                     });
                 }

@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 // Load Composer's autoloader
 require 'vendor/autoload.php';
 
-function envoyermail($clientmail, $code)
+function envoyermail($clientmail, $Subject, $Body)
 {
 
     // Instantiation and passing `true` enables exceptions
@@ -26,27 +26,25 @@ function envoyermail($clientmail, $code)
         $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('villagegreen80@gmail.com', 'VG');
+        $mail->setFrom('villagegreen80@gmail.com', 'Village Green');
          $mail->addAddress($clientmail);     // Add a recipient
         // $mail->addAddress('Salemshah686@gmail.com');               // Name is optional
         // $mail->addReplyTo('info@example.com', 'Information');
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
-
+        $mail->CharSet = "utf-8";
         // Attachments
         // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
         // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Réinitialisation du mot de passe';
-        $mail->Body    = "<p>Bonjour  $clientmail , une réinitialisation du mot de passe a été lancée, voici votre code unique : $code .
-        Si vous en êtes à l\'origine, cliquez sur ce lien :  
-        Si vous n\'en n\'êtes pas à l\'origine, cliquez sur ce lien : </p>";
+        $mail->Subject = $Subject;
+        $mail->Body    = $Body;
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-        $mail->send();
-        if ($mail->send()) {
+        $envoie = $mail->send();
+        if ($envoie) {
             return 1;
         }
     } catch (Exception $e) {

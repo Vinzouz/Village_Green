@@ -51,6 +51,11 @@
                         'logged_in' => true
                     );
 
+                    require 'PHPMailer/sendmail.php';
+                    $Subject = 'Inscription à Village Green';
+                    $Body    = "<p>Bonjour  $nom , ceci est un mail automatique pour vous prévenir que vous êtes bien inscrit sur Village Green.</p>";
+                    envoyermail($user_mail, $Subject, $Body);
+
                     $this->session->set_userdata( $user_data );
                     $this->session->set_flashdata( 'login', 'Vous êtes connecté ' );
 
