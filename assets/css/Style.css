@@ -2284,6 +2284,15 @@ label {
   margin-right: 0px;
 }
 
+.encadre-nouveaumdp{
+  background-color: #acabadd3;
+  padding: 50px 60px 0px 60px;
+  height: 500px;
+  width: 900px;
+  border: 3px solid #FF8742;
+  border-radius: 30px;
+}
+
 .encadre-connexion {
   background-color: #acabadd3;
   padding: 50px 60px 0px 60px;

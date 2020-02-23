@@ -5,7 +5,7 @@
                 <section class="logo"><span class="orangetexte">V</span>illage <span class="orangetexte">G</span>reen
                 </section>
             </a>
-            <div class="encadre-nouveaumdp encadre-connexion">
+            <div class="encadre-nouveaumdp">
                 <div class="col centrage-col">
                     <p>
                         <h2 class="text-center legend">Réinitialisation du mot de passe</h2><br>
