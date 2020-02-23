@@ -381,7 +381,6 @@ a:hover {
   border-radius: 15px 0px 0px 15px !important;
 }
 
-.form-control,
 .recherche {
   margin-right: 0% !important;
   margin-bottom: 20px;
@@ -1435,6 +1434,7 @@ section.client .section-title {
     padding-top: 80px !important;
     top: -19px;
     text-align: left;
+    height: unset !important;
   }
 
   .choixdrap {
