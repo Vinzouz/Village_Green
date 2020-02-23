@@ -22,9 +22,9 @@
                       
                         <?= form_open("lostpass/updatepass", $attributes) ?>
 
-                        <input class="form-control" hidden type="password" name="client_id" id="mailNewPass">
+                        <input class="form-control" hidden type="password" name="client_id">
 
-                        <label for="mailNewPass">Nouveau mot de passe :</label><input class="form-control" type="password" name="client_newpass" id="mailNewPass">
+                        <label for="mailNewPass">Nouveau mot de passe :</label><input class="form-control" type="password" name="client_newpass" >
                         <br>
                         <?php
                         if (isset($formError['mailNewPass'])) {
