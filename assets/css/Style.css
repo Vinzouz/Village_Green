@@ -1434,6 +1434,7 @@ section.client .section-title {
     padding-top: 80px !important;
     top: -19px;
     text-align: left;
+    height: unset !important;
   }
 
   .choixdrap {
