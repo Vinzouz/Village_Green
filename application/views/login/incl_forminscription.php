@@ -21,23 +21,11 @@
                     <?= form_open( 'register/store', $attributes ) ?>
 
                     <div class="row">
-                        <div class="col-12 col-sm-6">
-                            
-                            <?php
-                                $value = set_value('InsclientNom');
-                                $attributes = array(
-                                    'id' => 'InsclientNom',
-                                    'type' => 'input',
-                                    'placeholder' => 'DOE',
-                                    'class' => 'form-control',
-                                    'value' => $value
-
-                                );
-                            ?>
-
-                            <?= form_label( 'Nom :', 'InsclientNom' ) ?>
-                            <?= form_input( $attributes ) ?>
-
+                    <div class="col-12 col-sm-6">
+                            <label for="InsclientNom">Nom :</label><input class="form-control" type="text"
+                                                                                name="InsclientNom"
+                                                                                id="InsclientNom"
+                                                                                placeholder="DOE" required>
                             <span id="missInsclientNom"></span>
                             <?php
                                 if ( isset( $formError['InsclientNom'] ) ) {
@@ -47,7 +35,7 @@
                                     </span>
                                     <?php
                                 }
-                            ?>
+                            ?><br>
                         </div>
                         <div class="col-12 col-sm-6">
                             <label for="InsclientPrenom">Prénom :</label><input class="form-control" type="text"
