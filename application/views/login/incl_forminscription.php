@@ -231,7 +231,7 @@
 
                     <div class="row">
                         <div class="input-field col-6">
-                            <input class="form-control" type="submit" name="buttonIns" id="buttonIns"
+                            <input class="form-control" type="button" name="buttonIns" id="buttonIns"
                                    value="S'inscrire">
                         </div>
                         <div class="input-field col-6">
