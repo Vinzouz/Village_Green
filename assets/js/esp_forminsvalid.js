@@ -298,10 +298,20 @@ function InsclientPassVCheck() {
 // FONCTION ENVOIE APPELLEE A L'APPUI DU BOUTON S'INSCRIRE
 function envoie() {
 
-    flag = flagInsclientNom + flagInsclientPrenom + flagInsclientAdresse + flagInsclientVille + flagInsclientCodeP + flagInsclientTel + flagInsclientMail + flagInsclientType + flagInsclientSiret + flagInsclientPass + flagInsclientPassV;
+    // Si l'index selectionné est Particulier, ne pas compter le flag du Siret.
+    if (document.getElementById("InsclientType").selectedIndex == 1)
+    {
+        flag = flagInsclientNom + flagInsclientPrenom + flagInsclientAdresse + flagInsclientVille + flagInsclientCodeP + flagInsclientTel + flagInsclientMail + flagInsclientType + flagInsclientPass + flagInsclientPassV;
+    }
+    // Si l'index selectionné est Professionnel, ne pas compter le flag du select mais celui du siret.
+    else if (document.getElementById("InsclientType").selectedIndex == 2)
+    {
+        flag = flagInsclientNom + flagInsclientPrenom + flagInsclientAdresse + flagInsclientVille + flagInsclientCodeP + flagInsclientTel + flagInsclientMail + flagInsclientSiret + flagInsclientPass + flagInsclientPassV;
+    }
+
     console.log(`flag ${flag}`);
 
-    if (flag === 11) {
+    if (flag === 10) {
 
         formInsclient.submit();
 
