@@ -17,7 +17,7 @@
             $this->form_validation->set_rules( 'InsclientCodeP', 'InsclientCodeP', 'trim|required|min_length[5]|max_length[5]|regex_match[/^\d{5}$/]' );
             $this->form_validation->set_rules( 'InsclientVille', 'InsclientVille', 'trim|required|min_length[3]|regex_match[/^[A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ\'"-\/\s]{1,40}$/]' );
             $this->form_validation->set_rules( 'InsclientTel', 'InsclientTel', 'trim|required|min_length[10]|regex_match[/^([\d]{2})([\s.]?)([\d]{2})([\s.]?)([\d]{2})([\s.]?)([\d]{2})([\s.]?)([\d]{2})([\s.]?)$/]' );
-            $this->form_validation->set_rules( 'InsclientMail', 'InsclientMail', 'trim|required|valid_email|regex_match[/([a-zA-Z0-9-_]{1,20})+(\.[a-zA-Z0-9-_]{1,20})*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]{1,20})*\.[a-zA-Z]{2,4}/]' );
+            $this->form_validation->set_rules( 'InsclientMail', 'InsclientMail', 'trim|required|valid_email|is_unique[clients.client_mail]|regex_match[/([a-zA-Z0-9-_]{1,20})+(\.[a-zA-Z0-9-_]{1,20})*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]{1,20})*\.[a-zA-Z]{2,4}/]' );
             //password
             $this->form_validation->set_rules( 'InsclientPass', 'InsclientPass', 'trim|required|min_length[4]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/]' );
             $this->form_validation->set_rules( 'InsclientPassV', 'InsclientPassV', 'trim|required|min_length[3]|matches[InsclientPass]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/]' );
