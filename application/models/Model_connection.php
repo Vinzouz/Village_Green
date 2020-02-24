@@ -7,14 +7,9 @@ class Model_connection extends CI_Model
     {
 
         $clientMail = $this->input->post('client_mail');
-        
-
-
         $this->db->where('client_mail', $clientMail);
-        
         $select = $this->db->get('clients');
         
-
         if ($select) {
             $selectUser = $select->row_array();
             $pHash = $selectUser['client_password'];

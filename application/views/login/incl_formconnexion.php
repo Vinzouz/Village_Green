@@ -19,6 +19,7 @@
                             'name' => 'formConclient'
                         );
                     ?>
+                    <div name="errormdp"></div>
                     <?php if ( $this->session->flashdata( 'errors' ) ): ?>
                         <?php  echo $test = $this->session->flashdata( 'errors' );?>
                     <?php endif; ?>
