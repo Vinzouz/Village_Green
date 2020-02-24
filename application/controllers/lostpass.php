@@ -26,7 +26,8 @@ class Lostpass extends CI_Controller
             $data = array('errors' => validation_errors());
             $this->session->set_flashdata($data);
             redirect('lostpass/index');
-        } else {
+        } 
+        else {
             $result = $this->Model_lostpass->envoie();
 
             if ($result) {
@@ -54,7 +55,7 @@ class Lostpass extends CI_Controller
                     $this->load->view('include/incl_head');
                     $this->load->view('login/incl_formcode');
                     $this->load->view('include/incl_script');
-                }
+            }
             } else {
                 $this->session->set_flashdata('failed', 'Aucun email correspondant');
                 redirect('connexion/index');
@@ -96,13 +97,28 @@ class Lostpass extends CI_Controller
 
     public function updatepass()
     {
-            $this->form_validation->set_rules('client_newpass', 'client_newpass', 'trim|required|min_length[4]');
-            $this->form_validation->set_rules('client_validnewpass', 'client_validnewpass', 'trim|required|min_length[3]|matches[client_newpass]');
+
+            $this->form_validation->set_rules('client_newpass', 'client_newpass', 'trim|required|min_length[4]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/]', array(
+                'required'      => 'Le champ est requis.',
+                'min_length'     => 'La taille minimale du mot de passe doit être de 4.',
+                'regex_match'     => 'Le format du mot de passe ne correspond pas aux normes attendues.'
+        ));
+            $this->form_validation->set_rules('client_validnewpass', 'client_validnewpass', 'trim|required|min_length[3]|matches[client_newpass]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/]', array(
+                'required'      => 'Le champ est requis.',
+                'min_length'     => 'La taille minimale du mot de passe doit être de 4.',
+                'regex_match'     => 'Le format du mot de passe ne correspond pas aux normes attendues.',
+                'matches'     => 'La validaiton du mot de passe ne correspondant pas au premier.'
+        ));
 
             if ($this->form_validation->run() == FALSE) {
-                $data = array('errors' => validation_errors());
+                $data = array('errors' => validation_errors('<p style="color: red" >', '</p>'));
                 $this->session->set_flashdata($data);
-                redirect('');
+
+                    $this->load->view('include/incl_loader');
+                    $this->load->view('include/incl_head');
+                    $this->load->view('login/incl_formnewpass');
+                    $this->load->view('include/incl_script');
+
             } else {
 
                 $result = $this->Model_lostpass->updatepass();
