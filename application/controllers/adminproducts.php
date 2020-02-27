@@ -29,6 +29,16 @@ class adminproducts extends CI_Controller
         }
     }
 
+    public function listeProduits(){
+        // POST data
+        $postData = $this->input->post();
+
+        // Get data
+        $data = $this->Model_adminproducts->getProduits($postData);
+
+        echo json_encode($data);
+}
+
 
     public function addProduct()
     {

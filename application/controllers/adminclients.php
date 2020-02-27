@@ -18,20 +18,33 @@ class adminclients extends CI_Controller
         if ($this->session->userdata('role') == 1) {
 
             $this->load->view('admin/partials/header');
-            
+
             $this->load->view('admin/partials/navbar', $data);
 
             $this->load->view('admin/adminclients/userslist', $data);
 
             $this->load->view('admin/partials/footer');
-            }
-        }
-
-        public function deleteClient($id)
-        {
-
-            $this->Model_adminclients->deleteClient($id);
-
-            redirect('adminclients/index');
         }
     }
+
+    public function listeClients()
+    {
+
+        // POST data
+        $postData = $this->input->post();
+
+        // Get data
+        $data = $this->Model_adminclients->getClients($postData);
+
+        echo json_encode($data);
+    }
+
+
+    public function deleteClient($id)
+    {
+
+        $this->Model_adminclients->deleteClient($id);
+
+        redirect('adminclients/index');
+    }
+}

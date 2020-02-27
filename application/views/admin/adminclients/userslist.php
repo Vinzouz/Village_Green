@@ -7,7 +7,7 @@
         <div class="card-body">
             <h4 class="card-title">Listes des utilisateurs</h4>
 
-            <table class="table table-hover">
+            <table id='clientsTable' class='display dataTable'>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -19,35 +19,34 @@
                     </tr>
                 </thead>
 
-
-                <tbody>
-                    <?php foreach ($users->result() as $user) { 
-                        
-                        if ($user->client_type == 'PRO'){
-                            $clientypebg = 'badge-success';
-                        }else {
-                            $clientypebg = 'badge-warning';
-                        }
-                        
-                        ?>
-                        <tr>
-                            <td><?= $user->client_id ?></td>
-                            <td><?= $user->client_nom ?></td>
-                            <td><?= $user->client_telephone ?></td>
-                            <td><?= $user->client_mail ?></td>
-                            <td>
-                                <label class="badge <?= $clientypebg ?>"><?= $user->client_type ?></label>
-                            </td>
-                            <td><a href="<?= site_url("adminclients/deleteClient/$user->client_id") ?>">Supprimer</a></td>
-                        </tr>
-
-                    <?php
-                    }
-                    ?>
-
-
-                </tbody>
             </table>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+     $(document).ready(function(){
+        $('#clientsTable').DataTable({
+          'processing': true,
+          'serverSide': true,
+          'serverMethod': 'post',
+          'ajax': {
+             'url':'<?=base_url('adminclients/listeClients')?>'
+          },
+          'columns': [
+
+             { data: 'client_id' },
+             { data: 'client_nom' },
+             { data: 'client_telephone' },
+             { data: 'client_mail' },
+             { data: 'client_type' },
+             { data: "client_id",
+                        "orderable": false,
+                        "searchable": false,
+                        "render": function(data,type,row,meta) { // render event defines the markup of the cell text
+                            var a = '<a href="/adminclients/deleteClient/'+ data +'">Supprimer</a>'; // row object contains the row data
+                            return a; }
+             }
+          ]
+        });
+     });
+     </script>

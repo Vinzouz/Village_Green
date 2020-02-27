@@ -1,5 +1,6 @@
 <?php //print_r($users->row_array); 
 ?>
+
 <div class="main-panel">
 
 <div class="col-lg-12 grid-margin stretch-card">
@@ -7,7 +8,7 @@
         <div class="card-body">
             <h4 class="card-title">Listes des sous-rubriques</h4>
 
-            <table class="table table-hover">
+            <table id="sousrubTable" class="table table-hover">
                 <thead>
                     <tr>
                         <th>ID sous-rubrique</th>
@@ -19,25 +20,39 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <?php foreach ($sousrubriques->result() as $sousrubrique) { 
-                        
-                        ?>
-                        <tr>
-                            <td><?= $sousrubrique->sousrub_id ?></td>
-                            <td><?= $sousrubrique->sousrub_nom ?></td>
-                            <td><?= $sousrubrique->sousrub_desc ?></td>
-                            <td><?= $sousrubrique->sousrub_rubrique_id ?></td>
-                            <td><p><a href="<?= site_url("adminsousrubriques/editSousRubrique/$sousrubrique->sousrub_id") ?>">Modifier</a> / <a href="<?= site_url("adminsousrubriques/deleteSousRubrique/$sousrubrique->sousrub_id") ?>">Supprimer</a></p></td>
-                        </tr>
 
-                    <?php
-                    }
-                    ?>
-
-
-                </tbody>
             </table>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+     $(document).ready(function(){
+        $('#sousrubTable').DataTable({
+          'processing': true,
+          'serverSide': true,
+          'serverMethod': 'post',
+          'ajax': {
+             'url':'<?=base_url('adminsousrubriques/listeSousrub')?>'
+          },
+          'columns': [
+
+             { data: 'sousrub_id' },
+             { data: 'sousrub_nom' },
+             { data: 'sousrub_desc' },
+             { data: 'sousrub_rubrique_id' },
+             { data: "sousrub_id",
+                        "orderable": false,
+                        "searchable": false,
+                        "render": function(data,type,row,meta) { // render event defines the markup of the cell text
+                            var a = '<a href="/adminsousrubriques/editSousRubrique/'+ data +'">Modifier</a> / <a href="/adminsousrubriques/deleteSousRubrique/'+ data +'">Supprimer</a>';
+                            
+                             // row object contains the row data
+                            return a;
+                            
+                             }
+            
+             }
+          ]
+        });
+     });
+     </script>

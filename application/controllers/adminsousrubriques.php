@@ -28,6 +28,16 @@ class adminsousrubriques extends CI_Controller
         }
     }
 
+    public function listeSousrub(){
+                // POST data
+                $postData = $this->input->post();
+
+                // Get data
+                $data = $this->Model_adminsousrubriques->getSousrub($postData);
+        
+                echo json_encode($data);
+    }
+
 
     public function addSousRubrique()
     {
@@ -80,7 +90,7 @@ class adminsousrubriques extends CI_Controller
         redirect('adminsousrubriques/getSousRubriques');
     }
 
-    public function editSousRubrique($idSR){
+    public function F($idSR){
 
         if ($this->session->userdata('role') != 1) {
             redirect('');

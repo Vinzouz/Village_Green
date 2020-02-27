@@ -11,6 +11,74 @@ class Model_adminproducts extends CI_Model
         
     }
 
+    function getProduits($postData = null)
+    {
+
+        $response = array();
+
+        ## Read value
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; // Rows display per page
+        $columnIndex = $postData['order'][0]['column']; // Column index
+        $columnName = $postData['columns'][$columnIndex]['data']; // Column name
+        $columnSortOrder = $postData['order'][0]['dir']; // asc or desc
+        $searchValue = $postData['search']['value']; // Search value
+
+        ## Search 
+        $searchQuery = "";
+        if ($searchValue != '') {
+            $searchQuery = " (produit_nom like '%" . $searchValue . "%' or produit_marque like '%" . $searchValue . "%' ) ";
+        }
+
+        ## Total number of records without filtering
+        $this->db->select('count(*) as allcount');
+        $records = $this->db->get('produit')->result();
+        $totalRecords = $records[0]->allcount;
+
+        ## Total number of record with filtering
+        $this->db->select('count(*) as allcount');
+        if ($searchQuery != '')
+            $this->db->where($searchQuery);
+        $records = $this->db->get('produit')->result();
+        $totalRecordwithFilter = $records[0]->allcount;
+
+        ## Fetch records
+        $this->db->select('*');
+        if ($searchQuery != '')
+            $this->db->where($searchQuery);
+        $this->db->order_by($columnName, $columnSortOrder);
+        $this->db->limit($rowperpage, $start);
+        $records = $this->db->get('produit')->result();
+
+        $data = array();
+
+        foreach ($records as $record) {
+            $data[] = array(
+                "produit_id" => $record->produit_id,
+                "produit_marque" => $record->produit_marque,
+                "produit_nom" => $record->produit_nom,
+                "produit_prix_HT" => $record->produit_prix_HT,
+                "produit_caract" => $record->produit_caract,
+                "produit_sousrub_id" => $record->produit_sousrub_id,
+                "produit_qtite" => $record->produit_qtite,
+                "produit_qtite_ale" => $record->produit_qtite_ale,
+                "produit_photo_id" => $record->produit_photo_id,
+            );
+        }
+	
+        ## Response
+        $response = array(
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        );
+
+        return $response;
+    }
+
+
     public function addProduct($data){
 
         $this->db->insert('produit', $data);
@@ -55,6 +123,8 @@ class Model_adminproducts extends CI_Model
         }
     }
 
+
+    
     public function updateProduct($data)
     {
 

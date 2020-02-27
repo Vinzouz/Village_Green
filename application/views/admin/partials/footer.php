@@ -25,6 +25,8 @@
 <!-- endinject -->
 <!-- Custom js for this page-->
 <script src="<?= base_url() ?>assets/admin/assets/js/demo_1/dashboard.js"></script>
+<!-- Appel Datatables -->
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <!-- End custom js for this page-->
 </body>
 </html>

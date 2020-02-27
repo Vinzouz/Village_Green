@@ -146,7 +146,7 @@
           </a>
         </li>
         <li class="nav-item nav-category">Menu principal</li>
-        <li class="nav-item nav-category"> <a href="<?= base_url('') ?>">Retour page d'accueil</a></li>
+        <li class="nav-item nav-category" id="retouraccueil"> <a id="lienretour" href="<?= base_url('') ?>">Retour page d'accueil</a></li>
         <li class="nav-item">
           <a class="nav-link" href="index.html">
             <i class="menu-icon typcn typcn-document-text"></i>

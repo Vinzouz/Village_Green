@@ -1,5 +1,7 @@
 <?php //print_r($users->row_array); 
 ?>
+
+
 <div class="main-panel">
 
 <div class="col-lg-12 grid-margin stretch-card">
@@ -7,7 +9,7 @@
         <div class="card-body">
             <h4 class="card-title">Listes des produits</h4>
 
-            <table class="table table-hover">
+            <table id="produitsTable" class="table table-hover">
                 <thead>
                     <tr>
                         <th>ID produit</th>
@@ -20,27 +22,40 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <?php foreach ($products->result() as $product) { 
-                        
-                        ?>
-                        <tr>
-                            <td><?= $product->produit_id ?></td>
-                            <td><?= $product->produit_marque ?></td>
-                            <td><?= $product->produit_nom ?></td>
-                            <td><?= $product->produit_prix_HT ?></td>
-                            <td><?= $product->produit_sousrub_id ?></td>
-                            <td><?= $product->produit_qtite ?></td>
-                            <td><p><a href="<?= site_url("adminproducts/editProduct/$product->produit_id") ?>">Modifier</a> / <a href="<?= site_url("adminproducts/deleteProduct/$product->produit_id") ?>">Supprimer</a></p></td>
-                        </tr>
 
-                    <?php
-                    }
-                    ?>
-
-
-                </tbody>
             </table>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+     $(document).ready(function(){
+        $('#produitsTable').DataTable({
+          'processing': true,
+          'serverSide': true,
+          'serverMethod': 'post',
+          'ajax': {
+             'url':'<?=base_url('adminproducts/listeProduits')?>'
+          },
+          'columns': [
+             { data: 'produit_id' },
+             { data: 'produit_marque' },
+             { data: 'produit_nom' },
+             { data: 'produit_prix_HT' },
+             { data: 'produit_sousrub_id' },
+             { data: 'produit_qtite' },
+             { data: "produit_id",
+                        "orderable": false,
+                        "searchable": false,
+                        "render": function(data,type,row,meta) { // render event defines the markup of the cell text
+                            var a = '<a href="/adminproducts/editProduct/'+ data +'">Modifier</a> / <a href="/adminproducts/deleteProduct/'+ data +'">Supprimer</a>';
+                            
+                             // row object contains the row data
+                            return a;
+                            
+                             }
+            
+             }
+          ]
+        });
+     });
+     </script>
