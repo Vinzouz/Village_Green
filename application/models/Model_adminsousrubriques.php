@@ -75,8 +75,16 @@ class Model_adminsousrubriques extends CI_Model
 
     public function addSousRubrique($data)
     {
-
         $this->db->insert('sous_rubrique', $data);
+        $insert_id = $this->db->insert_id();
+        $this->db->where( 'sousrub_id', $insert_id );
+        $result = $this->db->get( 'sous_rubrique' );
+
+        if ( $result ) {
+            return $insert_id;
+        } else {
+            return false;
+        }
     }
 
     public function deleteSousRubrique($idSR)

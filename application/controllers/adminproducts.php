@@ -8,6 +8,7 @@ class adminproducts extends CI_Controller
         parent::__construct();
         $this->load->model('Model_adminproducts');
         $this->load->model('Model_espaceclient');
+        $this->load->model('Model_products');
         $this->load->library('upload');
     }
 
@@ -92,7 +93,10 @@ class adminproducts extends CI_Controller
         $config['file_name'] =  "product.jpg";
 
         $this->upload->initialize($config);
-
+        if (file_exists('assets/images/Imagesproducts/'.$rubid.'/'. $sousrubid .'/'. $lastId.'/product.jpg')){
+            unlink('assets/images/Imagesproducts/'.$rubid.'/'. $sousrubid .'/'. $lastId.'/product.jpg');
+        }
+        
         if (!empty($_FILES['image_file']['name'])) {
             if ($this->upload->do_upload('image_file')) {
                 $gbr = $this->upload->data();
@@ -177,11 +181,15 @@ class adminproducts extends CI_Controller
         }
     }
 
-    public function deleteProduct($idP){
+    public function deleteProduct($idSR, $idP){
 
-        $this->Model_adminproducts->deleteProduct($idP);
-
+        $result = $this->Model_adminproducts->deleteProduct($idP);
+        print_r($result);
+        $idR = $result['sousrub_rubrique_id'];
+        $suppr = rmdir('assets/images/Imagesproducts/'.$idR.'/'.$idSR.'/'.$idP.'');
+        if($suppr == true){
         redirect('adminproducts/getProduct');
+    }
     }
 
     public function editProduct($idP){
@@ -191,6 +199,7 @@ class adminproducts extends CI_Controller
         }
         $data['getSousRubriques'] = $this->Model_adminproducts->getSousRubriques();
         $data['getProRubriques'] = $this->Model_adminproducts->getProRubriques();
+        $data['getSousRubriqueP'] = $this->Model_adminproducts->getSousRubriqueP($idP);
         $data['dataC'] = $this->Model_espaceclient->getClient();
         $array['data'] =  $this->Model_adminproducts->getProductData($idP);
         $this->load->view('admin/partials/header');
@@ -202,7 +211,7 @@ class adminproducts extends CI_Controller
         $this->load->view('admin/partials/footer');
     }
 
-    public function updateProduct($idP){
+    public function updateProduct($rubid, $sousrubid, $lastId){
 
         $this->form_validation->set_rules('produit_marque', 'Produit marque', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('produit_nom', 'Produit nom', 'trim|required|min_length[3]');
@@ -218,7 +227,7 @@ class adminproducts extends CI_Controller
             redirect( 'adminproducts/index' );
         } else {
             $data = array(
-                'produit_id' => $idP,
+                'produit_id' => $lastId,
                 'produit_marque' => $this->input->post('produit_marque'),
                 'produit_nom' => $this->input->post('produit_nom'),
                 'produit_prix_HT' => $this->input->post('produit_prix_HT'),
@@ -232,7 +241,7 @@ class adminproducts extends CI_Controller
             // print_r($test);
             if ( $dataPro ) {
 
-                
+                $this->upload_image($rubid, $sousrubid, $lastId);
 
             }
             redirect('adminproducts/getProduct');

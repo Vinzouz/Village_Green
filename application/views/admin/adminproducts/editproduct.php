@@ -5,7 +5,9 @@
             <h4 class="card-title">Modifier un produit</h4>
 
             <!-- <form action="" method="post" class="forms-sample" enctype="multipart/form-data"> -->
-            <?= form_open_multipart(base_url('adminproducts/updateproduct')) ?>
+            <?php foreach ($getSousRubriqueP as $sousRubriqueP) { ?>
+            <?= form_open_multipart(base_url('adminproducts/updateproduct/' . @$sousRubriqueP->sousrub_rubrique_id . '/' . @$sousRubriqueP->produit_sousrub_id . '/' . @$sousRubriqueP->produit_id . '/product.jpg')) ?>
+            <?php } ?>
             <!-- Produit marque -->
             <div class="form-group">
                 <label for="exampleInputName1">Marque produit</label>
@@ -86,13 +88,13 @@
                     echo form_upload($data); ?>
                 </div>
             </div>
+            <?php
+            foreach ($getSousRubriqueP as $sousRubriqueP) { ?>
 
-            <!-- Produit description -->
-            <!-- <div class="form-group">
-                <label for="exampleTextarea1">Description du produit</label>
-                <textarea class="form-control" name="produit_desc" id="exampleTextarea1" rows="5"></textarea>
-            </div> -->
-
+            <section class="card-image">
+                <img src=<?= base_url('assets/images/Imagesproducts/' . @$sousRubriqueP->sousrub_rubrique_id . '/' . @$sousRubriqueP->produit_sousrub_id . '/' . @$sousRubriqueP->produit_id . '/product.jpg') ?> alt="Catégorie" style='width: 200px;height:300px;' />
+            </section>
+                <?php } ?>
             <button type="submit" class="btn btn-success mr-2">Envoyer</button>
             <button class="btn btn-light">Annuler</button>
 

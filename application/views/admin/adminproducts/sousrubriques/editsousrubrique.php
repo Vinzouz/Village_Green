@@ -4,7 +4,7 @@
             <div class="card-body">
                 <h4 class="card-title">Modifier une sous-rubrique</h4>
 
-                <form action="<?= base_url('adminsousrubriques/updatesousrubrique') ?>" method="post" class="forms-sample">
+                <?= form_open_multipart(base_url('adminsousrubriques/updateSousRubrique/'.@$data['sousrub_rubrique_id'].'/'.@$data['sousrub_id'].'')) ?>
 
                     <!-- Produit sous rubrique id -->
                     <div class="form-group">
@@ -34,10 +34,29 @@
                         <textarea class="form-control" name="sousrub_desc" id="exampleTextarea1" rows="5"><?= @$data['sousrub_desc'] ?></textarea>
                     </div>
 
+                    <section class="card-image">
+                        <img src=<?= base_url('assets/images/Imagesproducts/' . @$data['sousrub_rubrique_id'] . '/' . @$data['sousrub_id'] . '/home.jpg') ?> alt="Catégorie" style='width: 400px;height:300px;' />
+                    </section>
+
+                    <br>
+                    <!-- Produit photo -->
+                    <div class="form-group">
+                        <label>Télécharger l'image</label>
+                        <div>
+                            <?php
+                            $data = array(
+                                'name' => 'image_file',
+                                'size' => '20'
+                            );
+                            echo form_upload($data); ?>
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-success mr-2">Envoyer</button>
                     <button class="btn btn-light">Annuler</button>
 
-                </form>
+                    <?php
+                echo form_close();
+                ?>
             </div>
         </div>
     </div>

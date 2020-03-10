@@ -47,7 +47,7 @@
                         "orderable": false,
                         "searchable": false,
                         "render": function(data,type,row,meta) { // render event defines the markup of the cell text
-                            var a = '<a href="/adminproducts/editProduct/'+ data +'">Modifier</a> / <a href="/adminproducts/deleteProduct/'+ data +'">Supprimer</a>';
+                            var a = '<a href="/adminproducts/editProduct/'+ data +'">Modifier</a> / <a href="/adminproducts/deleteProduct/'+row['produit_sousrub_id']+'/'+ data +'">Supprimer</a>';
                             
                              // row object contains the row data
                             return a;

@@ -14,8 +14,16 @@ class Model_adminrubriques extends CI_Model
 
     public function addRubrique($data)
     {
-
         $this->db->insert('rubrique', $data);
+        $insert_id = $this->db->insert_id();
+        $this->db->where( 'rubrique_id', $insert_id );
+        $result = $this->db->get( 'rubrique' );
+
+        if ( $result ) {
+            return $insert_id;
+        } else {
+            return false;
+        }
     }
 
     public function deleteRubrique($idR)

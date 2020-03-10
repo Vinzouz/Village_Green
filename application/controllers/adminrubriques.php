@@ -8,6 +8,7 @@ class adminrubriques extends CI_Controller
         parent::__construct();
         $this->load->model('Model_adminrubriques');
         $this->load->model('Model_espaceclient');
+        $this->load->library('Upload');
     }
 
     public function index()
@@ -44,9 +45,14 @@ class adminrubriques extends CI_Controller
                 'rubrique_desc' => $this->input->post('rubrique_desc')
 
             );
-            $this->Model_adminrubriques->addRubrique($data);
+            $result = $this->Model_adminrubriques->addRubrique($data);
 
-            redirect('adminrubriques/getRubriques');
+            if($result > 0){
+                $this->upload_image($result);
+                redirect('adminrubriques/getRubriques');
+            }
+
+            
         }
     }
 
@@ -71,6 +77,8 @@ class adminrubriques extends CI_Controller
     public function deleteRubrique($idR){
 
         $this->Model_adminrubriques->deleteRubrique($idR);
+        unlink('assets/images/Imagesproducts/'.$idR.'/home.jpg');
+        rmdir('assets/images/Imagesproducts/'.$idR.'');
 
         redirect('adminrubriques/getRubriques');
     }
@@ -110,12 +118,63 @@ class adminrubriques extends CI_Controller
             $dataRub = $this->Model_adminrubriques->updateRubrique($data);
             // print_r($test);
             if ( $dataRub ) {
-
-                
-
+                $this->upload_image($idR);
             }
             redirect('adminrubriques/getRubriques');
         }
 
     }
+
+    function upload_image($rubid)
+    {
+
+        $path = "./assets/images/Imagesproducts/$rubid/";
+        $config['upload_path'] = $path; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+        $config['file_name'] =  "home.jpg";
+
+        $this->upload->initialize($config);
+        if (file_exists('assets/images/Imagesproducts/'.$rubid.'/home.jpg')){
+            unlink('assets/images/Imagesproducts/'.$rubid.'/home.jpg');
+        }
+        if (!empty($_FILES['image_file']['name'])) {
+            if ($this->upload->do_upload('image_file')) {
+                $gbr = $this->upload->data();
+                $this->gallery($gbr['file_name'], $path);
+            } else {
+                echo $this->upload->display_errors();
+            }
+        } else {
+            echo "image is empty or type of image not allowed";
+        }
+    }
+
+    function gallery($file_name, $path)
+    {
+
+        if (!is_dir("$path/")) {
+            mkdir("$path/");
+        }
+
+
+        $config = array(
+            array(
+                'image_library' => 'GD2',
+                'source_image'  => "$path/" . $file_name,
+                'maintain_ratio' => FALSE,
+                'new_image'     => "$path/" . $file_name
+            )
+        );
+
+
+        $this->load->library('image_lib', $config[0]);
+        foreach ($config as $item) {
+            $this->image_lib->initialize($item);
+            if (!$this->image_lib->resize()) {
+                return false;
+            }
+            $this->image_lib->clear();
+        }
+    }
+
 }

@@ -4,8 +4,7 @@
         <div class="card-body">
             <h4 class="card-title">Ajouter une rubrique</h4>
 
-            <form action="<?= base_url('adminrubriques/addrubrique') ?>" method="post" class="forms-sample">
-
+            <?= form_open_multipart(base_url('adminrubriques/addrubrique')) ?>
 
                 <!-- Produit nom -->
                 <div class="form-group">
@@ -19,10 +18,24 @@
                     <textarea class="form-control" name="rubrique_desc" id="exampleTextarea1" rows="5"></textarea>
                 </div>
 
+                <div class="form-group">
+                    <label>Télécharger l'image</label>
+                    <div>
+                        <?php
+                        $data = array(
+                            'name' => 'image_file',
+                            'size' => '20'
+                        );
+                        echo form_upload($data); ?>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-success mr-2">Envoyer</button>
                 <button class="btn btn-light">Annuler</button>
 
-            </form>
+                <?php
+                echo form_close();
+                ?>
         </div>
     </div>
 </div>

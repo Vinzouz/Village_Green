@@ -9,6 +9,7 @@ class adminsousrubriques extends CI_Controller
         $this->load->model('Model_adminsousrubriques');
         $this->load->model('Model_espaceclient');
         $this->load->model('Model_adminproducts');
+        $this->load->library('Upload');
     }
 
     public function index()
@@ -59,9 +60,12 @@ class adminsousrubriques extends CI_Controller
                 'sousrub_rubrique_id' => $this->input->post('sousrub_rubrique_id')
 
             );
-            $this->Model_adminsousrubriques->addSousRubrique($data);
+            $result = $this->Model_adminsousrubriques->addSousRubrique($data);
 
-            redirect('adminsousrubriques/getSousRubriques');
+            if($result > 0){
+                $this->upload_image($data['sousrub_rubrique_id'],$result);
+                redirect('adminsousrubriques/getSousRubriques');
+            }
         }
     }
 
@@ -83,14 +87,15 @@ class adminsousrubriques extends CI_Controller
         }
     }
 
-    public function deleteSousRubrique($idSR){
+    public function deleteSousRubrique($idR, $idSR){
 
         $this->Model_adminsousrubriques->deleteSousRubrique($idSR);
-
+        unlink('assets/images/Imagesproducts/'.$idR.'/'.$idSR.'/home.jpg');
+        rmdir('assets/images/Imagesproducts/'.$idR.'/'.$idSR.'');
         redirect('adminsousrubriques/getSousRubriques');
     }
 
-    public function F($idSR){
+    public function editSousRubrique($idSR){
 
         if ($this->session->userdata('role') != 1) {
             redirect('');
@@ -107,7 +112,7 @@ class adminsousrubriques extends CI_Controller
         $this->load->view('admin/partials/footer');
     }
 
-    public function updateSousRubrique($idSR){
+    public function updateSousRubrique($idR, $idSR){
 
         $this->form_validation->set_rules('sousrub_nom', 'Nom sous-rubrique', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('sousrub_desc', 'Description sous-rubrique', 'trim');
@@ -128,10 +133,60 @@ class adminsousrubriques extends CI_Controller
             $dataSousRub = $this->Model_adminsousrubriques->updateSousRubrique($data);
             // print_r($test);
             if ( $dataSousRub ) {
-
+                $this->upload_image($idR, $idSR);
             }
             redirect('adminsousrubriques/getSousRubriques');
         }
 
+    }
+
+    function upload_image($idR, $idSR)
+    {
+
+        $path = "./assets/images/Imagesproducts/$idR/$idSR/";
+        $config['upload_path'] = $path; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+        $config['file_name'] =  "home.jpg";
+
+        $this->upload->initialize($config);
+        if (file_exists('assets/images/Imagesproducts/'.$idR.'/'. $idSR .'/home.jpg')){
+            unlink('assets/images/Imagesproducts/'.$idR.'/'.$idSR.'/home.jpg');
+        }
+        if (!empty($_FILES['image_file']['name'])) {
+            if ($this->upload->do_upload('image_file')) {
+                $gbr = $this->upload->data();
+                $this->gallery($gbr['file_name'], $path);
+            } else {
+                echo $this->upload->display_errors();
+            }
+        } else {
+            echo "image is empty or type of image not allowed";
+        }
+    }
+
+    function gallery($file_name, $path)
+    {
+
+        if (!is_dir("$path/")) {
+            mkdir("$path/");
+        }
+
+        $config = array(
+            array(
+                'image_library' => 'GD2',
+                'source_image'  => "$path/" . $file_name,
+                'maintain_ratio' => FALSE,
+                'new_image'     => "$path/" . $file_name
+            )
+        );
+
+        $this->load->library('image_lib', $config[0]);
+        foreach ($config as $item) {
+            $this->image_lib->initialize($item);
+            if (!$this->image_lib->resize()) {
+                return false;
+            }
+            $this->image_lib->clear();
+        }
     }
 }

@@ -104,6 +104,21 @@ class Model_adminproducts extends CI_Model
 
         $this->db->where('produit_id', $idP);
         $this->db->delete('produit');
+
+        $this->db->select('*');
+        $this->db->from('sous_rubrique');
+        $this->db->join('produit', 'sous_rubrique.sousrub_id = produit.produit_sousrub_id');
+        $this->db->where('produit_id', $idP);
+        $select = $this->db->get();
+        if ($select) {
+            return $select->row_array();
+            $this->db->where('produit_id', $idP);
+            $this->db->delete('produit');
+            
+        } else {
+            return false;
+        }
+
     }
 
     public function getProductData($idP)
@@ -145,6 +160,16 @@ class Model_adminproducts extends CI_Model
         } else {
             return false;
         }
+    }
+
+    public function getSousRubriqueP($idP){
+
+        $this->db->where('produit_id', $idP);
+        $this->db->join('sous_rubrique', 'sousrub_id = produit_sousrub_id');
+        $this->db->join('rubrique', 'rubrique_id = sousrub_rubrique_id');
+        $selected = $this->db->get('produit');
+
+        return $selected->result();
     }
 
 }
