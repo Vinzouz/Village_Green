@@ -30,7 +30,7 @@
 
         <div class="general testCompte">
             <p><a href="<?= site_url('connexion/edit') ?>">Modifier les informations du compte</a></p>
-            <p><a href="#">Désactiver le compte</a></p>
+            <p><a href="">Désactiver le compte</a></p>
         </div>
 
 
@@ -63,10 +63,10 @@
             <h2>Autres</h2>
         </div>
         <div class="general autresInfos">
-            <p><a href="#">Modifier les moyens de paiement</a></p>
-            <p><a href="#">A propos de Village Green</a></p>
-            <p><a href="#">Nous contacter</a></p>
-            <p><a href="#">Foire aux Questions (FAQ)</a></p>
+            <p><a href="">Modifier les moyens de paiement</a></p>
+            <p><a href="">A propos de Village Green</a></p>
+            <p><a href="">Nous contacter</a></p>
+            <p><a href="">Foire aux Questions (FAQ)</a></p>
         </div>
 
 
