@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bellota+Text&display=swap');
 
 
 * {
@@ -178,6 +179,42 @@ a:hover {
 .nav-fostrap li:hover a {
   background: rgb(77, 77, 77);
   color: #fff !important;
+}
+
+.nav-fostrap li div.child-search{
+  background:white !important;
+  color:black !important;
+  font-size:15px !important;
+  font-family:'Bellota Text', cursive !important;
+  padding: 0px 0px !important;
+  display:block;
+}
+
+.nav-fostrap li div.child-search:hover{
+  background:rgb(219, 219, 219) !important;
+  color:black !important;
+  font-size:15px !important;
+  padding: 0px 0px !important;
+  font-family:'Bellota Text', cursive !important;
+  display:block;
+}
+
+.nav-fostrap li a.search{
+  background:white !important;
+  color:black !important;
+  font-size:15px !important;
+  font-family:'Bellota Text', cursive !important;
+  padding: 2px 4px !important;
+  display:block;
+}
+
+.nav-fostrap li a.search:hover{
+  background:rgb(219, 219, 219) !important;
+  color:black !important;
+  font-size:15px !important;
+  padding: 2px 4px !important;
+  font-family:'Bellota Text', cursive !important;
+  display:block;
 }
 
 .nav-fostrap li:first-child:hover a {
@@ -1229,6 +1266,52 @@ section.client .section-title {
   .InfoCpt h2 {
     font-size: 1.6vw;
   }
+
+  #sub-search {
+    position: absolute;
+    width: 330px;
+    background: #fff;
+    left: 11px;
+    top: 47px;
+    border-radius: 4px;
+    font-family:'Bellota Text', cursive !important;
+  }
+
+  .nav-fostrap li div.child-search{
+    background:white !important;
+    color:black !important;
+    font-size:15px !important;
+    font-family:'Bellota Text', cursive !important;
+    padding: 0px 0px !important;
+    display:block;
+  }
+  
+  .nav-fostrap li div.child-search:hover{
+    background:rgb(219, 219, 219) !important;
+    color:black !important;
+    font-size:15px !important;
+    padding: 0px 0px !important;
+    font-family:'Bellota Text', cursive !important;
+    display:block;
+  }
+  
+  .nav-fostrap li a.search{
+    background:white !important;
+    color:black !important;
+    font-size:15px !important;
+    font-family:'Bellota Text', cursive !important;
+    padding: 2px 4px !important;
+    display:block;
+  }
+  
+  .nav-fostrap li a.search:hover{
+    background:rgb(219, 219, 219) !important;
+    color:black !important;
+    font-size:15px !important;
+    padding: 2px 4px !important;
+    font-family:'Bellota Text', cursive !important;
+    display:block;
+  }
 }
 
 
@@ -1270,6 +1353,51 @@ section.client .section-title {
     font-size: 1.5rem;
   }
 
+  #sub-search {
+    position: absolute;
+    width: 277px;
+    background: #fff;
+    left: 11px;
+    top: 47px;
+    border-radius: 4px;
+    font-family:'Bellota Text', cursive !important;
+  }
+
+  .nav-fostrap li div.child-search{
+    background:white !important;
+    color:black !important;
+    font-size:15px !important;
+    font-family:'Bellota Text', cursive !important;
+    padding: 0px 0px !important;
+    display:block;
+  }
+  
+  .nav-fostrap li div.child-search:hover{
+    background:rgb(219, 219, 219) !important;
+    color:black !important;
+    font-size:15px !important;
+    padding: 0px 0px !important;
+    font-family:'Bellota Text', cursive !important;
+    display:block;
+  }
+  
+  .nav-fostrap li a.search{
+    background:white !important;
+    color:black !important;
+    font-size:15px !important;
+    font-family:'Bellota Text', cursive !important;
+    padding: 2px 4px !important;
+    display:block;
+  }
+  
+  .nav-fostrap li a.search:hover{
+    background:rgb(219, 219, 219) !important;
+    color:black !important;
+    font-size:15px !important;
+    padding: 2px 4px !important;
+    font-family:'Bellota Text', cursive !important;
+    display:block;
+  }
 }
 
 
@@ -1513,6 +1641,53 @@ section.client .section-title {
 
   .card {
     margin-bottom: 15px;
+  }
+
+  #sub-search {
+    position: absolute;
+    width: 147px;
+    background: #fff;
+    left: 11px;
+    top: 47px;
+    border-radius: 4px;
+    font-family:'Bellota Text', cursive !important;
+  }
+
+  .nav-fostrap li div.child-search{
+    background:white !important;
+    color:black !important;
+    font-size:15px !important;
+    font-family:'Bellota Text', cursive !important;
+    padding: 0px 0px !important;
+    display:block;
+  }
+  
+  .nav-fostrap li div.child-search:hover{
+    background:rgb(219, 219, 219) !important;
+    color:black !important;
+    font-size:15px !important;
+    padding: 0px 0px !important;
+    font-family:'Bellota Text', cursive !important;
+    display:block;
+  }
+  
+  .nav-fostrap li a.search{
+    background:white !important;
+    color:black !important;
+    font-size:15px !important;
+    font-family:'Bellota Text', cursive !important;
+    padding: 2px 4px !important;
+    display:block;
+    font-weight: 100 !important;
+  }
+  
+  .nav-fostrap li a.search:hover{
+    background:rgb(219, 219, 219) !important;
+    color:black !important;
+    font-size:15px !important;
+    padding: 2px 4px !important;
+    font-family:'Bellota Text', cursive !important;
+    display:block;
   }
 
 }
@@ -2420,17 +2595,14 @@ select {
 }
 
 
-#sub-search {
-  position: absolute;
-  width: 320px;
-  background: #fff;
-  left: 11px;
-  top: 47px;
-  border-radius: 4px;
-}
+
 
 .child-search {
-  color: #000;
+  color: #000 !important;
   text-align: left;
-  padding: 2px 1px 2px 7px;
+  padding: 2px 1px 2px 7px !important;
+}
+
+.sbar{
+  font-family:Arial, Helvetica, sans-serif !important;
 }
