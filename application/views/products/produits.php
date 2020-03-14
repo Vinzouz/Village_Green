@@ -15,7 +15,7 @@
           <img class="card__img-preview" src=<?= base_url('assets/images/Imagesproducts/' . @$sousRubrique->sousrub_rubrique_id . '/' . @$sousRubrique->produit_sousrub_id . '/' . @$sousRubrique->produit_id . '/product.jpg') ?> alt="Image name">
         </div>
         <div class="card__content">
-          <a href="#">
+          <a href="<?= base_url('ficheproduit/index/'.@$sousRubrique->produit_id.'') ?>">
             <h2 class="card__title"><?= @$sousRubrique->produit_nom ?></h2>
           </a>
 
@@ -33,16 +33,11 @@
 
               <button type="submit"><i class="fas fa-plus-circle"></i></button>
 
-              <select name="pro_qte" id="pro_qte">
-                <?php
-                for ($i = 1; $i < 11; $i++) {
-                  echo "<option value=" . '"' . $i . '"' . ">" . $i . "</option>";
-                }
-                ?>
-              </select>
+
               <input type="hidden" name="produit_prix_HT" value="<?= @$sousRubrique->produit_prix_HT ?>">
               <input type="hidden" name="produit_id" value="<?= @$sousRubrique->produit_id ?>">
               <input type="hidden" name="produit_nom" value="<?= @$sousRubrique->produit_nom ?>">
+              <input type="hidden" name="pro_qte" value="1">
             </div>
             <?php form_close() ?>
           </div>
