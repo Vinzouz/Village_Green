@@ -2606,3 +2606,16 @@ select {
 .sbar{
   font-family:Arial, Helvetica, sans-serif !important;
 }
+
+
+
+#tabpanier{
+  width: 65%;
+  padding: 20 0 0 15;
+}
+
+.titrepanier{
+  color: #FFF;
+  text-align: left;
+  padding: 20 0 0 15;
+}
