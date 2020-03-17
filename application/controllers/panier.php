@@ -31,30 +31,43 @@ class Panier extends CI_Controller
         if ($this->session->panier == null) // création du panier s'il n'existe pas
         {
             $this->session->panier = array();
-            $tab = array();
+            $tab = $this->session->panier;
+            $qte = $this->input->post('pro_qte');
+            array_push($data, $qte);
             //On ajoute le produit
             array_push($tab, $data); // Empile un ou plusieurs éléments à la fin d'un tableau
-            $qte = $this->input->post('pro_qte');
+
             $this->session->panier = $tab;
-            $this->session->qte = $qte;
             // var_dump($tab);
             redirect('ficheproduit/index/' . $idP . '');
         } else //si le panier existe
         {
             $tab = $this->session->panier;
-            $idProduit = $tab[0][0]->produit_id;
+            $idProduit = $this->input->post('produit_id');
             $qte = $this->input->post('pro_qte');
-            // var_dump($data);
-            foreach ($tab[0] as $produit) //on cherche si le produit existe déjà dans le panier
+            $i = 0;
+            foreach ($tab[$i] as $produit) //on cherche si le produit existe déjà dans le panier
             {
-                if ($produit->produit_id == $idProduit) {
-                    
-                    $this->session->qte = $this->session->qte + $qte;
+
+                if ($produit['produit_id'] == $idProduit) {
+                    $produit;
+                    $tab[$i][1] = $tab[$i][1] + $qte;
+                    $this->session->panier = $tab;
+                    // var_dump($tab);
                     redirect('ficheproduit/index/' . $idP . '');
                     exit;
+                } else {
+                    
+                    array_push($data, $qte);
+                    array_push($tab, $data);
+                    $this->session->panier = $tab;
+                    redirect('ficheproduit/index/' . $idP . '');
+                    // var_dump($tab);
+                    exit;
                 }
+                $i++;
             }
-            
+
             // var_dump($tab);
         }
     }
@@ -66,10 +79,10 @@ class Panier extends CI_Controller
 
         for ($i = 0; $i < count($tab); $i++) //on parcourt le tableau produit après produit
         {
-            if ($tab[$i]['produit_id'] !== $id) {
+            if ($tab[$i][0]['produit_id'] !== $id) {
                 array_push($temp, $tab[$i]);
             } else {
-                $tab[$i]['pro_qte']++;
+                $tab[$i][1]++;
                 array_push($temp, $tab[$i]);
             }
         }
@@ -88,10 +101,10 @@ class Panier extends CI_Controller
 
         for ($i = 0; $i < count($tab); $i++) //on parcourt le tableau produit après produit
         {
-            if ($tab[$i]['produit_id'] !== $id) {
+            if ($tab[$i][0]['produit_id'] !== $id) {
                 array_push($temp, $tab[$i]);
             } else {
-                $tab[$i]['pro_qte']--;
+                $tab[$i][1]--;
                 array_push($temp, $tab[$i]);
             }
         }
@@ -110,7 +123,7 @@ class Panier extends CI_Controller
 
         for ($i = 0; $i < count($tab); $i++) //on cherche dans le panier les produits à ne pas supprimer
         {
-            if ($tab[$i]['produit_id'] !== $id) {
+            if ($tab[$i][0]['produit_id'] !== $id) {
                 array_push($temp, $tab[$i]); // ces produits sont ajoutés dans le tableau temporaire
             }
         }
@@ -118,7 +131,6 @@ class Panier extends CI_Controller
         $tab = $temp;
         unset($temp);
         $this->session->panier = $tab; // le panier prend la valeur du tableau temporaire et ne contient donc plus le produit à supprimer
-        $this->session->qte--;
         $this->index();
     }
 

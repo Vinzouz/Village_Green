@@ -18,29 +18,30 @@
                 <tbody>
                     <?php
                     $total = 0;
+                    $i = 0;
                     $newtab = $this->session->panier;
-                    foreach ($newtab[0][0] as $produit) {
+                    foreach ($newtab as $produit) {
                     ?>
                         <tr>
-                            <td><?= $newtab[0][0]->produit_nom; ?></td>
-                            <td><?= str_replace('.', ',', $newtab[0][0]->produit_prix_HT); ?> <sup>€</sup></td>
+                            <td><?= $newtab[$i][0]['produit_nom']; ?></td>
+                            <td><?= str_replace('.', ',', $newtab[$i][0]['produit_prix_HT']); ?> <sup>€</sup></td>
                             <td>
                                 <div class="panier_qte">
                                     <div class="panier_qte_valeur">
-                                        <a href="<?= site_url('panier/qtemoins/' . $newtab[0][0]->produit_id); ?>" role="button"><i type="button" class="fas fa-minus-square"></i></a>
-                                        <?= $this->sessions->qte ?>
-                                        <a href="<?= site_url('panier/qteplus/' . $newtab[0][0]->produit_id); ?>" role="button"><i type="button" class="fas fa-plus-square"></i></a>
+                                        <a href="<?= site_url('panier/qtemoins/' . $newtab[$i][0]['produit_id']); ?>" role="button"><i type="button" class="fas fa-minus-square"></i></a>
+                                        <?= $newtab[$i][1] ?>
+                                        <a href="<?= site_url('panier/qteplus/' . $newtab[$i][0]['produit_id']); ?>" role="button"><i type="button" class="fas fa-plus-square"></i></a>
                                     </div>
                                 </div>
                             </td>
-                            <td><?= str_replace('.', ',', ($produit['pro_qte'] * $produit['produit_prix_HT'])); ?> <sup>€</sup></td>
+                            <td><?= str_replace('.', ',', ($newtab[$i][1] * $newtab[$i][0]['produit_prix_HT'])); ?> <sup>€</sup></td>
                             <td>
                                 <?php
-                                $total += $produit['pro_qte'] * $newtab[0][0]->produit_prix_HT; ?>
-                                <a href="<?= site_url('panier/effaceProduit/' . $newtab[0][0]->produit_id); ?>"><i class="fas fa-trash-alt"></i></a>
+                                $total += $newtab[0][1] * $newtab[$i][0]['produit_prix_HT']; ?>
+                                <a href="<?= site_url('panier/effaceProduit/' . $newtab[$i][0]['produit_id']); ?>"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
-                    <?php
+                    <?php $i++;
                     }
 
                     ?>
