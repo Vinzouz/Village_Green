@@ -37,6 +37,8 @@ class Panier extends CI_Controller
             //On ajoute le produit
             array_push($tab, $data); // Empile un ou plusieurs éléments à la fin d'un tableau
 
+            $this->session->qte = 0;
+            $this->session->qte++;
             $this->session->panier = $tab;
             // var_dump($tab);
             redirect('ficheproduit/index/' . $idP . '');
@@ -46,27 +48,27 @@ class Panier extends CI_Controller
             $idProduit = $this->input->post('produit_id');
             $qte = $this->input->post('pro_qte');
             $i = 0;
-            foreach ($tab[$i] as $produit) //on cherche si le produit existe déjà dans le panier
+            foreach ($tab as $produit) //on cherche si le produit existe déjà dans le panier
             {
+                if ($tab[$i][0]['produit_id'] == $idProduit) {
 
-                if ($produit['produit_id'] == $idProduit) {
-                    $produit;
                     $tab[$i][1] = $tab[$i][1] + $qte;
                     $this->session->panier = $tab;
                     // var_dump($tab);
+
                     redirect('ficheproduit/index/' . $idP . '');
-                    exit;
-                } else {
-                    
-                    array_push($data, $qte);
-                    array_push($tab, $data);
-                    $this->session->panier = $tab;
-                    redirect('ficheproduit/index/' . $idP . '');
-                    // var_dump($tab);
                     exit;
                 }
                 $i++;
             }
+            unset($i);
+            array_push($data, $qte);
+            array_push($tab, $data);
+            $this->session->panier = $tab;
+            $this->session->qte++;
+            redirect('ficheproduit/index/' . $idP . '');
+            // var_dump($tab);
+            exit;
 
             // var_dump($tab);
         }
