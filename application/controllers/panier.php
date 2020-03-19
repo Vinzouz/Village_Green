@@ -92,7 +92,6 @@ class Panier extends CI_Controller
         $tab = $temp;
         unset($temp);
         $this->session->panier = $tab;
-        $this->session->qte = $this->session->qte + 1;
         $this->index();
     }
 
@@ -107,14 +106,17 @@ class Panier extends CI_Controller
                 array_push($temp, $tab[$i]);
             } else {
                 $tab[$i][1]--;
-                array_push($temp, $tab[$i]);
+                if ($tab[$i][1] == 0) {
+                    $this->effaceProduit($id);
+                } else {
+                    array_push($temp, $tab[$i]);
+                }
             }
         }
 
         $tab = $temp;
         unset($temp);
         $this->session->panier = $tab;
-        $this->session->qte = $this->session->qte - 1;
         $this->index();
     }
 
@@ -132,6 +134,7 @@ class Panier extends CI_Controller
 
         $tab = $temp;
         unset($temp);
+        $this->session->qte = $this->session->qte - 1;
         $this->session->panier = $tab; // le panier prend la valeur du tableau temporaire et ne contient donc plus le produit à supprimer
         $this->index();
     }

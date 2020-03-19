@@ -68,7 +68,14 @@
                             <?php } ?>
 
                             <!-- Panier -->
-                            <li><a class="padding_ligne_one" href="<?= site_url('panier/index') ?>"><i class="fas fa-shopping-basket panier"><?php if(!empty($this->session->qte)){echo $this->session->qte; }?></i></a></li>
+                            <li><a class="padding_ligne_one" href="<?= site_url('panier/index') ?>"><i class="fas fa-shopping-basket panier"><?php if (!empty($this->session->qte)) {
+                                                                                                                                                    if ($this->session->qte > 8) {
+                                                                                                                                                        echo "8+";
+                                                                                                                                                    } else {
+                                                                                                                                                        echo $this->session->qte;
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                                ?></i></a></li>
 
                             <!-- Langue -->
                             <li class="padding_ligne_one"><a href=""><span class="flag-icon flag-icon-fr"> </span>
