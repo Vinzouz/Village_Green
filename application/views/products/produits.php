@@ -27,19 +27,9 @@
               <span class="category"><i class="fa fa-tag" aria-hidden="true"></i> <?= @$sousRubrique->sousrub_nom ?></span>
               <span class="category"><i class="fa fa-tag" aria-hidden="true"></i> <?= @$sousRubrique->produit_marque ?></span>
             </div>
-            <?php echo form_open('panier/ajoutPanier/' . $sousRubrique->sousrub_id . ''); ?>
             <div class="card__price col-3 col-12">
-              <?= @$sousRubrique->produit_prix_HT ?> €
-
-              <button type="submit"><i class="fas fa-plus-circle"></i></button>
-
-
-              <input type="hidden" name="produit_prix_HT" value="<?= @$sousRubrique->produit_prix_HT ?>">
-              <input type="hidden" name="produit_id" value="<?= @$sousRubrique->produit_id ?>">
-              <input type="hidden" name="produit_nom" value="<?= @$sousRubrique->produit_nom ?>">
-              <input type="hidden" name="pro_qte" value="1">
+              <?= @$sousRubrique->produit_prix_HT ?> €       
             </div>
-            <?php form_close() ?>
           </div>
         </div>
       </div>
