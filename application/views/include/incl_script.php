@@ -8,7 +8,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
 <script type="text/javascript">
-
     window.onload = function() {
         $(".loader").hide();
         $('.allPage').css({
@@ -19,51 +18,101 @@
 
     $(document).ready(function($) {
         $('.card-slider').slick({
-          dots: true,
-          infinite: true,
-          speed: 1000,
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 3000,
-          arrows: false,
-          responsive: [{
-             breakpoint: 1100,
-             settings: {
-                arrows: false,
-                slidesToShow: 1,
-                slidesToScroll: 1
-             }
-          }]
-      });
+            dots: true,
+            infinite: true,
+            speed: 1000,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: false,
+            responsive: [{
+                breakpoint: 1100,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
     });
 </script>
 <script>
     $(document).ready(function() {
-    var sub_search = $('#sub-search');
-    $('#searchbox').keyup(function() {
-        var search_value = $('#searchbox').val();
-        //alert(search_value);
-        if (search_value != "") {
+        var sub_search = $('#sub-search');
+        $('#searchbox').keyup(function() {
+            var search_value = $('#searchbox').val();
+            //alert(search_value);
+            if (search_value != "") {
+                $.ajax({
+                    url: "<?= base_url('search/get_search') ?>",
+                    data: {
+                        search_value: search_value
+                    },
+                    method: 'post',
+                    dataType: 'json',
+                    success: function(data) {
+                        //console.log(data);
+                        sub_search.html('');
+                        $.each(data, function(index, value) {
+                            var child_search = '<div class="child-search"><a class="search" href="">' + value['produit_marque'] + ' ' + value['produit_nom'] + '</a></div>';
+                            sub_search.append(child_search);
+                        });
+                    }
+                })
+            } else {
+                sub_search.html('');
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#ajoutP').click(function() {
+            var pro_id = $('#pro_id').val();
+            var pro_qte = $('#pro_qte').val();
             $.ajax({
-                url: "<?= base_url('search/get_search') ?>",
+                url: "<?= base_url('panier/ajoutPanier/') ?>",
                 data: {
-                    search_value: search_value
+                    pro_qte: pro_qte,
+                    pro_id: pro_id
                 },
                 method: 'post',
                 dataType: 'json',
-                success: function(data) {
-                    //console.log(data);
-                    sub_search.html('');
-                    $.each(data, function(index, value) {
-                        var child_search = '<div class="child-search"><a class="search" href="">' + value['produit_marque'] +' '+ value['produit_nom'] + '</a></div>';
-                        sub_search.append(child_search);
-                    });
+            })
+            $.ajax({
+                url: "<?= base_url('panier/verifPanier') ?>",
+                method: 'post',
+                dataType: 'json',
+                success: function(value) {
+                    var qtepanier = $('#qtepanier');
+                    qtepanier.html('');
+                    var qte = value;
+                    qtepanier.append(qte);
                 }
             })
-        }else{
-            sub_search.html('');  
-        }
+
+        });
     });
-});</script>
+</script>
+
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "<?= base_url('panier/verifPanier') ?>",
+            method: 'post',
+            dataType: 'json',
+            success: function(value) {
+                var qtepanier = $('#qtepanier');
+                qtepanier.html('');
+                var qte = value;
+                qtepanier.append(qte);
+            }
+        })
+    });
+</script>
+
+
+
 </div>

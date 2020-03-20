@@ -21,12 +21,10 @@ class Panier extends CI_Controller
         $this->load->view('include/incl_script');
     }
 
-    public function ajoutPanier($idP) //ajoute un produit au panier
+    public function ajoutPanier() //ajoute un produit au panier
     {
+        $idP = $this->input->post('pro_id');
         $data = $this->Model_panier->getinfosproduit($idP);
-
-        // echo $data[1][0]->produit_nom;
-        // var_dump($data);
 
         if ($this->session->panier == null) // création du panier s'il n'existe pas
         {
@@ -36,27 +34,21 @@ class Panier extends CI_Controller
             array_push($data, $qte);
             //On ajoute le produit
             array_push($tab, $data); // Empile un ou plusieurs éléments à la fin d'un tableau
-
             $this->session->qte = 0;
             $this->session->qte++;
             $this->session->panier = $tab;
-            // var_dump($tab);
-            redirect('ficheproduit/index/' . $idP . '');
+
         } else //si le panier existe
         {
             $tab = $this->session->panier;
-            $idProduit = $this->input->post('produit_id');
+            $idProduit = $idP;
             $qte = $this->input->post('pro_qte');
             $i = 0;
             foreach ($tab as $produit) //on cherche si le produit existe déjà dans le panier
             {
                 if ($tab[$i][0]['produit_id'] == $idProduit) {
-
                     $tab[$i][1] = $tab[$i][1] + $qte;
                     $this->session->panier = $tab;
-                    // var_dump($tab);
-
-                    redirect('ficheproduit/index/' . $idP . '');
                     exit;
                 }
                 $i++;
@@ -66,11 +58,7 @@ class Panier extends CI_Controller
             array_push($tab, $data);
             $this->session->panier = $tab;
             $this->session->qte++;
-            redirect('ficheproduit/index/' . $idP . '');
-            // var_dump($tab);
             exit;
-
-            // var_dump($tab);
         }
     }
 
@@ -120,14 +108,15 @@ class Panier extends CI_Controller
         $this->index();
     }
 
-    public function effaceProduit($id)
+    public function effaceProduit()
     {
+        $idP = $this->input->post('idP');
         $tab = $this->session->panier;
         $temp = array(); //création d'un tableau temporaire vide
 
         for ($i = 0; $i < count($tab); $i++) //on cherche dans le panier les produits à ne pas supprimer
         {
-            if ($tab[$i][0]['produit_id'] !== $id) {
+            if ($tab[$i][0]['produit_id'] !== $idP) {
                 array_push($temp, $tab[$i]); // ces produits sont ajoutés dans le tableau temporaire
             }
         }
@@ -144,5 +133,26 @@ class Panier extends CI_Controller
         $_SESSION['panier'] = array();
         $_SESSION['qte'] = array();
         redirect('panier/index');
+    }
+
+    public function verifPanier(){
+        
+        $qte = $this->session->qte;
+        if($qte != null){
+            echo json_encode($qte);
+        }
+    }
+
+    public function vuePanier(){
+        
+        $newtab = $this->session->panier;
+
+        if($newtab != null){
+            
+            echo json_encode($newtab);
+            return $newtab;
+            
+        }
+
     }
 }
