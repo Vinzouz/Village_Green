@@ -81,6 +81,7 @@ class Panier extends CI_Controller
         unset($temp);
         $this->session->panier = $tab;
         $this->index();
+        redirect('panier/index'); // Permet la redirection automatique lors du clique sur le bouton +
     }
 
     public function qtemoins($id)
@@ -106,6 +107,7 @@ class Panier extends CI_Controller
         unset($temp);
         $this->session->panier = $tab;
         $this->index();
+        redirect('panier/index'); // Permet la redirection automatique lors du clique sur le bouton -
     }
 
     public function effaceProduit()
@@ -126,6 +128,8 @@ class Panier extends CI_Controller
         $this->session->qte = $this->session->qte - 1;
         $this->session->panier = $tab; // le panier prend la valeur du tableau temporaire et ne contient donc plus le produit à supprimer
         $this->index();
+        redirect('panier/index'); // Permet la redirection automatique lors du clique sur le bouton supprimer.
+        
     }
 
     public function effacePanier()
