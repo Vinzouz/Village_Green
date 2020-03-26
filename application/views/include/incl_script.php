@@ -68,7 +68,7 @@
 </script>
 
 <script>
-    $(document).ready(function() {
+        var qtepanier = $('#qtepanier');
         $('#ajoutP').click(function() {
             var pro_id = $('#pro_id').val();
             var pro_qte = $('#pro_qte').val();
@@ -86,31 +86,28 @@
                 method: 'post',
                 dataType: 'json',
                 success: function(value) {
-                    var qtepanier = $('#qtepanier');
+
                     qtepanier.html('');
                     var qte = value;
                     qtepanier.append(qte);
                 }
             })
-
         });
-    });
 </script>
 
 <script>
-    $(document).ready(function() {
+        var qtepanier = $('#qtepanier');
         $.ajax({
             url: "<?= base_url('panier/verifPanier') ?>",
             method: 'post',
             dataType: 'json',
             success: function(value) {
-                var qtepanier = $('#qtepanier');
+
                 qtepanier.html('');
                 var qte = value;
                 qtepanier.append(qte);
             }
         })
-    });
 </script>
 
 

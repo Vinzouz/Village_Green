@@ -1,8 +1,10 @@
 <div class="container">
 
-    <?php $Panier = $_SESSION["panier"]; // Permet au foreach d'être initialisé
-    $prixtotfinal = 0; // Initialisation de la variable hors du tableau pour éviter une boucle de reset et pouvoir afficher 0 en cas de panier vide. ?>
-
+    <?php if(isset($_SESSION["panier"])){
+    $Panier = $_SESSION["panier"]; // Permet au foreach d'être initialisé
+    $prixtotfinal = 0; // Initialisation de la variable hors du tableau pour éviter une boucle de reset et pouvoir afficher 0 en cas de panier vide. 
+    }
+    ?>
     <p>
         <h2 class="titrepanier">Votre panier :</h2>
     </p>

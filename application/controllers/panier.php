@@ -147,16 +147,4 @@ class Panier extends CI_Controller
         }
     }
 
-    public function vuePanier(){
-        
-        $newtab = $this->session->panier;
-
-        if($newtab != null){
-            
-            echo json_encode($newtab);
-            return $newtab;
-            
-        }
-
-    }
 }
