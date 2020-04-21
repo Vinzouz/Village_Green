@@ -25,4 +25,18 @@ public function espaceC()
                 $this->load->view('include/incl_script');
                 }
         }
-    }
+
+public function detailsCommande($idcommande){
+
+    $array['dataC'] = $this->Model_espaceclient->getClient();
+    $array['dataCommande'] = $this->Model_espaceclient->getCommande($idcommande);
+    $data['getRubriques'] = $this->Model_home->getRubriques();
+    $this->load->view('include/incl_loader');
+    $this->load->view('include/incl_navbar', $data);
+    $this->load->view('include/incl_head');
+    $this->load->view('incl_detailscommande', $array);
+    $this->load->view('include/incl_footer');
+    $this->load->view('include/incl_script');
+}
+
+}

@@ -9,7 +9,7 @@ class Model_espaceclient extends CI_Model
 
         if ($user_id > 0) {
 
-            $this->db->select('*');
+            $this->db->select('client_id, client_nom, client_prenom, client_adresse, client_ville, client_codepo, client_telephone, client_mail, client_type, client_siret, client_role_id, client_commerciaux_id');
             $this->db->from('clients');
             $this->db->where('client_id', $user_id);
             $select = $this->db->get();
@@ -40,6 +40,18 @@ class Model_espaceclient extends CI_Model
          else {
             return false;
         }
+    }
+
+    public function getCommande($idcommande){
+
+        $this->db->select('*');
+        $this->db->from('secomposede');
+        $this->db->join('commande', 'secomposede.secomposede_commande_id = commande.commande_id');
+        $this->db->where('commande_id', $idcommande);
+        $select = $this->db->get();
+
+        return $select->result();
+
     }
 }
 

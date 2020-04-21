@@ -55,7 +55,7 @@
                         //console.log(data);
                         sub_search.html('');
                         $.each(data, function(index, value) {
-                            var child_search = '<div class="child-search"><a class="search" href="">' + value['produit_marque'] + ' ' + value['produit_nom'] + '</a></div>';
+                            var child_search = '<div class="child-search"><a class="search" href="<?= base_url('ficheproduit/index/') ?>'+value['produit_id']+'">' + value['produit_marque'] + ' ' + value['produit_nom'] + '</a></div>';
                             sub_search.append(child_search);
                         });
                     }

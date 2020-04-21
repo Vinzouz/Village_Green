@@ -199,6 +199,20 @@
           </div>
         </li>
         <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <i class="menu-icon typcn typcn-coffee"></i>
+            <span class="menu-title">Gestion commandes</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admincommandes/index') ?>">Commandes</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
             <i class="menu-icon typcn typcn-document-add"></i>
             <span class="menu-title">Pages utilisateurs</span>

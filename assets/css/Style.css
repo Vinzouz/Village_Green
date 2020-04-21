@@ -2595,7 +2595,7 @@ select {
 }
 
 
-
+/* PANIER / COMMANDE */
 
 .child-search {
   color: #000 !important;
@@ -2608,14 +2608,52 @@ select {
 }
 
 
-
 #tabpanier{
   width: 65%;
   padding: 20 0 0 15;
 }
 
-.titrepanier{
+.titrepanier, .titretotalapayer{
   color: #FFF;
   text-align: left;
   padding: 20 0 0 15;
+}
+
+#tabpaniersecond{
+  width: 65%;
+  padding: 20 0 0 15;
+}
+
+#taxtabpanier{
+  width: 30%;
+  padding: 0 0 0 15;
+  margin-left:525px;
+}
+
+#lignetabpanier{
+  margin-bottom:-17px;
+}
+
+#fraispanier{
+  background:lightgrey;
+  width:58%;
+}
+
+#infoslivraison{
+  width: 40%;
+  background:lightgrey;
+  margin-bottom:15px;
+}
+
+#Choixlivraison{
+  height:35px !important;
+}
+
+#ligne1infoslivraison, #ligne2infoslivraison, #ligne3infoslivraison, #ligne4infoslivraison, #ligne5infoslivraison, #ligne6infoslivraison{
+  color:black !important;
+  text-shadow:0 0 0 !important;
+}
+
+#buttonComm{
+  width:20%;
 }

@@ -14,10 +14,10 @@ class adminsousrubriques extends CI_Controller
 
     public function index()
     {
-
         $data['dataC'] = $this->Model_espaceclient->getClient();
         $data['getProRubriques'] = $this->Model_adminproducts->getProRubriques();
-        if ($this->session->userdata('role') == 1) {
+
+        if ($data['dataC'][0]->client_role_id == 1 && $data['dataC'][0]->client_id === "101" || $data['dataC'][0]->client_id === "102" || $data['dataC'][0]->client_id === "103") {
 
             $this->load->view('admin/partials/header');
 
@@ -29,53 +29,12 @@ class adminsousrubriques extends CI_Controller
         }
     }
 
-    public function listeSousrub(){
-                // POST data
-                $postData = $this->input->post();
-
-                // Get data
-                $data = $this->Model_adminsousrubriques->getSousrub($postData);
-        
-                echo json_encode($data);
-    }
-
-
-    public function addSousRubrique()
-    {
-
-        //print_r($_POST);
-
-        $this->form_validation->set_rules('sousrub_nom', 'Nom sous-rubrique', 'trim|required|min_length[3]');
-        $this->form_validation->set_rules('sousrub_desc', 'Description sous-rubrique', 'trim');
-        $this->form_validation->set_rules('sousrub_rubrique_id', 'Produit sous rubrique', 'trim|required');
-
-        if ($this->form_validation->run() == FALSE) {
-            $data = array('errors' => validation_errors());
-            $this->session->set_flashdata($data);
-            redirect('adminsousrubriques/index');
-        } else {
-            $data = array(
-                'sousrub_nom' => $this->input->post('sousrub_nom'),
-                'sousrub_desc' => $this->input->post('sousrub_desc'),
-                'sousrub_rubrique_id' => $this->input->post('sousrub_rubrique_id')
-
-            );
-            $result = $this->Model_adminsousrubriques->addSousRubrique($data);
-
-            if($result > 0){
-                $this->upload_image($data['sousrub_rubrique_id'],$result);
-                redirect('adminsousrubriques/getSousRubriques');
-            }
-        }
-    }
-
-
     public function getSousRubriques()
     {
         $data['getProRubriques'] = $this->Model_adminproducts->getProRubriques();
         $data['sousrubriques'] = $this->Model_adminsousrubriques->getSousRubriques();
         $data['dataC'] = $this->Model_espaceclient->getClient();
-        if ($this->session->userdata('role') == 1) {
+        if ($data['dataC'][0]->client_role_id == 1 && $data['dataC'][0]->client_id === "101" || $data['dataC'][0]->client_id === "102" || $data['dataC'][0]->client_id === "103") {
 
             $this->load->view('admin/partials/header');
 
@@ -87,41 +46,85 @@ class adminsousrubriques extends CI_Controller
         }
     }
 
-    public function deleteSousRubrique($idR, $idSR){
+    public function listeSousrub()
+    {
+        // POST data
+        $postData = $this->input->post();
+        // Get data
+        $data = $this->Model_adminsousrubriques->getSousrub($postData);
+
+        echo json_encode($data);
+    }
+
+
+    public function addSousRubrique()
+    {
+        $data['dataC'] = $this->Model_espaceclient->getClient();
+
+        if ($data['dataC'][0]->client_role_id == 1 && $data['dataC'][0]->client_id === "101" || $data['dataC'][0]->client_id === "102" || $data['dataC'][0]->client_id === "103") {
+            $this->form_validation->set_rules('sousrub_nom', 'Nom sous-rubrique', 'trim|required|min_length[3]');
+            $this->form_validation->set_rules('sousrub_desc', 'Description sous-rubrique', 'trim');
+            $this->form_validation->set_rules('sousrub_rubrique_id', 'Produit sous rubrique', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $data = array('errors' => validation_errors());
+                $this->session->set_flashdata($data);
+                redirect('adminsousrubriques/index');
+            } else {
+                $data = array(
+                    'sousrub_nom' => $this->input->post('sousrub_nom'),
+                    'sousrub_desc' => $this->input->post('sousrub_desc'),
+                    'sousrub_rubrique_id' => $this->input->post('sousrub_rubrique_id')
+
+                );
+                $result = $this->Model_adminsousrubriques->addSousRubrique($data);
+
+                if ($result > 0) {
+                    $this->upload_image($data['sousrub_rubrique_id'], $result);
+                    redirect('adminsousrubriques/getSousRubriques');
+                }
+            }
+        }
+    }
+
+
+    public function deleteSousRubrique($idR, $idSR)
+    {
 
         $this->Model_adminsousrubriques->deleteSousRubrique($idSR);
-        unlink('assets/images/Imagesproducts/'.$idR.'/'.$idSR.'/home.jpg');
-        rmdir('assets/images/Imagesproducts/'.$idR.'/'.$idSR.'');
+        unlink('assets/images/Imagesproducts/' . $idR . '/' . $idSR . '/home.jpg');
+        rmdir('assets/images/Imagesproducts/' . $idR . '/' . $idSR . '');
         redirect('adminsousrubriques/getSousRubriques');
     }
 
-    public function editSousRubrique($idSR){
-
-        if ($this->session->userdata('role') != 1) {
-            redirect('');
-        }
-        $array['getProRubriques'] = $this->Model_adminproducts->getProRubriques();
+    public function editSousRubrique($idSR)
+    {
         $data['dataC'] = $this->Model_espaceclient->getClient();
+        $array['getProRubriques'] = $this->Model_adminproducts->getProRubriques();
         $array['data'] =  $this->Model_adminsousrubriques->getSousRubriqueData($idSR);
-        $this->load->view('admin/partials/header');
+        
+        if ($data['dataC'][0]->client_role_id == 1 && $data['dataC'][0]->client_id === "101" || $data['dataC'][0]->client_id === "102" || $data['dataC'][0]->client_id === "103") {
+            $this->load->view('admin/partials/header');
 
-        $this->load->view('admin/partials/navbar', $data);
+            $this->load->view('admin/partials/navbar', $data);
 
-        $this->load->view('admin/adminproducts/sousrubriques/editsousrubrique', $array);
+            $this->load->view('admin/adminproducts/sousrubriques/editsousrubrique', $array);
 
-        $this->load->view('admin/partials/footer');
+            $this->load->view('admin/partials/footer');
+        }
     }
 
-    public function updateSousRubrique($idR, $idSR){
+    public function updateSousRubrique($idR, $idSR)
+    {
 
         $this->form_validation->set_rules('sousrub_nom', 'Nom sous-rubrique', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('sousrub_desc', 'Description sous-rubrique', 'trim');
         $this->form_validation->set_rules('sousrub_rubrique_id', 'Produit sous rubrique', 'trim|required');
 
-        if ( $this->form_validation->run() == FALSE ) {
-            $data = array( 'errors' => validation_errors() );
-            $this->session->set_flashdata( $data );
-            redirect( 'adminsousrubriques/index' );
+        if ($this->form_validation->run() == FALSE) {
+            $data = array('errors' => validation_errors());
+            $this->session->set_flashdata($data);
+            redirect('adminsousrubriques/index');
         } else {
             $data = array(
                 'sousrub_id' => $idSR,
@@ -132,12 +135,11 @@ class adminsousrubriques extends CI_Controller
 
             $dataSousRub = $this->Model_adminsousrubriques->updateSousRubrique($data);
             // print_r($test);
-            if ( $dataSousRub ) {
+            if ($dataSousRub) {
                 $this->upload_image($idR, $idSR);
             }
             redirect('adminsousrubriques/getSousRubriques');
         }
-
     }
 
     function upload_image($idR, $idSR)
@@ -149,8 +151,8 @@ class adminsousrubriques extends CI_Controller
         $config['file_name'] =  "home.jpg";
 
         $this->upload->initialize($config);
-        if (file_exists('assets/images/Imagesproducts/'.$idR.'/'. $idSR .'/home.jpg')){
-            unlink('assets/images/Imagesproducts/'.$idR.'/'.$idSR.'/home.jpg');
+        if (file_exists('assets/images/Imagesproducts/' . $idR . '/' . $idSR . '/home.jpg')) {
+            unlink('assets/images/Imagesproducts/' . $idR . '/' . $idSR . '/home.jpg');
         }
         if (!empty($_FILES['image_file']['name'])) {
             if ($this->upload->do_upload('image_file')) {

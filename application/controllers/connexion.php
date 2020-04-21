@@ -40,7 +40,7 @@ class connexion extends CI_Controller
             array(
                 "required"      => "Le mot de passe n'est pas rempli",
                 "min_length"     => "Le mot de passe est trop court",
-                "trim"  => "Des espaces dans l'email sont présents"
+                "trim"  => "Des espaces dans le mot de passe sont présents"
             )
         );
 

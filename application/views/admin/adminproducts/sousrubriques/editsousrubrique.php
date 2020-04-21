@@ -13,7 +13,7 @@
                             <?php foreach ($getProRubriques->result() as $rubrique) {
                                 if ($rubrique->rubrique_id == $data['sousrub_rubrique_id']) { ?>
                                     <option selected="selected" value="<?= @$data['sousrub_rubrique_id'] ?>"> <?= $rubrique->rubrique_nom ?></option>
-                                <?php } else { ?> ?>
+                                <?php } else { ?>
 
                                     <option value="<?= $rubrique->rubrique_id ?>"> <?= $rubrique->rubrique_nom ?></option>
 
