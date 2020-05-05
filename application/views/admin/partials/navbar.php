@@ -2,7 +2,7 @@
   <!-- partial:partials/_navbar.html -->
   <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-      <a class="navbar-brand brand-logo" href="index.html">
+      <a class="navbar-brand brand-logo" href="<?= base_url() ?>admin">
         <img src="<?= base_url() ?>assets/admin/assets/images/logo.svg" alt="logo" /> </a>
       <a class="navbar-brand brand-logo-mini" href="index.html">
         <img src="<?= base_url() ?>assets/admin/assets/images/logo-mini.svg" alt="logo" /> </a>
@@ -131,7 +131,7 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item nav-profile">
-          <a href="#" class="nav-link">
+          <a href="" class="nav-link">
             <div class="profile-image">
               
               <img class="img-xs rounded-circle" src="<?= base_url() ?>assets/admin/assets/images/faces/<?= $Userid ?>/profilpic.jpg" alt="profile image">
@@ -145,7 +145,7 @@
             </div>
           </a>
         </li>
-        <li class="nav-item nav-category">Menu principal</li>
+        <li class="nav-item nav-category" id="retourmenu"><a id="lienretour2" href="<?= base_url('') ?>admin">Menu principal</a></li>
         <li class="nav-item nav-category" id="retouraccueil"> <a id="lienretour" href="<?= base_url('') ?>">Retour page d'accueil</a></li>
         <li class="nav-item">
           <a class="nav-link" href="index.html">
