@@ -13,6 +13,7 @@ class Ficheproduit extends CI_Controller
     public function index($idP)
     {
 
+        $array['jointureSousrubRub'] = $this->Model_panier->jointureSousrubRub($idP);
         $array['getdataProduit'] = $this->Model_panier->getinfosproduit($idP);
         $data['getRubriques'] = $this->Model_home->getRubriques();
         $this->load->view( 'include/incl_loader' );
