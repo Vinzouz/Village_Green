@@ -69,4 +69,14 @@ class Model_panier extends CI_Model
         return $select->result_array();
 
     }
+
+    public function jointureSousrubRub($idP){
+        $this->db->select('produit.produit_id, sous_rubrique.sousrub_id, rubrique.rubrique_id');
+        $this->db->from('produit');
+        $this->db->join('sous_rubrique', 'sousrub_id = produit_sousrub_id');
+        $this->db->join('rubrique', 'rubrique_id = sousrub_rubrique_id');
+        $this->db->where('produit_id', $idP );
+        $select = $this->db->get();
+        return $select->result_array();
+    }
 }
