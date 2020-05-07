@@ -3,47 +3,45 @@
 class Model_adminclients extends CI_Model
 {
 
-    public function getUsers()
+    public function getUsers() // Fonction appelée dans la fonction index du controller adminclients
     {
-
-        $select = $this->db->get('clients');
-
+        $select = $this->db->get('clients'); // Récupération et envoie de la table entière des clients dans la variable $select 
         return $select;
     }
 
-    function getClients($postData = null)
-    {
+    function getClients($postData = null) // Fonction appelée dans la fonction listeClients dans le controller adminclients
+    { // Fonction utilisée par le script jQuery
 
-        $response = array();
+        $response = array(); // Création d'un tableau vide
 
-        ## Read value
+        // Données d'affichage
         $draw = $postData['draw'];
         $start = $postData['start'];
-        $rowperpage = $postData['length']; // Rows display per page
-        $columnIndex = $postData['order'][0]['column']; // Column index
-        $columnName = $postData['columns'][$columnIndex]['data']; // Column name
-        $columnSortOrder = $postData['order'][0]['dir']; // asc or desc
-        $searchValue = $postData['search']['value']; // Search value
+        $rowperpage = $postData['length']; // Affichage de lignes par pages
+        $columnIndex = $postData['order'][0]['column']; // Index des colonnes
+        $columnName = $postData['columns'][$columnIndex]['data']; // Nom des colonnes
+        $columnSortOrder = $postData['order'][0]['dir']; // Dans l'ordre ou désordre
+        $searchValue = $postData['search']['value']; // Valeur cherchée
 
-        ## Search 
+        // Recherche possible par nom, prénom ou ville
         $searchQuery = "";
         if ($searchValue != '') {
             $searchQuery = " (client_nom like '%" . $searchValue . "%' or client_prenom like '%" . $searchValue . "%' or client_ville like'%" . $searchValue . "%' ) ";
         }
 
-        ## Total number of records without filtering
+        // Nombre total d'enregistrements sans filtrage
         $this->db->select('count(*) as allcount');
         $records = $this->db->get('clients')->result();
         $totalRecords = $records[0]->allcount;
 
-        ## Total number of record with filtering
+        // Nombre total d'enregistrements avec filtrage
         $this->db->select('count(*) as allcount');
         if ($searchQuery != '')
             $this->db->where($searchQuery);
         $records = $this->db->get('clients')->result();
         $totalRecordwithFilter = $records[0]->allcount;
 
-        ## Fetch records
+        // Récupération des enregistrements dans le tableau
         $this->db->select('*');
         if ($searchQuery != '')
             $this->db->where($searchQuery);
@@ -52,7 +50,7 @@ class Model_adminclients extends CI_Model
         $records = $this->db->get('clients')->result();
 
         $data = array();
-
+        // Création d'un tableau vide et rentrée de toutes les données des clients
         foreach ($records as $record) {
             $data[] = array(
                 "client_id" => $record->client_id,
@@ -72,7 +70,7 @@ class Model_adminclients extends CI_Model
             );
         }
 
-        ## Response
+        // Réponse initialisée selon la recherche et renvoyée
         $response = array(
             "draw" => intval($draw),
             "iTotalRecords" => $totalRecords,
@@ -83,12 +81,9 @@ class Model_adminclients extends CI_Model
         return $response;
     }
 
-
-
-    public function deleteClient($id)
+    public function deleteClient($id) // Fonction appelée dans la fonction deleteClient du controller adminclients
     {
-
-        $this->db->where('client_id', $id);
+        $this->db->where('client_id', $id); // Sélection du client selon l'id et suppression en BDD
         $this->db->delete('clients');
     }
 }

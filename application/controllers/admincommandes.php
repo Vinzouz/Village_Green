@@ -168,7 +168,7 @@ class admincommandes extends CI_Controller
                             $compolivraison = $this->Model_admincommandes->getCompolivraison($dataCommande['commande_id']);
                             // Appel de la fonction getCompolivraison du modèle admincommandes en passant en paramètre l'id de la commande
                             // Et qui renvoie ce que contient la commande dans la variable $compolivraison 
-
+                            // print_r($compolivraison);
                             $contenulivraison = array( // Affectation des différents résultats aux champs présents en BDD
                                 "contient_livraison_id" => $idlivraisonCommande,
                                 $compolivraison
