@@ -3,47 +3,45 @@
 class Model_admincommandes extends CI_Model
 {
 
-    public function getCommandes()
+    public function getCommandes() // Fonction appelée dans la fonction index du controller admincommandes
     {
-
-        $select = $this->db->get('commande');
-
+        $select = $this->db->get('commande'); // // Récupération et envoie de la table entière des commandes dans la variable $select
         return $select;
     }
 
-    function getCommande($postData = null)
-    {
+    function getCommande($postData = null) // Fonction appelée dans la fonction listeCommandes dans le controller admincommandes
+    { // Fonction utilisée par le script jQuery
 
-        $response = array();
+        $response = array(); // Création d'un tableau vide
 
-        ## Read value
+        // Données d'affichage
         $draw = $postData['draw'];
         $start = $postData['start'];
-        $rowperpage = $postData['length']; // Rows display per page
-        $columnIndex = $postData['order'][0]['column']; // Column index
-        $columnName = $postData['columns'][$columnIndex]['data']; // Column name
-        $columnSortOrder = $postData['order'][0]['dir']; // asc or desc
-        $searchValue = $postData['search']['value']; // Search value
+        $rowperpage = $postData['length']; // Affichage de lignes par pages
+        $columnIndex = $postData['order'][0]['column']; // Index des colonnes
+        $columnName = $postData['columns'][$columnIndex]['data']; // Nom des colonnes
+        $columnSortOrder = $postData['order'][0]['dir']; // Dans l'ordre ou désordre
+        $searchValue = $postData['search']['value']; // Valeur cherchée
 
-        ## Search 
+        // Recherche possible état de commande ou id de commande
         $searchQuery = "";
         if ($searchValue != '') {
             $searchQuery = " (commande_etat like '%" . $searchValue . "%' or commande_id like '%" . $searchValue . "%' ) ";
         }
 
-        ## Total number of records without filtering
+        // Nombre total d'enregistrements sans filtrage
         $this->db->select('count(*) as allcount');
         $records = $this->db->get('commande')->result();
         $totalRecords = $records[0]->allcount;
 
-        ## Total number of record with filtering
+        // Nombre total d'enregistrements avec filtrage
         $this->db->select('count(*) as allcount');
         if ($searchQuery != '')
             $this->db->where($searchQuery);
         $records = $this->db->get('commande')->result();
         $totalRecordwithFilter = $records[0]->allcount;
 
-        ## Fetch records
+        // Récupération des enregistrements dans le tableau
         $this->db->select('*');
         if ($searchQuery != '')
             $this->db->where($searchQuery);
@@ -52,7 +50,7 @@ class Model_admincommandes extends CI_Model
         $records = $this->db->get('commande')->result();
 
         $data = array();
-
+        // Création d'un tableau vide et rentrée de toutes les données des commandes
         foreach ($records as $record) {
             $data[] = array(
                 "commande_id" => $record->commande_id,
@@ -72,7 +70,7 @@ class Model_admincommandes extends CI_Model
             );
         }
 
-        ## Response
+        // Réponse initialisée selon la recherche et renvoyée
         $response = array(
             "draw" => intval($draw),
             "iTotalRecords" => $totalRecords,
@@ -83,92 +81,97 @@ class Model_admincommandes extends CI_Model
         return $response;
     }
 
-    public function deleteCommande($id)
+    public function deleteCommande($id) // Fonction appelée dans la fonction deleteCommande du controller admincommandes
     {
-
-        $this->db->where('commande_id', $id);
+        $this->db->where('commande_id', $id); // Sélection de la commande selon l'id et suppression en BDD
         $this->db->delete('commande');
     }
 
-    public function getCommandeData($id)
+    public function getCommandeData($id) // Fonction appelée dans la fonction editCommande du controller admincommandes
     {
+        // Sélection des données de la commande pour l'affichage dans le formulaire d'édition
+        if ($id > 0) { // Si l'id de la commande est correct
 
-        if ($id > 0) {
-
-            $this->db->where('commande_id', $id);
-            $result = $this->db->get('commande');
+            $this->db->where('commande_id', $id); // Sélection de la commande selon l'id de la commande
+            $result = $this->db->get('commande'); // Affectation de la réponse et renvoie
 
             return $result->row_array();
-        } else {
+        } else { // Si aucune commande, renvoie false
             return false;
         }
     }
 
-    public function updateCommande($data)
+    public function updateCommande($data) // Fonction appelée dans la fonction updateCommande du controller admincommandes
     {
-
+        // Réception des données du formulaire pour update en BDD
         $id = $data['commande_id'];
 
-        $this->db->where('commande_id', $id);
+        $this->db->where('commande_id', $id); // Sélection de la commande selon son id
 
-        $select = $this->db->get('commande');
+        $select = $this->db->get('commande'); // Affectation de la réponse à la variable
 
-        $selectCommande = $select->row_array();
+        $selectCommande = $select->row_array(); // Mise en tableau de la réponse
 
-        if ($selectCommande) {
+        if ($selectCommande) { // Si commande trouvée
 
-            $this->db->set($data);
-            $this->db->where('commande_id', $id);
-            $this->db->update('commande');
-            return $selectCommande;
-        } else {
+            $this->db->set($data); // Définit les valeurs d'update
+            $this->db->where('commande_id', $id); // Sélection de la commande à update
+            $this->db->update('commande'); // Update
+            return $selectCommande; // Renvoie de la ligne 
+        } else { // Si aucune commande trouvée renvoie false
             return false;
         }
     }
 
-    public function insertLivraison($datalivraisonC)
+    public function insertLivraison($datalivraisonC) // Fonction appelée dans la fonction updateCommande du controller admincommandes
     {
+        // Réception des données de la livraison si celle-ci est passé à 'En cours de livraison'
+        $this->db->insert('livraison', $datalivraisonC); // Insertion des données dans la table livraison
+        $insert_id = $this->db->insert_id(); // Récupération de l'id de la livraison venant d'être insérée
+        $this->db->where('livraison_id', $insert_id); // Sélection de la ligne insérée
+        $result = $this->db->get('livraison'); // Affectation de la réponse à la variable
 
-        $this->db->insert('livraison', $datalivraisonC);
-        $insert_id = $this->db->insert_id();
-        $this->db->where('livraison_id', $insert_id);
-        $result = $this->db->get('livraison');
-
-        if ($result) {
-            return $insert_id;
-        } else {
-            return false;
+        if ($result) { // Si l'ajout a été fait
+            return $insert_id; // Envoie de l'id insérée
+        } else { // Si aucun ajout
+            return false; // Envoie de false
         }
     }
 
-    public function getCompolivraison($id){
+    public function getCompolivraison($id){ // Fonction appelée dans la fonction updateCommande du controller admincommandes
+        // Sélection des données de la commande pour détails de la livraison
 
-        $this->db->select('secomposede_produit_id, secomposede_qtite_commande');
-        $this->db->where('secomposede_commande_id',$id);
-        $select = $this->db->get('secomposede');
+        $this->db->select('secomposede_produit_id, secomposede_qtite_commande'); // Sélection de la commande dans la table secomposede
+        $this->db->where('secomposede_commande_id',$id); // Où l'id de la commande est égal à celui en paramètre
+        $select = $this->db->get('secomposede'); // Affectation de la selection à la variable
 
-        return $select->result_array();
+        return $select->result_array(); // Retour en tableau
     }
 
-    public function insertContenulivraison($contenu){
+    public function insertContenulivraison($contenu){ // Fonction appelée dans la fonction updateCommande du controller admincommandes
+        // Récupération des données pour insertion dans la table contient liée à la livraison
 
         $i = 0;
-        foreach($contenu[0][$i] as $key){
-            $data = array(
+        foreach($contenu[0][$i] as $key){ // Boucle pour chaque produit
+            $data = array( // A chaque produit insertion dans le tableau avec
                 "contient_livraison_id" => $contenu['contient_livraison_id'],
                 "contient_produit_id" => $contenu[0][$i]['secomposede_produit_id'],
                 "contient_qtite_liv" => $contenu[0][$i]['secomposede_qtite_commande']
             );
-            $this->db->insert('contient', $data);
+            // print_r($data);
+            $this->db->insert('contient', $data); // Insertion des données dans la table contient
                 $i++;
         }
+        
     }
 
-    public function updateLivraison($id){
+    public function updateLivraison($id){ // Fonction appelée dans la fonction updateCommande du controller admincommandes
 
-        $data = array("livraison_etat" => 'Livrée');
-        $this->db->set($data);
-        $this->db->where('livraison_commande_id', $id);
+        // Fonction appelée si l'état de la commande passe à 'Livrée'
+
+        $data = array("livraison_etat" => 'Livrée'); 
+        $this->db->set($data); // Définit la valeur de l'état de livraison
+        $this->db->where('livraison_commande_id', $id); // Selection de la livraison selon son id et update en BDD
         $this->db->update('livraison');
 
     }
