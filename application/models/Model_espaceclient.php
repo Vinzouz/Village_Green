@@ -44,6 +44,7 @@ class Model_espaceclient extends CI_Model
         $this->db->select('*');
         $this->db->from('secomposede'); // Sélection de tous les champs de la table commande et secomposede
         $this->db->join('commande', 'secomposede.secomposede_commande_id = commande.commande_id'); // Jointure selon l'id de commande
+        $this->db->join('produit', 'secomposede.secomposede_produit_id = produit.produit_id'); // Jointure selon l'id du produit
         $this->db->where('commande_id', $idcommande); // Où l'id de la commande est égal à celui passé en paramètre
         $select = $this->db->get(); // Affectation du résultat à la variable $select
 
