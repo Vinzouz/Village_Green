@@ -6,7 +6,7 @@
 
     <div class="card-slider">
         <?php foreach ($carrousel_produit as $index) : ?>
-            <span><a href="#">
+            <span><a href="<?= base_url('ficheproduit/index/'.@$index->produit_id.'') ?>">
             <section class="card__list padding_prod">
                 <div class="card__box">
                     <div class="card">
