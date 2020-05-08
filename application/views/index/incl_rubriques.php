@@ -1,12 +1,11 @@
-      <!--------------------------------->
-      <!-- Catégorie et Sous-Catégorie -->
-      <!--------------------------------->
-
+<?php 
+// Vue rubriques qui gère l'affichage des rubriques et de leurs sous-rubriques dans les pages principales du site
+?>
       <section class="row overlay">
 
         <ul class="card-list overlay-categorie overlay-decalage-categorie">
 
-          <?php foreach ($getRubriques as $rubrique) : ?>
+          <?php foreach ($getRubriques as $rubrique) : // Boucle foreach pour parcourir chaque rubriques envoyé par la fonction getRubrique ?>
 
             <!-- Catégorie -->
             <a href="<?= base_url('products/getRubrique/') . $rubrique['rubrique_id'] ?>">
@@ -23,7 +22,7 @@
 
                     <?php
                     $childes = $rubrique['child'];
-                    foreach ($childes as $child) :
+                    foreach ($childes as $child) : // 2ème boucle foreach pour parcourir chaque sous-rubriques de chaque rubrique
                     ?>
                       <a href="<?= base_url('products/getSousRubrique/') . $child['sousrub_id'] ?>"><?= $child['sousrub_nom'] ?></a><br>
                     <?php

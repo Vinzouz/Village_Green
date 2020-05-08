@@ -1,3 +1,6 @@
+<?php 
+// Vue avantages qui gère l'affichage des avantages dans les pages principales du site
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

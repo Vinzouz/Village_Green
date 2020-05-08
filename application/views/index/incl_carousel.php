@@ -1,3 +1,6 @@
+<?php 
+// Vue carousel gère l'affichage des pubs dans le grand carousel dans les pages principales du site
+?>
 <body>
 
   <section class="body">

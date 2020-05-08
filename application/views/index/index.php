@@ -1,6 +1,5 @@
 <?php
-
-
+// Vue index qui gère l'affichage de la page d'accueil
 $this->load->view('include/incl_head');
 $this->load->view('include/incl_loader');
 $this->load->view('include/incl_navbar');

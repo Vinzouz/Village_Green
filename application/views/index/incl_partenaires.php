@@ -1,6 +1,6 @@
-      <!-------------------->
-      <!-- Nos Partenaire -->
-      <!-------------------->
+<?php 
+// Vue partenaires qui gère l'affichage des partenaires du site dans les pages principales du site
+?>
       <section class="row overlay overlay-decalage-titre">
         <h2 class="intercalaire">Nos partenaires</h2>
       </section>
