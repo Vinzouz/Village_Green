@@ -8,9 +8,9 @@
 
         }
 
-        public function store()
+        public function store() // Fonction store qui reçoit les informations du formulaire d'inscription
         {
-
+            // Vérification de tous les champs pour éviter les erreurs
             $this->form_validation->set_rules( 'InsclientNom', 'InsclientNom', 'trim|required|min_length[2]|regex_match[/^([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]{1,15})[-\'\s]{0,1}([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]{1,15})[-\s]{0,1}([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]{1,15})$/]',
             array(
                     "required"      => "Nom non défini",
@@ -70,12 +70,12 @@
                     "matches"   =>  "Les mots de passe ne correspondent pas",
                     "trim"  => "Des espaces dans la vérification du mot de passe sont présents" ) );
 
-            if ( $this->form_validation->run() == FALSE ) {
-                $data = array( 'errors' => validation_errors('<p style="color:red">', '</p>') );
-                $this->session->set_flashdata( $data );
+            if ( $this->form_validation->run() == FALSE ) { // Si erreur du formulaire
+                $data = array( 'errors' => validation_errors('<p style="color:red">', '</p>') ); // Affectation des erreurs à la variable $data
+                $this->session->set_flashdata( $data ); // Redirection et affichage des erreurs
                 redirect( 'home/inscription' );
-            } else {
-                $data = array(
+            } else { // Si aucune erreur de formulaire
+                $data = array( // Affectation des input aux champs relatif en BDD dans un tableau
                     'client_nom' => $this->input->post( 'InsclientNom' ),
                     'client_prenom' => $this->input->post( 'InsclientPrenom' ),
                     'client_adresse' => $this->input->post( 'InsclientAdresse' ),
@@ -85,42 +85,38 @@
                     'client_mail' => $this->input->post( 'InsclientMail' ),
                     'client_type' => $this->input->post( 'InsclientType' ),
                     'client_siret' => $this->input->post( 'InsclientSiret' ),
-                    'client_password' => password_hash($this->input->post( 'InsclientPass' ), PASSWORD_DEFAULT)
+                    'client_password' => password_hash($this->input->post( 'InsclientPass' ), PASSWORD_DEFAULT),
+                    'client_role_id' => 2
                 );
-                $nom = $this->input->post( 'InsclientNom' );
+                $nom = $this->input->post( 'InsclientNom' ); // Récupération du nom du client
 
-                $this->load->model( 'Model_register' );
-                $user_id = $this->Model_register->clientStore( $data );
-                //print_r($user_id);
-                if ( $user_id > 0 ) {
-                    $user_data = array(
+                $this->load->model( 'Model_register' ); // Chargement du modèle pour la fonction
+                $user_id = $this->Model_register->clientStore( $data ); // Envoi du tableau à fonction clientStore du modèle register et récupération de l'id du client
+                
+                if ( $user_id > 0 ) { // Si l'id renvoyé est correct
+                    $user_data = array( // Affectation des données de session en tableau
                         'user_id' => $user_id,
                         'username' => $nom,
+                        'role' => $data['client_role_id'],
                         'logged_in' => true
                     );
 
-                    require 'PHPMailer/sendmail.php';
-                    $Subject = 'Inscription à Village Green';
-                    $Body    = "<p>Bonjour  $nom , ceci est un mail automatique pour vous prévenir que vous êtes bien inscrit sur Village Green.</p>";
-                    envoyermail($user_mail, $Subject, $Body);
-
-                    $this->session->set_userdata( $user_data );
-                    $this->session->set_flashdata( 'login', 'Vous êtes connecté ' );
-
-                } else {
+                    require 'PHPMailer/sendmail.php'; // Appel du fichier nécessaire de PHPMailer avec ses fonctions pour envoyer un mail
+                    $Subject = 'Inscription à Village Green'; // Initialisation du sujet du mail
+                    $Body    = "<p>Bonjour  $nom , ceci est un mail automatique pour vous prévenir que vous êtes bien inscrit sur Village Green.</p>"; // Initialisation du corps du mail avec les données nécessaires
+                    envoyermail($user_mail, $Subject, $Body); // Envoye de l'email avec comme paramètres le mail du client, le sujet et le corps du mail
+                    $this->session->set_userdata( $user_data ); // Initialisation de données de session
+                    $this->session->set_flashdata( 'login', 'Vous êtes connecté ' ); // Données flash
+                } else { // Si erreur avec l'id
                     $this->session->set_flashdata( 'failed', 'Vous n\'êtes pas connecté' );
-
                 }
-                redirect( '' );
+                redirect( '' ); // Redirection page d'accueil
             }
-
         }
 
-        public function logout()
+        public function logout() // Fonction qui sert à déconnecter le compte
         {
-            $this->session->sess_destroy();
+            $this->session->sess_destroy(); // Suppression de toutes les données de session puis redirection accueil
             redirect('');
         }
-
-
     }
