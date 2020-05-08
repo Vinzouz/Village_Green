@@ -1,3 +1,6 @@
+<?php 
+// Vue footer qui gère l'affichage du footer dans les pages principales du site
+?>
 <footer>
   <section class="container">
 

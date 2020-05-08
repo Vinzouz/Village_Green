@@ -1,3 +1,6 @@
+<?php 
+// Vue navbar qui gère l'affichage de la navbar dans les pages principales du site
+?>
 <div class="allPage">
     <header>
         <section class="container">
@@ -35,7 +38,7 @@
                             <li><a class="padding_ligne_one" href="">Service</a></li>
 
                             <!-- Espace Client -->
-                            <?php if ($this->session->flashdata('login') || $this->session->userdata('logged_in')) { ?>
+                            <?php if ($this->session->flashdata('login') || $this->session->userdata('logged_in')) { // Si l'utilisateur est connecté affichage de 'Connecté', 'Mon compte' et 'Déconnexion' ?>
                                 <li class="padding_ligne_one"><a href="">Connecté<span class="arrow-down"></span></a>
                                     <ul class="dropdown">
                                         <li class="esp_client"><a class="dropdown-item" href="<?= site_url('espaceclient/espaceC') ?>"><i class="fas fa-id-card"></i>Mon compte</a></li>
@@ -51,13 +54,13 @@
                                             'method' => 'post',
                                             'id' => 'logout'
                                         );
-                                        if ($this->session->userdata('logged_in')) {
-                                            echo form_open('register/logout', $attr);
+                                        if ($this->session->userdata('logged_in')) { // Si l'utilisateur est bien connecté
+                                            echo form_open('register/logout', $attr); // Appel de la fonction logout du controller register qui s'occupe de déconnecter l'utilisateur
                                             echo form_close();
                                         } ?>
                                     </ul>
                                 </li>
-                            <?php } else { ?>
+                            <?php } else { // Si l'utilisateur n'est pas connecté, affichage de 'Espace client', 'Connexion' et 'Inscription' ?>
                                 <li class="padding_ligne_one"><a class="ec_hover">Espace client<span class="arrow-down"></span></a>
                                     <ul class="dropdown">
                                         <li class="esp_client"><a class="dropdown-item" href="<?= site_url('connexion/index') ?>"><i class="fas fa-sign-in-alt"></i>Connexion</a></li>
@@ -68,7 +71,7 @@
                             <?php } ?>
 
                             <!-- Panier -->
-                            <li><a class="padding_ligne_one" href="<?= site_url('panier/index') ?>"><i class="fas fa-shopping-basket panier" id="qtepanier"></i></a></li>
+                            <li><a class="padding_ligne_one" href="<?= site_url('panier/index') ?>"><i class="fas fa-shopping-basket panier" id="qtepanier"></i></a></li> <?php // Icône panier suivi du chiffre qui se met à jour avec le script jQuery ?>
 
                             <!-- Langue -->
                             <li class="padding_ligne_one"><a href=""><span class="flag-icon flag-icon-fr"> </span>
@@ -105,13 +108,13 @@
                             <!-- Catégorie et Sous-Catégorie -->
 
 
-                            <?php foreach ($getRubriques as $rubrique) : ?>
+                            <?php foreach ($getRubriques as $rubrique) : // Boucle foreach pour parcourir chaque rubriques envoyé par la fonction getRubrique ?>
                                 <li><a href="<?= base_url('products/getRubrique/') . $rubrique['rubrique_id'] ?>"><?= $rubrique['rubrique_nom'] ?><span class="arrow-down"></span></a>
                                     <ul class="dropdown">
 
                                         <?php
                                         $childes = $rubrique['child'];
-                                        foreach ($childes as $child) :
+                                        foreach ($childes as $child) : // 2ème boucle foreach pour parcourir chaque sous-rubriques de chaque rubrique
                                         ?>
                                             <li><a href="<?= base_url('products/getSousRubrique/') . $child['sousrub_id'] ?>"><?= $child['sousrub_nom'] ?></a></li>
                                         <?php

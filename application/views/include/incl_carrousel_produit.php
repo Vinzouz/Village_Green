@@ -1,3 +1,6 @@
+<?php 
+// Vue carrousel produit qui gère l'affichage des pubs en card de produits aléatoires dans les pages principales du site
+?>
 <div class="container">
     <section class="row overlay overlay-decalage-titre">
         <h2 class="intercalaire">Venez découvrir</h2>
@@ -5,7 +8,7 @@
     <hr>
 
     <div class="card-slider">
-        <?php foreach ($carrousel_produit as $index) : ?>
+        <?php foreach ($carrousel_produit as $index) : // Boucle foreach pour parcourir chaque produit reçu par le controller home ?>
             <span><a href="<?= base_url('ficheproduit/index/'.@$index->produit_id.'') ?>">
             <section class="card__list padding_prod">
                 <div class="card__box">

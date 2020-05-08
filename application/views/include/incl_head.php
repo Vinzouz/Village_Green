@@ -1,3 +1,6 @@
+<?php 
+// Vue head qui gère les scirpts dans les pages principales du site
+?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
