@@ -1,3 +1,6 @@
+<?php 
+// Vue forminscription qui gère l'affichage du formulaire d'inscription' client
+?>
 <div class="container">
     <div class="row justify-content-center overlay-decalage-inscription overlay">
         <div class="encadre-milieu2">
@@ -9,15 +12,15 @@
                 <div class="col centrage-col2">
                     <h2 class="text-center legend">Inscription</h2><br>
                     <?php
-                    $attributes = array(
+                    $attributes = array( // Affectation des attributs de formulaire
                         'method' => 'post',
                         'name' => 'formInsclient'
                     );
                     ?>
-                    <?php if ($this->session->flashdata('errors')) : ?>
-                        <?php echo $test = $this->session->flashdata('errors'); ?>
+                    <?php if ($this->session->flashdata('errors')) : // Si erreur du formulaire ?>
+                        <?php echo $test = $this->session->flashdata('errors'); // Affichage des erreurs ?>
                     <?php endif; ?>
-                    <?= form_open('register/store', $attributes) ?>
+                    <?= form_open('register/store', $attributes) // Appel de la fonction store du controller register grâce à l'envoi du formulaire ?>
 
                     <div class="row">
                         <div class="col-12 col-sm-6">
@@ -211,4 +214,4 @@
     </div>
 </div>
 
-<script src=<?= base_url('assets/js/esp_forminsvalid.js') ?>></script>
+<script src=<?= base_url('assets/js/esp_forminsvalid.js') ?>></script> <?php // Ajout du script JS de vérification de champs ?>

@@ -1,5 +1,6 @@
 <?php
-    // include 'esp_validinscription.php';
+    // Vue editaccount qui gère l'affichage du formulaire d'édition de données utilisateurs
+    // Avec récupération des données dans les value du formulaire grâce à la fonction updateUser du controller connexion
 ?>
 
 <div class="container">
@@ -18,8 +19,8 @@
                             'name' => 'formInsclient'
                         );
                     ?>
-                    <?php if ( $this->session->flashdata( 'errors' ) ): ?>
-                        <?php  echo $test = $this->session->flashdata( 'errors' );?>
+                    <?php if ( $this->session->flashdata( 'errors' ) ): // Si erreur du formulaire ?>
+                        <?php  echo $test = $this->session->flashdata( 'errors' ); // Affichage des erreurs ?>
                     <?php endif; ?>
                     <?= form_open( 'connexion/updateUser', $attributes ) ?>
 
@@ -246,4 +247,3 @@
     </div>
 </div>
 
-<script src="esp_forminsvalid.js"></script>

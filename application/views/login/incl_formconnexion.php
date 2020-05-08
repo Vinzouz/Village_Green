@@ -1,7 +1,6 @@
-<?php
-// include 'esp_validconnexion.php';
+<?php 
+// Vue formconnexion qui gère l'affichage du formulaire de connexion client
 ?>
-
 <div class="container">
     <div class="row justify-content-center overlay-decalage-connexion overlay">
         <div class="encadre-milieu">
@@ -14,16 +13,16 @@
                     <p>
                         <h2 class="text-center legend">Connexion</h2><br>
                         <?php
-                        $attributes = array(
+                        $attributes = array( // Affectation des attributs de formulaire
                             'method' => 'post',
                             'name' => 'formConclient'
                         );
                     ?>
                     <div name="errormdp"></div>
-                    <?php if ( $this->session->flashdata( 'errors' ) ): ?>
-                        <?php  echo $test = $this->session->flashdata( 'errors' );?>
+                    <?php if ( $this->session->flashdata( 'errors' ) ): // Si erreur du formulaire ?>
+                        <?php  echo $test = $this->session->flashdata( 'errors' ); // Affichage des erreurs ?>
                     <?php endif; ?>
-                    <?= form_open( 'connexion/login', $attributes ) ?>
+                    <?= form_open( 'connexion/login', $attributes ) // Appel de la fonction login du controller connexion grâce à l'envoi du formulaire ?>
 
                             <label for="ConclientMail">Email :</label><input class="form-control connexion-champ" type="email" name="client_mail" id="ConclientMail" placeholder=" john.doe@gmail.com" required>
                             <span id="missConclientMail"></span>

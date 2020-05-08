@@ -1,4 +1,6 @@
-
+<?php 
+// Vue formlostpass qui gère l'affichage du formulaire d'envoie du mail client qui a perdu son mot de passe
+?>
 <div class="container">
     <div class="row justify-content-center overlay-decalage-connexion overlay">
         <div class="encadre-milieu">
@@ -11,16 +13,16 @@
                     <p>
                         <h2 class="text-center legend">Mot de passe perdu</h2><br>
                         <?php
-                        $attributes = array(
+                        $attributes = array( // Affectation des attributs de formulaire
                             'method' => 'post',
                             'name' => 'formLostpass'
                         );
                         ?>
                         <p class="text-center">Veuillez renseigner votre adresse mail afin de reçevoir un mail dans le but de réinitialiser votre mot de passe.</p>
-                        <?php if ($this->session->flashdata('errors')) : ?>
-                            <?php echo $test = $this->session->flashdata('errors'); ?>
+                        <?php if ($this->session->flashdata('errors')) : // Si erreur du formulaire ?>
+                            <?php echo $test = $this->session->flashdata('errors'); // Affichage des erreurs ?>
                         <?php endif; ?>
-                        <?= form_open('lostpass/envoie', $attributes) ?>
+                        <?= form_open('lostpass/envoie', $attributes) // Appel de la fonction envoie du controller lostpass grâce à l'envoi du formulaire ?>
 
                         <label for="mailLostPass">Email :</label><input class="form-control connexion-champ" type="email" name="client_mail" id="ConclientMail" placeholder=" john.doe@gmail.com" required>
                         <span id="missmailLostPass"></span>

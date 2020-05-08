@@ -1,3 +1,6 @@
+<?php 
+// Vue formnewpass qui gère l'affichage du formulaire de réinitialisation de mot de passe client
+?>
 <div class="container">
     <div class="row justify-content-center overlay-decalage-connexion overlay">
         <div class="encadre-milieu">
@@ -10,17 +13,17 @@
                     <p>
                         <h2 class="text-center legend">Réinitialisation du mot de passe</h2><br>
                         <?php
-                        $attributes = array(
+                        $attributes = array( // Affectation des attributs de formulaire
                             'method' => 'post',
                             'name' => 'formNewpass'
                         );
                         ?>
                         <p class="text-center">Veuillez rentrer un nouveau mot de passe</p>
-                        <?php if ($this->session->flashdata('errors')) : ?>
-                            <?php echo $test = $this->session->flashdata('errors'); ?>
+                        <?php if ($this->session->flashdata('errors')) : // Si erreur du formulaire ?>
+                            <?php echo $test = $this->session->flashdata('errors'); // Affichage des erreurs ?>
                         <?php endif; ?>
                       
-                        <?= form_open("lostpass/updatepass", $attributes) ?>
+                        <?= form_open("lostpass/updatepass", $attributes) // Appel de la fonction updatepass du controller lostpass grâce à l'envoi du formulaire ?>
 
                         <input class="form-control" hidden type="password" name="client_id">
 
