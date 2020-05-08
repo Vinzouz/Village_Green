@@ -48,7 +48,7 @@
                 <?php
                 if ($data != null) {
                     foreach ($data as $commande) { ?>
-                        <p>Commande n°<?= $commande->commande_id; ?> (<a href="<?= base_url('espaceclient/detailscommande/'.$commande->commande_id.'') ?>">Détails</a>)</p>
+                        <p>Commande n°<?= $commande->commande_id; ?> - - <?= date("d-m-Y", strtotime($commande->commande_date_reglem)); ?> (<a href="<?= base_url('espaceclient/detailscommande/'.$commande->commande_id.'') ?>">Détails</a>)</p>
 
                 <?php
                     }

@@ -83,11 +83,16 @@
                         print '<div style="margin-top: 20px;" class="row justify-content-center">';
                         print '<div class="card" id="infoslivraison">';
                         print '<div class=card-body>';
-                        print '<h5 class="card-title" id="ligne1infoslivraison">Vos informations de facturation et de livraison :</h5>';
+                        print '<h5 class="card-title" id="ligne1infoslivraison">Les informations de votre commande :</h5>';
+                        print '<p class="card-text" id="ligne2infoslivraison">Votre adresse de livraison et de facturation :</p>';
                         print $dataC[0]->client_prenom . ' ' . $dataC[0]->client_nom . '<br>';
                         print $dataCommande[0]->commande_facturation_rue . '<br>';
                         print $dataCommande[0]->commande_facturation_ville . '<br>';
                         print $dataCommande[0]->commande_facturation_codepo . '</p><br>';
+
+                        print '<p class="card-text" id="ligne2infoslivraison">Divers :</p>';
+                        print 'Commande passée le : ' . date('d-m-Y', strtotime($dataCommande[0]->commande_date_reglem)) . '<br>';
+                        print 'Statut : '. $dataCommande[0]->commande_etat. '<br>';
                         print ' </div>';
                         print '</div>';
                         print '</div>';
@@ -95,24 +100,30 @@
                         print '<div style="margin-top: 20px;" class="row justify-content-center">';
                         print '<div class="card" id="infoslivraison">';
                         print '<div class=card-body>';
-                        print '<h5 class="card-title" id="ligne1infoslivraison">Vos informations de facturation et de livraison :</h5>';
-                        print '<p class="card-text" id="ligne2infoslivraison">Votre adresse de facturation :<br>';
+                        print '<h5 class="card-title" id="ligne1infoslivraison">Les informations de votre commande :</h5>';
+                        print '<p class="card-text" id="ligne2infoslivraison">Votre adresse de facturation :</p>';
                         print $dataC[0]->client_prenom . ' ' . $dataC[0]->client_nom . '<br>';
                         print $dataCommande[0]->commande_facturation_rue . '<br>';
                         print $dataCommande[0]->commande_facturation_ville . '<br>';
-                        print $dataCommande[0]->commande_facturation_codepo . '</p><br>';
+                        print $dataCommande[0]->commande_facturation_codepo . '<br><br>';
 
-                        print '<p class="card-text" id="ligne2infoslivraison">Votre adresse de Livraison :<br>';
+                        print '<p class="card-text" id="ligne2infoslivraison">Votre adresse de Livraison :<br></p>';
                         print $dataC[0]->client_prenom . ' ' . $dataC[0]->client_nom . '<br>';
                         print $dataCommande[0]->commande_livraison_rue . '<br>';
                         print $dataCommande[0]->commande_livraison_ville . '<br>';
                         print $dataCommande[0]->commande_livraison_codepo . '</p><br>';
+
+                        print '<p class="card-text" id="ligne2infoslivraison">Divers :</p>';
+                        print 'Commande passée le : ' . date('d-m-Y', strtotime($dataCommande[0]->commande_date_reglem)) . '<br>';
+                        print 'Statut : '. $dataCommande[0]->commande_etat. '<br>';
                         print ' </div>';
                         print '</div>';
                         print '</div>';
                     }
 
                     ?>
+
+                    <div class="row justify-content-center"><a href="<?= base_url('espaceclient/espaceC') ?>">Retour vers l'espace client</a></div>
 
                 </div>
 

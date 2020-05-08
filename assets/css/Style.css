@@ -1129,7 +1129,7 @@ section.client .section-title {
                    flex-direction: column;
                    border-right: 2px solid black;
                    font-size: 1vw;
-                   overflow: hidden;
+                   overflow: scroll;
                  }
                  
                  .histo p
