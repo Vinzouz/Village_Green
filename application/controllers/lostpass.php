@@ -3,142 +3,133 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Lostpass extends CI_Controller
 {
 
-    public function __construct()
+    public function __construct() // Fonction constructrice qui charge les modèles pour tout le controller
     {
         parent::__construct();
         $this->load->model('Model_lostpass');
     }
 
-    public function index()
-    {
+    public function index() // Fonction index qui charge la vue pour rentrer le mail du mot de passe perdu
+    { // Simple chargement des vues nécessaires
         $this->load->view('include/incl_loader');
         $this->load->view('include/incl_head');
         $this->load->view('login/incl_formlostpass');
         $this->load->view('include/incl_script');
     }
 
-    public function envoie()
+    public function envoie() // Fonction envoie qui reçoit l'email du mot de passe perdu
     {
-        // $mailReg = '/([a-zA-Z0-9-_]{1,20})+(\.[a-zA-Z0-9-_]{1,20})*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]{1,20})*\.[a-zA-Z]{2,4}/';
+        // Vérification de l'input de l'email pour éviter les erreurs
         $this->form_validation->set_rules('client_mail', 'ConclientMail', "trim|required|valid_email");
 
-        if ($this->form_validation->run() == FALSE) {
-            $data = array('errors' => validation_errors());
-            $this->session->set_flashdata($data);
+        if ($this->form_validation->run() == FALSE) { // Si erreur du formulaire
+            $data = array('errors' => validation_errors()); // Affectation des erreurs à la variable $data
+            $this->session->set_flashdata($data); // Redirection et affichage des erreurs
             redirect('lostpass/index');
-        } 
-        else {
-            $result = $this->Model_lostpass->envoie();
+        } else { // Si aucune erreur du formulaire
+            $result = $this->Model_lostpass->envoie(); // Appel de la fonction envoie du modèle lostpass et récupération des données client selon le mail
 
-            if ($result) {
+            if ($result) { // Si le client existe bien
                 $user_id = $result['client_id'];
                 $user_mail = $result['client_mail'];
-                $user_data = array(
+                $user_data = array( // Récupération et affectation en tableau de l'id et du mail
                     'user_id' => $user_id,
                     'user_mail' => $user_mail
                 );
-                $this->session->set_userdata($user_data);
-                $nombrealeatoire = $this->genererChaine(6);
-                $data = array(
+                $this->session->set_userdata($user_data); // Affectation à des données flash
+                $nombrealeatoire = $this->genererChaine(6); // Génération d'un nombre aléatoire grâce à la fonction genererChaine présente dans le controller
+                $data = array( // Affectation en tableau du mail et du nombre aléatoire
                     'clients_temporaire_mail' => $user_mail,
                     'clients_temporaire_code' => $nombrealeatoire
                 );
 
-                require 'PHPMailer/sendmail.php';
-                $Subject = 'Réinitialisation du mot de passe';
-                $Body    = "<p>Bonjour  $user_mail , une réinitialisation du mot de passe a été lancée, voici votre code unique : $nombrealeatoire .</p>";
-                $send = envoyermail($user_mail, $Subject, $Body);
+                require 'PHPMailer/sendmail.php'; // Appel du fichier nécessaire de PHPMailer avec ses fonctions pour envoyer un mail
+                $Subject = 'Réinitialisation du mot de passe'; // Initialisation du sujet du mail
+                $Body    = "<p>Bonjour  $user_mail , une réinitialisation du mot de passe a été lancée, voici votre code unique : $nombrealeatoire .</p>"; // Initialisation du corps du mail avec les données nécessaires
+                $send = envoyermail($user_mail, $Subject, $Body); // Envoye de l'email avec comme paramètre le mail du client, le sujet et le corps du mail
 
-                if ($send == 1) {
+                if ($send == 1) { // Si l'email a bien été envoyé
+                    // Appel de la fonction insert_clients_temporaire dans le modèle lostpass pour rentrer les infos du client dans une table temporaire
                     $this->Model_lostpass->insert_clients_temporaire($data);
+                    // Et chargement des vues dont le formulaire pour rentrer le code reçu par mail
                     $this->load->view('include/incl_loader');
                     $this->load->view('include/incl_head');
                     $this->load->view('login/incl_formcode');
                     $this->load->view('include/incl_script');
-            }
-            } else {
-                $this->session->set_flashdata('failed', 'Aucun email correspondant');
-                redirect('connexion/index');
+                }
+            } else { // Si le client n'est pas trouvé par son mail
+                $this->session->set_flashdata('failed', 'Aucun email correspondant'); // Initilisation de données flash
+                redirect('connexion/index'); // Redirection à la page de connexion
             }
         }
     }
 
-
-    public function verif()
+    public function verif() // Fonction verif qui reçoit l'input du code reçu par mail
     {
-        // $user_id = $this->session->userdata('user_id');
-        // $user_mail = $this->session->userdata('user_mail');
+        // Vérfication de l'input du code pour éviter les erreurs
+        $this->form_validation->set_rules('client_temporaire_code', 'Code', 'trim|required|min_length[6]');
+        if ($this->form_validation->run() == FALSE) { // Si erreur du formulaire
+            $data = array('errors' => validation_errors()); // Affectation des erreurs à la variable $data
+            $this->session->set_flashdata($data); // Redirection et affichage des erreurs
+            redirect('');
+        } else { // Si aucune erreur du formulaire
 
-        // if ($user_id > 0 && $user_mail != "") {
+            $result = $this->Model_lostpass->verif(); // Appel de la fonction verif du modèle lostpass et récupération des données client de la table temporaire
 
-            $this->form_validation->set_rules('client_temporaire_code', 'Code', 'trim|required|min_length[6]');
-            if ($this->form_validation->run() == FALSE) {
-                $data = array('errors' => validation_errors());
-                $this->session->set_flashdata($data);
-                redirect('');
-            } else {
-
-                $result = $this->Model_lostpass->verif();
-
-                if ($result) {
-
-                    $this->load->view('include/incl_loader');
-                    $this->load->view('include/incl_head');
-                    $this->load->view('login/incl_formnewpass');
-                    $this->load->view('include/incl_script');
-                } else {
-                    redirect('login/incl_formcode');
-                }
+            if ($result) { // Si le client a été trouvé dans la table des clients temporaire
+                // Chargement des vues dont le formulaire pour changer le mot de passe
+                $this->load->view('include/incl_loader');
+                $this->load->view('include/incl_head');
+                $this->load->view('login/incl_formnewpass');
+                $this->load->view('include/incl_script');
+            } else { // Si le client n'est pas trouvé ou que le code n'est pas bon
+                redirect('login/incl_formcode'); // Redirection à la page pour rentrer le code
             }
-        // } else {
-        //     redirect('home/index');
-        // }
+        }
     }
 
-    public function updatepass()
+    public function updatepass() // Fonction updatepass qui reçoit le nouveau mot de passe pour modification après mot de passe perdu
     {
 
-            $this->form_validation->set_rules('client_newpass', 'client_newpass', 'trim|required|min_length[4]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/]', array(
-                'required'      => 'Le champ est requis.',
-                'min_length'     => 'La taille minimale du mot de passe doit être de 4.',
-                'regex_match'     => 'Le format du mot de passe ne correspond pas aux normes attendues.'
+        // Vérification du mot de passe et de sa vérification pour éviter les erreurs
+        $this->form_validation->set_rules('client_newpass', 'client_newpass', 'trim|required|min_length[4]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/]', array(
+            'required'      => 'Le champ est requis.',
+            'min_length'     => 'La taille minimale du mot de passe doit être de 4.',
+            'regex_match'     => 'Le format du mot de passe ne correspond pas aux normes attendues.'
         ));
-            $this->form_validation->set_rules('client_validnewpass', 'client_validnewpass', 'trim|required|min_length[3]|matches[client_newpass]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/]', array(
-                'required'      => 'Le champ est requis.',
-                'min_length'     => 'La taille minimale du mot de passe doit être de 4.',
-                'regex_match'     => 'Le format du mot de passe ne correspond pas aux normes attendues.',
-                'matches'     => 'La validaiton du mot de passe ne correspondant pas au premier.'
+        $this->form_validation->set_rules('client_validnewpass', 'client_validnewpass', 'trim|required|min_length[3]|matches[client_newpass]|regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/]', array(
+            'required'      => 'Le champ est requis.',
+            'min_length'     => 'La taille minimale du mot de passe doit être de 4.',
+            'regex_match'     => 'Le format du mot de passe ne correspond pas aux normes attendues.',
+            'matches'     => 'La validaiton du mot de passe ne correspondant pas au premier.'
         ));
 
-            if ($this->form_validation->run() == FALSE) {
-                $data = array('errors' => validation_errors('<p style="color: red" >', '</p>'));
-                $this->session->set_flashdata($data);
+        if ($this->form_validation->run() == FALSE) { // Si erreur du formulaire 
+            $data = array('errors' => validation_errors('<p style="color: red" >', '</p>')); // Affectation des erreurs à la variable $data
+            $this->session->set_flashdata($data); // Données flash d'erreur du formulaire
+            // Chargement de vues qui sert de redirection
+            $this->load->view('include/incl_loader');
+            $this->load->view('include/incl_head');
+            $this->load->view('login/incl_formnewpass');
+            $this->load->view('include/incl_script');
+        } else { // Si aucune erreur du formulaire
 
-                    $this->load->view('include/incl_loader');
-                    $this->load->view('include/incl_head');
-                    $this->load->view('login/incl_formnewpass');
-                    $this->load->view('include/incl_script');
+            $result = $this->Model_lostpass->updatepass(); // Appel de la fonction updatepass du modèle lostpass et récupération de true si aucune erreur 
 
-            } else {
-
-                $result = $this->Model_lostpass->updatepass();
-
-                //print_r($user_id);
-                if ($result) {
-                    $user_mail = $this->session->userdata('user_mail');
-                    require 'PHPMailer/sendmail.php';
-                    $Subject = 'Mot de passe réinitialisé';
-                    $Body    = "<p>Bonjour  $user_mail , votre mot de passe a bien été réinitialisé.</p>";
-                    $send = envoyermail($user_mail, $Subject, $Body);
-                    redirect('home/index');
-                } else {
-
-                    redirect('login/incl_formnewpass');
-                }
+            if ($result) { // Si $result est sur true
+                $user_mail = $this->session->userdata('user_mail'); // Récupération du mail client par donnée de session
+                require 'PHPMailer/sendmail.php'; // Appel du fichier nécessaire de PHPMailer avec ses fonctions pour envoyer un mail
+                $Subject = 'Mot de passe réinitialisé'; // Initialisation du sujet du mail
+                $Body    = "<p>Bonjour  $user_mail , votre mot de passe a bien été réinitialisé.</p>"; // Initialisatio du corps du mail
+                envoyermail($user_mail, $Subject, $Body); // Envoie du mail
+                redirect(''); // Redirection page d'accueil
+            } else { // Si $result est sur false
+                redirect('login/incl_formnewpass'); // Redirection à la page de changement de mot de passe
             }
+        }
     }
 
-    function genererChaine($longueur)
+    function genererChaine($longueur) // Fonction qui sert à génerer une chaine et de choisir sa longueur par le chiffre passé en paramètre
     {
         $listeCar = '0123456789';
         $chaine = '';

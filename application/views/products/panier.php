@@ -31,7 +31,7 @@
                     ?>
 
                             <!-- Formulaire très important, qui permet d'envoyer vers le controler à chaque fois que le bouton supprimer apparait (a chaque fois qu'une ligne du panier est créée donc...) -->
-                            <form action="effaceProduit" method="post">
+                            <form action="<?= base_url('panier/effaceProduit/'.$key[0]['produit_id'].'') ?>" method="post">
 
                                 <tr>
                                     <td><?= $key[0]["produit_nom"] ?></td>
@@ -43,7 +43,7 @@
                                         </div>
                                     </td>
                                     <td><?= $prixtot ?><sup>€</sup></td>
-                                    <td><input name="idP" hidden="hidden" value="<?= $key[0]['produit_id'] ?>"><button type="submit" id="supprProd" name="supprProd"><i class="fas fa-trash-alt"></i></button></td>
+                                    <td><button type="submit" id="supprProd" name="supprProd"><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                             </form><?php
 
