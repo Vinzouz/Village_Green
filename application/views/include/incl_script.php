@@ -37,79 +37,77 @@
         });
     });
 </script>
-<script>
-    $(document).ready(function() {
-        var sub_search = $('#sub-search');
-        $('#searchbox').keyup(function() {
-            var search_value = $('#searchbox').val();
-            //alert(search_value);
-            if (search_value != "") {
+<script> // Script jQuery pour la recherche dans la searchbar
+    $(document).ready(function() { // Dès que la page est prête la fonction se charge
+        var sub_search = $('#sub-search'); // Récupération de la div sous la searchbar pour faire apparaître les résultats (vide et invisible si aucune recherche)
+        $('#searchbox').keyup(function() { // Déclenchement de la fonction à chaque lettre rentrée
+            var search_value = $('#searchbox').val(); // Récupération de la valeur cherchée
+            
+            if (search_value != "") { // Si la valeur de recherche n'est pas nulle
                 $.ajax({
-                    url: "<?= base_url('search/get_search') ?>",
-                    data: {
-                        search_value: search_value
+                    url: "<?= base_url('search/get_search') ?>", // Appel de la fonction get_search du controller search
+                    data: { // Mise en tableau de la valeur cherchée
+                        search_value: search_value 
                     },
-                    method: 'post',
-                    dataType: 'json',
-                    success: function(data) {
-                        //console.log(data);
-                        sub_search.html('');
-                        $.each(data, function(index, value) {
+                    method: 'post', // Méthode POST
+                    dataType: 'json', // Type de donnée json
+                    success: function(data) { // Si réussi
+                        
+                        sub_search.html(''); // Remise à blanc de la recherche
+                        $.each(data, function(index, value) { // Pour chaque résultat trouvé, affecter une div a child_search avec les valeurs
                             var child_search = '<div class="child-search"><a class="search" href="<?= base_url('ficheproduit/index/') ?>'+value['produit_id']+'">' + value['produit_marque'] + ' ' + value['produit_nom'] + '</a></div>';
-                            sub_search.append(child_search);
+                            sub_search.append(child_search); // Push des résulats dans la div sous la searchbar
                         });
                     }
                 })
-            } else {
-                sub_search.html('');
+            } else { // Sinon si recherche vide (de base)
+                sub_search.html(''); // Remise à blanc de la div sous la searchbar (donc invisible)
             }
         });
     });
 </script>
 
-<script>
-        var qtepanier = $('#qtepanier');
-        $('#ajoutP').click(function() {
-            var pro_id = $('#pro_id').val();
-            var pro_qte = $('#pro_qte').val();
-            $.ajax({
-                url: "<?= base_url('panier/ajoutPanier/') ?>",
-                data: {
+<script> // Script jQuery pour ajouter un produit au panier
+        var qtepanier = $('#qtepanier'); // Récupération de la quantité panier de la navbar
+        $('#ajoutP').click(function() { // A chaque ajout de produit
+            var pro_id = $('#pro_id').val(); // Récupération de l'id du produit
+            var pro_qte = $('#pro_qte').val(); // Récupération de la quantité du produit
+            $.ajax({ 
+                url: "<?= base_url('panier/ajoutPanier/') ?>", // Appel de la fonction ajoutPanier du controller panier
+                data: { // Mise en tableau de l'id du produit avec la quantité
                     pro_qte: pro_qte,
                     pro_id: pro_id
                 },
-                method: 'post',
-                dataType: 'json',
+                method: 'post', // Méthode POST
+                dataType: 'json', // Type de donnée json
             })
             $.ajax({
-                url: "<?= base_url('panier/verifPanier') ?>",
-                method: 'post',
-                dataType: 'json',
-                success: function(value) {
+                url: "<?= base_url('panier/verifPanier') ?>", // Appel de la fonction verifPanier du controller panier qui vérifie la quantité panier à chaque ajout
+                method: 'post', // Méthode POST
+                dataType: 'json', // Type de donnée json
+                success: function(value) { // Si réussi
 
-                    qtepanier.html('');
-                    var qte = value;
-                    qtepanier.append(qte);
+                    qtepanier.html(''); // Remise à blanc de la quantité
+                    var qte = value; // Récup de la value de la fonction
+                    qtepanier.append(qte); // Push de la quantité dans la balise récupérée en début
                 }
             })
         });
 </script>
 
-<script>
-        var qtepanier = $('#qtepanier');
+<script> // Script jQuery pour mettre à jour la quantité panier 
+        var qtepanier = $('#qtepanier'); // Récupération de la quantité panier de la navbar
         $.ajax({
-            url: "<?= base_url('panier/verifPanier') ?>",
-            method: 'post',
-            dataType: 'json',
-            success: function(value) {
+            url: "<?= base_url('panier/verifPanier') ?>", // Appel de la fonction ajoutPanier du controller panier
+            method: 'post', // Méthode POST
+            dataType: 'json', // Type de donnée json
+            success: function(value) { // Si réussi
 
-                qtepanier.html('');
-                var qte = value;
-                qtepanier.append(qte);
+                qtepanier.html(''); // Remise à blanc de la quantité
+                var qte = value; // Récup de la value de la fonction
+                qtepanier.append(qte); // Push de la quantité dans la balise récupérée en début
             }
         })
 </script>
-
-
 
 </div>
