@@ -31,6 +31,7 @@ class Model_espaceclient extends CI_Model
             $this->db->from('clients'); // Sélection de tous les champs de la table clients et commande
             $this->db->join('commande', 'clients.client_id = commande.commande_client_id'); // Jointure selon l'id du client
             $this->db->where('client_id', $user_id); // Où l'id du client est égal à celui récupéré
+            $this->db->order_by('commande_id', 'DESC'); // Permet de trier les commandes en affichant les dernieres commandes en premieres.
             $select = $this->db->get(); // Affectation dur ésultat à la variable $select
 
             return $select->result(); // Renvoie du résultat en objet
