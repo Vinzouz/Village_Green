@@ -2736,9 +2736,6 @@ select {
   
 }
 
-.card2__img-preview:hover {
-  transform: scale(1.5);
-}
 
 .card2-img-overlay {
   position: absolute;
