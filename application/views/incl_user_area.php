@@ -1,3 +1,6 @@
+<?php 
+// Vue user_area qui gère l'affichage de l'espace client
+?>
 <div class="container">
     <?php
     // Permet de transcrire un objet en valeur affichable.
@@ -44,7 +47,7 @@
 
         <div class="general histo">
             <p>
-                <!-- Va permettre d'afficher les différentes commandes enregistrées dans la BDD, view à créer pour le detail -->
+                <!-- Va permettre d'afficher les différentes commandes enregistrées dans la BDD -->
                 <?php
                 if ($data != null) {
                     foreach ($data as $commande) { ?>
@@ -68,10 +71,5 @@
             <p><a href="">Nous contacter</a></p>
             <p><a href="">Foire aux Questions (FAQ)</a></p>
         </div>
-
-
     </div>
-
-
-
 </div>

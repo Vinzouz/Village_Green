@@ -22,7 +22,7 @@
                     <?php if ( $this->session->flashdata( 'errors' ) ): // Si erreur du formulaire ?>
                         <?php  echo $test = $this->session->flashdata( 'errors' ); // Affichage des erreurs ?>
                     <?php endif; ?>
-                    <?= form_open( 'connexion/updateUser', $attributes ) ?>
+                    <?= form_open( 'connexion/updateUser', $attributes ) // Appel de la fonction updateUser du controller connexion grâce à l'envoi du formulaire ?>
 
                     <div class="row">
                         <div class="col-12 col-sm-6">

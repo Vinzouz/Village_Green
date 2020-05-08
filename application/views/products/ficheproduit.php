@@ -1,3 +1,6 @@
+<?php 
+// Vue ficheproduit qui gère l'affichage de la fiche du produit selon l'id du produit
+?>
 <div class="container">
 
 <section class="card__list row">
@@ -29,7 +32,7 @@
 
 	<input type="hidden" name="pro_id" id="pro_id" value="<?= @$getdataProduit[0]['produit_id'] ?>">
 
-	<button type="submit" id="ajoutP">Ajouter au panier !</button>
+	<button type="submit" id="ajoutP">Ajouter au panier</button>
 </div>
 
 

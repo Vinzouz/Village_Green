@@ -1,5 +1,7 @@
+<?php 
+// Vue etapesuivante qui gère l'affichage de l'étape suivante du panier sans option de modification de ce dernier
+?>
 <div class="container">
-
 
     <?php if (isset($_SESSION["panier"])) {
         $Panier = $_SESSION["panier"]; // Permet au foreach d'être initialisé
@@ -47,16 +49,16 @@
         </div>
     </div>
     <?php
-    $tva = 0.2;
-    $totaltva = $prixtotfinal * $tva;
-    if ($prixtotfinal > 19) {
+    $tva = 0.2; // Initialisation de la TVA
+    $totaltva = $prixtotfinal * $tva; // Calcul de la tva selon le prixtotalfinal
+    if ($prixtotfinal > 19) { // Si le prix de la commande dépasse 19€, les frais sont gratuits
         $fraislivraison = 0;
         $fraislivraisonaffiche = 'Gratuit';
-    } else {
+    } else { // Sinon si le prix est inférieur à 19€, les frais sont à 3.5€
         $fraislivraison = 3.5;
         $fraislivraisonaffiche = '3.5<sup>€</sup>';
     }
-    $prixtotalfinalcommande = $prixtotfinal + $totaltva + $fraislivraison; ?>
+    $prixtotalfinalcommande = $prixtotfinal + $totaltva + $fraislivraison; // Calcul du prix total finale de la commande ?>
     <div class="row justify-content-center" id="lignetax">
         <div class="table-responsive" id="taxtabpanier">
             <table class="table table-striped table-hover table-bordered">
@@ -81,17 +83,17 @@
 
     <h2 class="row justify-content-center titretotalapayer">Total à payer : <?= $prixtotalfinalcommande ?>€</h2>
     <?php
-    $attributes = array(
+    $attributes = array( // Affectation des attributs de formulaire
         'method' => 'post',
         'name' => 'formCommande',
         'id' => 'formCommande'
     ); ?>
-    <?= form_open('panier/commander', $attributes); ?>
+    <?= form_open('panier/commander', $attributes); // Appel de la fonction commander du controller panier grâce à l'envoi du formulaire ?>
     <div class="row justify-content-center">
         <div class="card" id="infoslivraison">
             <div class=card-body>
                 <h5 class="card-title" id="ligne1infoslivraison">Vos informations de facturation et de livraison :</h5>
-                <?php foreach ($dataC as $infos) { ?>
+                <?php foreach ($dataC as $infos) { // Boucle foreach pour parcourir les infos client ?>
                     <p class="card-text" id="ligne2infoslivraison">Votre adresse de facturation :<br>
                         <?= $infos->client_adresse ?><br>
                         <?= $infos->client_ville ?><br>
@@ -152,7 +154,9 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <?php $userid = $_SESSION['user_id'];
+        <?php 
+        // Récupération de l'user id pour affichage du bouton d'envoi de la commande seulement pour les 3 comptes admins
+        $userid = $_SESSION['user_id'];
         if ($userid === 101 || 102 || 103) { ?>
             <input class="btn btn-success" type="button" name="buttonComm" id="buttonComm" value="Commander">
         <?php } ?>
@@ -162,4 +166,4 @@
     </div>
 </div>
 
-<script src=<?= base_url('assets/js/esp_formcommande.js') ?>></script>
+<script src=<?= base_url('assets/js/esp_formcommande.js') ?>></script><?php // Ajout du script JS de vérification de champs ?>

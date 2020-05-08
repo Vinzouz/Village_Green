@@ -1,4 +1,6 @@
-
+<?php 
+// Vue apropos qui gère l'affichage de la page à propos du site
+?>
 <body class="apropos">
 <section id='contap' class="container">
 

@@ -1,3 +1,6 @@
+<?php 
+// Vue panier qui gère l'affichage du panier avec option de modification ou suppression de ce dernier
+?>
 <div class="container">
 
     <?php if (isset($_SESSION["panier"])) {
@@ -62,16 +65,16 @@
         <?php }   ?>
     </div>
 
-    <?php if (isset($_SESSION["panier"]) && isset($_SESSION["logged_in"])) { ?>
+    <?php if (isset($_SESSION["panier"]) && isset($_SESSION["logged_in"])) { // Si l'utilisateur est connecté et a un panier ?>
         <div class="row justify-content-center">
             <a class="btn btn-success" href="<?= site_url("panier/etapeSuivante"); ?>" role="button">Etape suivante</a>
         </div>
-        <?php }else if(!isset($_SESSION["panier"])) { ?>
+        <?php }else if(!isset($_SESSION["panier"])) { // Si l'utilisateur n'a pas de panier ?>
         <div class="row justify-content-center">
             
         </div>
     <?php    ?>
-    <?php }else { ?>
+    <?php }else { // Si l'utilisateur n'est pas connecté ou n'a pas de panier ?>
         <div class="row justify-content-center">
             <p>Inscrivez-vous ou connectez vous pour pouvoir passer une commande.</p>
         </div>

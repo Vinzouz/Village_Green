@@ -1,3 +1,6 @@
+<?php 
+// Vue sous_rubriques qui gère l'affichage des cards de chaque sous-rubrique selon la rubrique sélectionnée
+?>
 <div class="container">
 <?php $array = json_decode(json_encode($getRubrique), True); ?>
     <div class="parallax" style="background-image:url('<?= base_url('assets/images/Imagesproducts/' . $array[0]['rubrique_id'] . '/home.jpg') ?>')">
@@ -12,7 +15,7 @@
 
         <ul class="card-list overlay-categorie overlay-decalage-categorie">
 
-            <?php foreach ($getRubrique as $rubrique) : ?>
+            <?php foreach ($getRubrique as $rubrique) : // Boucle pour parcourir chaque sous-rubrique dans la rubrique ?>
 
                 <!-- Catégorie -->
                 <a href="<?= base_url('products/getSousRubrique/') . $rubrique->sousrub_id ?>">

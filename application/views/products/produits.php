@@ -1,3 +1,6 @@
+<?php 
+// Vue produits qui gère l'affichage des cards de chaque produit selon la sous-rubrique sélectionnée
+?>
 <?php $array = json_decode(json_encode($getSousRubrique), True); ?>
 <div class="parallax" style="background-image:url('<?= base_url('assets/images/Imagesproducts/' . @$array[0]['rubrique_id'] . '/' . @$array[0]['sousrub_id'] . '/home.jpg') ?>')">
   <h1><?= @$array[0]['sousrub_nom'] ?></h1>
@@ -6,7 +9,7 @@
 <section class="card__list row">
   <?php
 
-  foreach ($getSousRubrique as $sousRubrique) : ?>
+  foreach ($getSousRubrique as $sousRubrique) : // Boucle pour parcourir chaque produit dans la sous-rubrique ?>
 
     <div class="card__box col-xl-6 col-md-12">
       <div class="card">

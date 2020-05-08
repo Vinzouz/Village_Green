@@ -1,4 +1,7 @@
-<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == 1) {
+<?php 
+// Vue detailscommande qui gère l'affichage d'un genre de bon de commande avec toutes les infos de la commande
+?>
+<?php if (isset($_SESSION['logged_in']) && isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == 1) { // Permet de s'assurer si l'utilisateur est bien défini et connecté
     if ($_SESSION["user_id"] == $dataCommande[0]->commande_client_id) // Permet de s'assurer que l'ID de l'utilisateur est bien celle du client de la commande, sinon le redirige
     { ?>
 
@@ -132,9 +135,9 @@
         </div>
 
 <?php } else {
-        redirect(""); // Parti 
+        redirect(""); // Redirection page d'accueil
     }
 } else {
-    redirect(""); // Parti 
+    redirect(""); // Redirection page d'accueil
 }
 ?>

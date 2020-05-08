@@ -1,3 +1,6 @@
+<?php 
+// Vue reussitecommande qui gère l'affichage après avoir passé une commande
+?>
 <div class="container">
 
 <p>Bravo, votre commande est bien passée !</p>
