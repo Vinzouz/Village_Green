@@ -86,7 +86,7 @@
                                     <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-jp"> </span>
                                             日本語</a></li>
                                     <li class="choixdrap"><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cn"> </span>
-                                            官话</a></li>
+                                            中文</a></li>
                                 </ul>
                             </li>
                         </ul>
