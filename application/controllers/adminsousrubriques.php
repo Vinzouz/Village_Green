@@ -32,8 +32,14 @@ class adminsousrubriques extends CI_Controller
                     $this->load->view('admin/adminproducts/sousrubriques/addsousrubrique', $data);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -55,8 +61,14 @@ class adminsousrubriques extends CI_Controller
                     $this->load->view('admin/adminproducts/sousrubriques/index', $data);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -77,8 +89,14 @@ class adminsousrubriques extends CI_Controller
                     // Récupération des résultats dans la variable data
 
                     echo json_encode($data); // Affichage direct des données avec le json_encode afin que le script puisse utiliser les données
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -120,8 +138,14 @@ class adminsousrubriques extends CI_Controller
                             redirect('adminsousrubriques/getSousRubriques'); // Redirection à la liste des sous-rubriques
                         }
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -142,8 +166,14 @@ class adminsousrubriques extends CI_Controller
                     rmdir('assets/images/Imagesproducts/' . $idR . '/' . $idSR . '');
 
                     redirect('adminsousrubriques/getSousRubriques'); // Redirection à la liste des sous-rubriques
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -166,8 +196,14 @@ class adminsousrubriques extends CI_Controller
                     $this->load->view('admin/adminproducts/sousrubriques/editsousrubrique', $array);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -205,8 +241,14 @@ class adminsousrubriques extends CI_Controller
                         }
                         redirect('adminsousrubriques/getSousRubriques'); // Redirection à la liste des sous-rubriques
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -236,8 +278,14 @@ class adminsousrubriques extends CI_Controller
                     } else {
                         echo "image is empty or type of image not allowed";
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 

@@ -30,8 +30,14 @@ class admincommandes extends CI_Controller
                     $this->load->view('admin/admincommandes/commandelist', $data);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -52,8 +58,14 @@ class admincommandes extends CI_Controller
                     // Récupération des résultats dans la variable data
 
                     echo json_encode($data); // Affichage direct des données avec le json_encode afin que le script puisse utiliser les données
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -70,8 +82,14 @@ class admincommandes extends CI_Controller
                     // Appel de la fonction deleteCommande du modèle admincommandes qui permet de supprimer une commande en passant
                     // son id en paramètre puis redirection à la liste des commandes
                     redirect('admincommandes/index');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -95,8 +113,14 @@ class admincommandes extends CI_Controller
                     $this->load->view('admin/admincommandes/editcommande', $array);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -179,7 +203,7 @@ class admincommandes extends CI_Controller
                         }
 
                         if ($dataCommande['commande_etat'] === 'Livrée') { // Si l'état de la commande passe à 'Livrée'
-                            
+
                             // Appel de la fonction updateLivraison du modèle admincommandes qui update simplement l'état de la livraison
                             $this->Model_admincommandes->updateLivraison($dataCommande['commande_id']);
                         }
@@ -187,8 +211,14 @@ class admincommandes extends CI_Controller
                         redirect('admincommandes/index');
                         // Une fois l'update fini, redirection vers la liste des commandes
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 

@@ -37,15 +37,15 @@ class Lostpass extends CI_Controller
                     'user_mail' => $user_mail
                 );
                 $this->session->set_userdata($user_data); // Affectation à des données flash
-                $nombrealeatoire = $this->genererChaine(6); // Génération d'un nombre aléatoire grâce à la fonction genererChaine présente dans le controller
+                $clealeatoire = $this->genererChaine(64); // Génération d'un nombre aléatoire grâce à la fonction genererChaine présente dans le controller
                 $data = array( // Affectation en tableau du mail et du nombre aléatoire
                     'clients_temporaire_mail' => $user_mail,
-                    'clients_temporaire_code' => $nombrealeatoire
+                    'clients_temporaire_code' => $clealeatoire
                 );
 
                 require 'PHPMailer/sendmail.php'; // Appel du fichier nécessaire de PHPMailer avec ses fonctions pour envoyer un mail
                 $Subject = 'Réinitialisation du mot de passe'; // Initialisation du sujet du mail
-                $Body    = "<p>Bonjour  $user_mail , une réinitialisation du mot de passe a été lancée, voici votre code unique : $nombrealeatoire .</p>"; // Initialisation du corps du mail avec les données nécessaires
+                $Body    = "<p>Bonjour  $user_mail , une réinitialisation du mot de passe a été lancée, voici votre code unique : $clealeatoire .</p>"; // Initialisation du corps du mail avec les données nécessaires
                 $send = envoyermail($user_mail, $Subject, $Body); // Envoye de l'email avec comme paramètre le mail du client, le sujet et le corps du mail
 
                 if ($send == 1) { // Si l'email a bien été envoyé
@@ -131,7 +131,7 @@ class Lostpass extends CI_Controller
 
     function genererChaine($longueur) // Fonction qui sert à génerer une chaine et de choisir sa longueur par le chiffre passé en paramètre
     {
-        $listeCar = '0123456789';
+        $listeCar = '0123456789abcdef';
         $chaine = '';
         for ($i = 0; $i < $longueur; ++$i) {
             $chaine .= $listeCar[random_int(0, 6)];

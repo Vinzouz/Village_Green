@@ -30,8 +30,14 @@ class adminrubriques extends CI_Controller
                     $this->load->view('admin/adminproducts/rubriques/addrubrique');
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -66,8 +72,14 @@ class adminrubriques extends CI_Controller
                             redirect('adminrubriques/getRubriques'); // Redirection à la liste des rubriques
                         }
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -90,8 +102,14 @@ class adminrubriques extends CI_Controller
                     $this->load->view('admin/adminproducts/rubriques/index', $data);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -111,8 +129,14 @@ class adminrubriques extends CI_Controller
                     rmdir('assets/images/Imagesproducts/' . $idR . '');
 
                     redirect('adminrubriques/getRubriques'); // Redirection à la liste des rubriques
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -134,8 +158,14 @@ class adminrubriques extends CI_Controller
                     $this->load->view('admin/adminproducts/rubriques/editrubrique', $array);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -171,8 +201,14 @@ class adminrubriques extends CI_Controller
                         }
                         redirect('adminrubriques/getRubriques'); // Redirection à la liste des rubriques
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -205,8 +241,14 @@ class adminrubriques extends CI_Controller
                     } else { // Si il n'y a pas d'image envoyée
                         echo "image vide ou type non autorisé";
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 

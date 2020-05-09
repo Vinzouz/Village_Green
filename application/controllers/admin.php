@@ -27,8 +27,14 @@ class admin extends CI_Controller
           $this->load->view('admin/blank');
 
           $this->load->view('admin/partials/footer');
+        } else {
+          redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
+      } else {
+        redirect('');
       }
+    } else {
+      redirect('');
     }
   }
 }

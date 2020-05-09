@@ -30,8 +30,14 @@ class adminclients extends CI_Controller
                     $this->load->view('admin/adminclients/userslist', $data);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -42,7 +48,7 @@ class adminclients extends CI_Controller
             $data['dataC'] = $this->Model_espaceclient->getClient();
             if ($data['dataC'] != null) {
                 if ($data['dataC'][0]->client_role_id === 1 && $data['dataC'][0]->client_id === "101" || $data['dataC'][0]->client_id === "102" || $data['dataC'][0]->client_id === "103") {
-                    
+
                     // Récupération du POST normalement vide de base du script jQuery pour récupérer la liste entière d'utilisateurs
                     // Change en cas de recherche
                     $postData = $this->input->post();
@@ -52,8 +58,14 @@ class adminclients extends CI_Controller
                     // Récupération des résultats dans la variable data
 
                     echo json_encode($data); // Affichage direct des données avec le json_encode afin que le script puisse utiliser les données
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -64,14 +76,19 @@ class adminclients extends CI_Controller
             $data['dataC'] = $this->Model_espaceclient->getClient();
             if ($data['dataC'] != null) {
                 if ($data['dataC'][0]->client_role_id === 1 && $data['dataC'][0]->client_id === "101" || $data['dataC'][0]->client_id === "102" || $data['dataC'][0]->client_id === "103") {
-                    
+
                     $this->Model_adminclients->deleteClient($id);
                     // Appel de la fonction deleteClient du modèle adminclients qui permet de supprimer un utilisateur en passant
                     // son id en paramètre puis redirection à la liste d'utilisateurs
                     redirect('adminclients/index');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
-
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 }

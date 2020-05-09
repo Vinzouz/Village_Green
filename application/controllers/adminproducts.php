@@ -33,8 +33,14 @@ class adminproducts extends CI_Controller
                     $this->load->view('admin/adminproducts/addproduct', $data);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -55,8 +61,14 @@ class adminproducts extends CI_Controller
                     // Récupération des résultats dans la variable data
 
                     echo json_encode($data); // Affichage direct des données avec le json_encode afin que le script puisse utiliser les données
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -113,8 +125,14 @@ class adminproducts extends CI_Controller
                             redirect('adminproducts/getProduct'); // Redirection à la liste des produits
                         }
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -148,8 +166,14 @@ class adminproducts extends CI_Controller
                     } else { // Si il n'y a pas d'image envoyée
                         echo "image vide ou type non autorisé";
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -172,8 +196,14 @@ class adminproducts extends CI_Controller
                     $this->load->view('admin/adminproducts/index', $data);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -249,8 +279,14 @@ class adminproducts extends CI_Controller
                     if ($suppr == true) { // Si la suppression est effective, redirection à la liste des produits
                         redirect('adminproducts/getProduct');
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -277,8 +313,14 @@ class adminproducts extends CI_Controller
                     $this->load->view('admin/adminproducts/editproduct', $array);
 
                     $this->load->view('admin/partials/footer');
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 
@@ -324,8 +366,14 @@ class adminproducts extends CI_Controller
                         }
                         redirect('adminproducts/getProduct'); // Redirection à la liste des produits
                     }
+                } else {
+                    redirect(''); // Redirection page d'accueil si problème d'identification admin
                 }
+            } else {
+                redirect(''); // Redirection page d'accueil si problème d'identification admin
             }
+        } else {
+            redirect(''); // Redirection page d'accueil si problème d'identification admin
         }
     }
 }
